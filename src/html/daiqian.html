@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="简介">
+    <meta name="keywords" content="关键词">
+    <meta name="author" content="zx">
+    <meta name="robots" content="index,follow">
+    <title>舆情监控平台</title>
+    <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendor/bootstrap-table/bootstrap-table.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+    <link href="../css/style.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
+        <script src="../vendor/respond.js_1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+   <div class="head-wrapper">
+        <div class="header" id="header">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="javascript:void(0);">舆情压力监测系统</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right ">
+                    <li><a href="javascript:void(0);"  data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/> 上午好，JD6524197_2012 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0);"><img src="../images/loginout.png" alt=""/> 退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pressure-search">
+              <div class="search-box">
+                  <h2>企业舆情压力查询</h2>
+                  <div class="search"><input type="text" placeholder="请输入企业名称或简称"/><button class="btn">提交</button></div>
+              </div>
+        </div>
+   </div>
+    <div class="evaluate">
+         <div class="evaluate-data">
+              <div class="top-bar"><span class="title">企业舆情风险评估看板</span>
+                  <div class="pull-right tool">
+                      <select  id="sld" class="selectpicker">
+                          <option value="近七天">近七天</option>
+                          <option value="近七天">近三天</option>
+                      </select>
+                      <input size="16" type="text"  placeholder="起始时间" readonly id="beginTime">
+                      <span>~</span>
+                      <input size="16" type="text"  placeholder="结束时间" readonly id="endTime">
+                      <a href="javascript:void(0);">
+                          <img src="../images/Export.png" alt=""/>
+                          导出数据
+                      </a>
+                  </div>
+
+              </div>
+             <table class="index-table" id="data-Table">
+
+             </table>
+         </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2004-2017 京东JD.com 版权所有 </p>
+        <p>中科点击（北京）科技有限公司提供技术支持    客服电话400617888</p>
+    </footer>
+    <script src="../vendor/jQuery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
+    <script src="../vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script src="../vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+    <script>
+            $(function(){
+                $('#sld').selectpicker({
+                    style:"btn-s"
+                });
+
+                $('#beginTime').datetimepicker({
+                    language:'zh-CN',
+                    format: 'yyyy-mm-dd',
+                    minView: "month",
+                    clearBtn:true,
+                    autoclose:1
+                });
+                $('#endTime').datetimepicker({
+                    language:'zh-CN',
+                    format: 'yyyy-mm-dd',
+                    minView: "month",
+                    clearBtn:true,
+                    autoclose:1
+                });
+
+                var operateFormatter = function (value, row, index) {
+                         var state="no";
+                         if(row.state=="分析完成"){
+                             state="";
+                         }
+                    return [
+                        "<button  type='button' class='btn view "+state+" '>查看</button>",
+                        "<button  type='button' class='btn remove "+state+"' >删除</button>",
+                    ].join('');
+                };
+                var stateFormatter=function (value, row, index){
+                    var name="analysis";
+                    if(row.state=="数据采集中"){
+                           name="collect";
+                    }else if(row.state=="提交完成"){
+                        name="submit"
+                    }
+                    var a="<span class='"+name+"'>"+row.state+"</span>";
+                    return a;
+                };
+            var options = {
+                columns : [ {
+                    field : 'name',
+                    align:"center",
+                    valign: "middle",
+                    title : "企业名称"
+                }, {
+                    field : 'exponent',
+                    title : "压力指数",
+                     align:"center",
+                     valign: "middle"
+
+
+                }, {
+                    field : 'number',
+                    title : "负面数",
+                    align:"center",
+                    valign: "middle",
+
+                }, {
+                    field : 'count',
+                    title : "舆情数",
+                    align:"center",
+                    valign: "middle"
+
+                }, {
+                    field : 'state',
+                    align:"center",
+                    valign: "middle",
+                    title : "状态",
+                    formatter: stateFormatter
+
+                },{
+                    field : 'data',
+                    align:"center",
+                    valign: "middle",
+                    title : "提交时间",
+                    sortable:true
+                },{
+                    field : 'action',
+                    align:"center",
+                    valign: "middle",
+                    title : "操作",
+                    formatter: operateFormatter
+
+                }],
+                paginationPreText:"<i class='glyphicon glyphicon-menu-left'></i>",
+                paginationNextText:"<i class='glyphicon glyphicon-menu-right'></i>",
+                method: 'post',
+                sortable:true,
+                sortOrder : 'desc',
+                pagination : true,
+                sidePagination : 'server',
+                pageNumber :1,
+                pageSize :6,
+                dataType: "json",
+                url : '../data/table2.json',
+                pageList : [ 10000],
+                queryParamsType: '',
+                onLoadSuccess:function(){
+                    $(".no").attr("disabled","disabled")
+                }
+//                queryParams : function(params) {
+//                    return{
+//                    offset:params.offset,
+//                    limit:params.limit
+//                   }
+//                }
+
+            };
+
+            $('#data-Table').bootstrapTable(options);
+            })
+        </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "total":80,
+  "rows":[
+    {
+      "name": "中昌大数据股份有限公司",
+      "exponent": "1231",
+      "number": "123",
+      "count": "123",
+      "state": "指标正常"
+
+    },
+    {
+      "name": "中昌大数据股份有限公司",
+      "exponent": "12",
+      "number": "12",
+      "count": "12",
+      "state": "黄色预警"
+
+    },
+    {
+      "name": "中昌大数据股份有限公司",
+      "exponent": "12",
+      "number": "12",
+      "count": "12",
+      "state": "橙色预警"
+
+    },
+    {
+      "name": "中昌大数据股份有限公司",
+      "exponent": "12",
+      "number": "12",
+      "count": "12",
+      "state": "红色预警"
+
+    }
+
+
+  ]
+}
