@@ -34,9 +34,9 @@
     </div>
    </div>
     <div class="banner">
-
-            <div class="type-wrapper ">
-                <ul class="type-list type-list-main  clearfix">
+        <div class="container clearfix">
+            <div class="type-wrapper row">
+                <ul class="type-list type-list-main">
                     <li class="active"><span class="type">全部企业（<span>2000</span>）</span></li>
                     <li><span class="type">人工智能（<span>2000</span>）</span></li>
                     <li><span class="type">无人机（<span>2000</span>）</span></li>
@@ -44,31 +44,30 @@
                     <li><span class="type">医疗健康（<span>2000</span>）</span></li>
                     <li><span class="type">汽车交通（<span>2000</span>）</span></li>
                     <li><span class="type">共享经济（<span>2000</span>）</span></li>
-                    <li class="last-menu"><a href="javascript:void(0);" class="arrow">
-                        <span class="glyphicon glyphicon-menu-up arrow-up"></span>
-                        <span class="glyphicon glyphicon-menu-down" style="display:none;"></span>
-                    </a>
-                    </li>
-                    <ul class="type-list clearfix subtype-list" >
-                        <li><span class="type">全部企业（<span>2000</span>）</span></li>
-                        <li><span class="type">人工智能（<span>2000</span>）</span></li>
-                        <li><span class="type">无人机（<span>2000</span>）</span></li>
-                        <li><span class="type">房产家居（<span>2000</span>）</span></li>
-                        <li><span class="type">医疗健康（<span>2000</span>）</span></li>
-                        <li><span class="type">汽车交通（<span>2000</span>）</span></li>
-                        <li><span class="type">共享经济（<span>2000</span>）</span></li>
-                        <li><span class="type">全部企业（<span>2000</span>）</span></li>
-                        <li><span class="type">人工智能（<span>2000</span>）</span></li>
-                        <li><span class="type">无人机（<span>2000</span>）</span></li>
-                        <li><span class="type">房产家居（<span>2000</span>）</span></li>
-                        <li><span class="type">医疗健康（<span>2000</span>）</span></li>
-                        <li><span class="type">汽车交通（<span>2000</span>）</span></li>
-                        <li><span class="type">共享经济（<span>2000</span>）</span></li>
-                    </ul>
+                    <li><span class="type">全部企业（<span>2</span>）</span></li>
+                    <li><span class="type">人工智能（<span>2000</span>）</span></li>
+                    <li><span class="type">无人机（<span>2000</span>）</span></li>
+                    <li><span class="type">房产家居（<span>2000</span>）</span></li>
+                    <li><span class="type">医疗健康（<span>2000</span>）</span></li>
+                    <li><span class="type">汽车交通（<span>2000</span>）</span></li>
+                    <li><span class="type">共享经济（<span>2000</span>）</span></li>
+                    <li><span class="type">全部企业（<span>2000</span>）</span></li>
+                    <li><span class="type">人工智能（<span>2000</span>）</span></li>
+                    <li><span class="type">无人机（<span>2000</span>）</span></li>
+                    <li><span class="type">房产家居（<span>2000</span>）</span></li>
+                    <li><span class="type">医疗健康（<span>2000</span>）</span></li>
+                    <li><span class="type">汽车交通（<span>2000</span>）</span></li>
+                    <li><span class="type">共享经济（<span>2000</span>）</span></li>
                 </ul>
-
+                <ul class="type-list-right">
+                    <li class="last-menu">
+                        <a href="javascript:void(0);" class="arrow">
+                            <span class="glyphicon glyphicon-menu-up arrow-up" style="display: block;"></span>
+                            <span class="glyphicon glyphicon-menu-down" style="display: none;"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        <div class="container clearfix">
             <div class="banner-content">
                 <div class="row">
                     <div class="col-xs-3">
@@ -183,17 +182,15 @@
     <script src="../script/yuqing/yuqing01.js"></script>
     <script src="../script/radialIndicator.js"></script>
     <script>
-        $(".type-list-main").hover(function(){
-            $(".subtype-list").slideDown();
-            $(".arrow-up").css("display","none").siblings().css("display","block");
+        $(".type-wrapper").hover(function(){
+            $(this).children(".type-list-main").addClass("open");
+            $(this).find(".arrow-up").css("display","none").siblings().css("display","block");
         },function(){
-            $(".subtype-list").slideUp();
-            $(".arrow-up").css("display","block").siblings().css("display","none");
+            $(this).children(".type-list-main").removeClass("open");
+            $(this).find(".arrow-up").css("display","block").siblings().css("display","none");
         });
-        $(".type").on("click",function(){
-            $("li.active").removeClass("active");
-            $(this).parent().addClass("active")
-
+        $(".type-wrapper").on("click",".type",function(){
+            $(this).parent().addClass("active").siblings().removeClass("active");
         });
         var option={
             initValue :80,

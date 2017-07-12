@@ -38,19 +38,42 @@ a{
 .banner{
     margin-top:45px;
 }
-.type-wrapper{width:1200px;margin:0 auto;position:relative;}
+.type-wrapper{
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    left: 15px;
+    right: 15px;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+}
 .type-wrapper:hover{background-color:rgba(60,63,82,0.7);}
-.type-list{padding:0;}
-.type-list li{float:left;color:#ffffff;width:160px;margin-bottom:10px;}
-.type-wrapper>ul .last-menu{width:50px;padding:10px;margin-bottom:0;margin-left:0;}
-.type-wrapper>ul  .subtype-list{display:none;background-color:rgba(60,63,82,0.7);z-index:999;width:1200px;position:absolute;left:0;top:40px;}
-
-.type-list li .type{padding:8px 15px;border-radius:15px;cursor:pointer;display:inline-block;}
+.type-list-main {
+    flex: 1;
+    transition: all 1s;
+    height: 38px;
+    overflow: hidden;
+}
+.type-list-main.open{
+    height: auto;
+}
+.type-list-right {
+    width: 20px;
+    margin-top: 3px;
+}
+.type-list li{float: none;display: inline-block;color:#ffffff;margin-bottom:10px;}
+.type-list li .type{padding:8px 15px;border-radius:25px;cursor:pointer;display: block;}
 .type-list li.active .type{background-color:#1e90ff;}
 .type-list li .type:hover{background-color:#1e90ff;}
-.type-list .arrow{color:#53586c;display:inline-block;padding:0 10px;background-color:rgba(0,0,0,0.3);}
-.type-list .arrow:hover,.type-list .arrow:focus{text-decoration:none;color:#53586c;}
-
+.type-wrapper .last-menu .arrow{display: block;height: 29px;text-decoration:none;line-height: 29px;text-align: center;font-size: 12px;color:#cccccc;background-color: #2f3343;border-radius: 3px;}
+.arrow .glyphicon {
+    line-height: 29px;
+}
 .silder{
     float: left;
     width: 1120px;
@@ -105,7 +128,7 @@ a{
 }
 .banner-content {
     position:absolute;
-    margin-top:35px;
+    top: 100px;
     left:0;
     right:0;
     width:100%;
@@ -212,7 +235,6 @@ a{
 }
 
 .info-box{
-    width:100%;
     background:url(../images/info-bg.png) center center no-repeat;
     background-size:cover;
     padding-top:110px;
@@ -367,7 +389,7 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
 }
 .posb-content .doc-name {
     margin: 0;
-    padding-top: 65px;
+    padding-top: 55px;
     font-size: 40px;
 }
 .posb-content .create-date {
@@ -410,7 +432,7 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
     width:100%;
     border-radius:5px;
     background-color:#ffffff;
-    box-shadow:0 30px 30px rgba(132,137,147,.15), 0 0 30px rgba(132,137,147,.15)
+    box-shadow: 0 15px 30px rgba(132,137,147,.1), 0 0 20px rgba(132,137,147,.1);
 }
 .model-statistics>.row>.col-xs-3{
     border-right:1px solid #f2f2f2;
@@ -487,6 +509,7 @@ span.big-text {
 }
 
 .model-statistics .number-title img {
+    margin-left: 15px;
     margin-right: 5px;
 }
 
@@ -496,7 +519,9 @@ span.big-text {
     margin-bottom: 30px;
     text-align: center;
     font-size: 55px;
+    font-weight: bold;
     overflow: hidden;
+    text-shadow: 0 0 4px rgba(9,193,254,.48);
     text-overflow: ellipsis;
     white-space: nowrap;
     background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#00e1ff), to(#00a0e9));
@@ -508,6 +533,105 @@ span.big-text {
     background-repeat: no-repeat;
     background-position: center center;
 }
+.background-2 .panel-custom,
+.background-4 .panel-custom
+{
+    background-color: transparent;
+}
 .charts{
     height: 500px;
+}
+.btn-radius {border-radius: 50px;}
+
+.btn-gradual{
+    font-size: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #323232;
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    outline:none !important;
+}
+
+.btn-transform,
+.btn-transform:hover,
+.btn-transform:active,
+.btn-transform:visited,
+.btn-transform:focus
+{
+    color:#ffffff;
+    background-image:-webkit-linear-gradient(to right, #04bae2, #1996f3);
+    background-image:-moz-linear-gradient(to right, #04bae2, #1996f3);
+    background-image:-ms-linear-gradient(to right, #04bae2, #1996f3);
+    background-image:-o-linear-gradient(to right, #04bae2, #1996f3);
+    background-image:linear-gradient(to right,#04bae2,#1996f3);
+    outline:none;
+}
+.panel-custom .bootstrap-select>.btn{
+    border-radius: 50px;
+    padding: 6px 25px;
+    background-color: #f5f5f5 !important;
+    border-color:#e6e6e6 !important;;
+}
+.panel-custom .bootstrap-select{
+    margin-right:20px;
+}
+.panel-custom .bootstrap-select:last-child{
+    margin-right: 0;
+}
+.panel-custom .bootstrap-select.btn-group .dropdown-toggle .caret{
+    right:18px;
+}
+.background-3{
+    height: 77px;
+    background-image: url("../images/background_3.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.background-3 .type-wrapper{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: auto;
+}
+.background-3 .type-wrapper:hover{
+    background-image: -webkit-linear-gradient(to right,#68a1f1,#6ac9f1);
+    background-image: -moz-linear-gradient(to right,#68a1f1,#6ac9f1);
+    background-image: -ms-linear-gradient(to right,#68a1f1,#6ac9f1);
+    background-image: -o-linear-gradient(to right,#68a1f1,#6ac9f1);
+    background-image: linear-gradient(to right,#68a1f1,#6ac9f1);
+}
+.background-3 .type-list li .type{
+    border:1px solid transparent;
+    transition: border-color .5s;
+}
+.background-3 .type-list li.active .type,
+.background-3 .type-list li:hover .type {
+    background-color: transparent;
+    border-color: #ffffff;
+}
+.background-4{
+    background-image: url("../images/background_4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.background-4 .panel-custom .big-text{
+    color:#dcc186;
+}
+.background-4 .panel-custom .panel-title{
+    color:#dcc186;
+}
+.background-4 .panel-custom .panel-title>.circle{
+    color:#dcc186;
+    border-color:#dcc186;
+}
+.background-4 .panel-custom .bootstrap-select>.btn{
+    background-color: transparent !important;
+    border-color:#474f50 !important;
+    color:#cdced0;
 }
