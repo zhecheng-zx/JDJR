@@ -796,6 +796,7 @@ span.big-text {
     top: 10px;
     left: 10px;
     color: #8d989d;
+    cursor: pointer;
 }
 
 .yuqingView .search-box .search-div .search-text{
