@@ -84,21 +84,21 @@
         }
     };
     $("#header").headroom(headroomOption);
-    var type=0;
-    $(window).on("scroll",function () {
-        var scrollTop=$(this).scrollTop();
-        if(scrollTop>type){
-            if(scrollTop>=358){
-                $("#header").headroom("destroy").fadeOut(500);
-            }else{
-                $("#header").headroom(headroomOption).fadeIn(500);
-            }
-            type=scrollTop;
-        }else{
-            $("#header").headroom(headroomOption).fadeIn(500);
-            type=scrollTop
-        }
-    });
+    // var type=0;
+    // $(window).on("scroll",function () {
+    //     var scrollTop=$(this).scrollTop();
+    //     if(scrollTop>type){
+    //         if(scrollTop>=358){
+    //             $("#header").headroom("destroy").fadeOut(500);
+    //         }else{
+    //             $("#header").headroom(headroomOption).fadeIn(500);
+    //         }
+    //         type=scrollTop;
+    //     }else{
+    //         $("#header").headroom(headroomOption).fadeIn(500);
+    //         type=scrollTop
+    //     }
+    // });
     var dom = document.getElementById("charts");
     var dom2 = document.getElementById("charts2");
     var dom3 = document.getElementById("charts3");
@@ -361,8 +361,35 @@
             data: [3.9, 5.9, 11.1, 18.7, 48.3, -69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
         }
     };
-    myChart.setOption(option,true);
-    myChart2.setOption(option2,true);
-    myChart3.setOption(option2,true);
-    myChart4.setOption(option2,true);
+    var fpOptions={
+        'anchors': ['page1', 'page2', 'page3', 'page4','page5','page6','footer'],
+        'navigation': true,
+        'navigationPosition': 'right',
+        'navigationTooltips': ['舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情'],
+        'afterLoad': function(anchorLink, index){
+            if(index == 2){
+                myChart.setOption(option,true);
+            }
+            if(index == 3){
+                myChart2.setOption(option2,true);
+                myChart3.setOption(option2,true);
+                myChart4.setOption(option2,true);
+            }
+            if(index==4){
+                $("#fp-nav").addClass("white");
+            }
+        },
+        'onLeave':function (index,nextIndex,direction) {
+            if(index==4){
+                $("#fp-nav").removeClass("white");
+            }
+            if(index==1&&nextIndex==4){
+                $("#fp-nav").removeClass("white");
+            }
+            if(index==3&&direction=="down"&&nextIndex==4||index==5&&direction=="up"&&nextIndex==4){
+                $("#fp-nav").addClass("white");
+            }
+        }
+    }
+    $("#pullpage").fullpage(fpOptions);
 })(jQuery);

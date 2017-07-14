@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<html lang="zh_CN" class="page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=1">
@@ -11,6 +11,7 @@
     <title>舆情监控平台-风险评估单</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../vendor/fullpage.js/dist/jquery.fullpage.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
@@ -18,74 +19,77 @@
     <![endif]-->
 </head>
 <body>
-    <div class="head-wrapper header-list">
-        <div class="header header--fixed hide-from-print" id="header" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="javascript:void(0);">舆情压力监测系统</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right ">
-                    <li><a href="javascript:void(0);"  data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/> 上午好，JD6524197_2012 <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="javascript:void(0);"><img src="../images/loginout.png" alt=""/> 退出</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="banner">
-            <div class="container">
-                <div class="posb-content">
-                    <div class="company-name">中科点击（北京）科技有限公司</div>
-                    <h3 class="doc-name">企业网络舆情压力评估建议单</h3>
-                    <div class="create-date">2017年07月14日</div>
+<div class="pullpage" id="pullpage">
+    <div class="section page-wrapper vertical-top">
+        <div class="head-wrapper header-list">
+            <div class="header header--fixed hide-from-print" id="header" role="banner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="javascript:void(0);">舆情压力监测系统</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a href="javascript:void(0);"  data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/> 上午好，JD6524197_2012 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="javascript:void(0);"><img src="../images/loginout.png" alt=""/> 退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="remind-message-box">
-        <div class="container">
-            <p class="remind-message">
-                距离您<span class="prev-time">2017-06-15 12:01</span>查看该企业期间，舆情信息增加<span>34</span>条，负面信息增加<span>3</span>条，请及时跟踪。
-                <a href="javascript:void(0);">点击此处查看→</a>
-                <a href="javascript:void(0);" class="close-remind">&times;</a>
-            </p>
-        </div>
-    </div>
-    <div class="page-wrapper">
-        <div class="container">
-            <div class="panel panel-custom">
-                <div class="panel-heading">
-                    <span class="big-text">01</span>
-                    <h3 class="panel-title">舆情量化指标 <a href="javascript:void(0);" class="circle help">?</a></h3>
+            <div class="banner">
+                <div class="container">
+                    <div class="posb-content">
+                        <div class="company-name">中科点击（北京）科技有限公司</div>
+                        <h3 class="doc-name">企业网络舆情压力评估建议单</h3>
+                        <div class="create-date">2017年07月14日</div>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <div class="model-statistics">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <div  class="indicatorContainerWrap">
-                                    <div id="indicatorContainer-1"></div>
-                                    <div class="ring blue" >
-                                        <h3 class="num">0.86</h3>
-                                        <p class="num-ud"><span class="ud-icom up"></span><span class="ud-num">16%</span>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="remind-message-box">
+                <div class="container">
+                    <p class="remind-message">
+                        距离您<span class="prev-time">2017-06-15 12:01</span>查看该企业期间，舆情信息增加<span>34</span>条，负面信息增加<span>3</span>条，请及时跟踪。
+                        <a href="javascript:void(0);">点击此处查看→</a>
+                        <a href="javascript:void(0);" class="close-remind">&times;</a>
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="panel panel-custom">
+                    <div class="panel-heading">
+                        <span class="big-text">01</span>
+                        <h3 class="panel-title">舆情量化指标 <a href="javascript:void(0);" class="circle help">?</a></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="model-statistics">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div  class="indicatorContainerWrap">
+                                        <div id="indicatorContainer-1"></div>
+                                        <div class="ring blue" >
+                                            <h3 class="num">0.86</h3>
+                                            <p class="num-ud"><span class="ud-icom up"></span><span class="ud-num">16%</span>
+                                        </div>
                                     </div>
+                                    <p class="ring-title">压力指数</p>
                                 </div>
-                                <p class="ring-title">压力指数</p>
-                            </div>
-                            <div class="col-xs-3">
-                                <h3 class="number-title"><img src="../images/chart.png" />昨日统计&nbsp;<span>1220</span></h3>
-                                <h1 class="number">1220</h1>
-                                <p class="ring-title">正面舆情</p>
-                            </div>
-                            <div class="col-xs-3">
-                                <h3 class="number-title"><img src="../images/downPointer.png" />昨日统计&nbsp;<span>1000</span></h3>
-                                <h1 class="number">1000</h1>
-                                <p class="ring-title">正面舆情</p>
-                            </div>
-                            <div class="col-xs-3">
-                                <h3 class="number-title"><img src="../images/fav.png" />昨日统计&nbsp;<span>220</span></h3>
-                                <h1 class="number">220</h1>
-                                <p class="ring-title">正面舆情</p>
+                                <div class="col-xs-3">
+                                    <h3 class="number-title"><img src="../images/chart.png" />昨日统计&nbsp;<span>1220</span></h3>
+                                    <h1 class="number">1220</h1>
+                                    <p class="ring-title">正面舆情</p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <h3 class="number-title"><img src="../images/downPointer.png" />昨日统计&nbsp;<span>1000</span></h3>
+                                    <h1 class="number">1000</h1>
+                                    <p class="ring-title">正面舆情</p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <h3 class="number-title"><img src="../images/fav.png" />昨日统计&nbsp;<span>220</span></h3>
+                                    <h1 class="number">220</h1>
+                                    <p class="ring-title">正面舆情</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,7 +97,7 @@
             </div>
         </div>
     </div>
-    <div class="page-wrapper background-2">
+    <div class="section page-wrapper background-2">
         <div class="container">
             <div class="panel panel-custom">
                 <div class="panel-heading">
@@ -118,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div class="page-wrapper">
+    <div class="section page-wrapper">
         <div class="container">
             <div class="panel panel-custom">
                 <div class="panel-heading">
@@ -229,7 +233,7 @@
             </div>
         </div>
     </div>
-    <div class="page-wrapper background-4">
+    <div class="section page-wrapper background-4">
         <div class="container">
             <div class="panel panel-custom">
                 <div class="panel-heading">
@@ -254,7 +258,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">正面</span>金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -269,7 +273,7 @@
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
                                     <div class="lyt-text-left-overflow">
-                                        金融巨头们接连发布合作协议，好戏才刚刚开始
+                                        <a href="javascript:void(0);"><span class="text-icon golden">负面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +288,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">负面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -298,7 +302,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">正面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -312,7 +316,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">正面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -326,7 +330,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">正面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -340,7 +344,7 @@
                         <div class="lyt-item">
                             <div class="lyt lyt-text-left w630">
                                 <div class="lyt-text-left-overflow">
-                                    金融巨头们接连发布合作协议，好戏才刚刚开始
+                                    <a href="javascript:void(0);"><span class="text-icon golden">正面</span>金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                 </div>
                             </div>
                             <div class="lyt lyt-text-center">河南经济报</div>
@@ -362,7 +366,7 @@
             </div>
         </div>
     </div>
-    <div class="page-wrapper">
+    <div class="section page-wrapper">
         <div class="container">
             <div class="panel panel-custom">
                 <div class="panel-heading">
@@ -426,7 +430,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -441,7 +445,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -456,7 +460,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -471,7 +475,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -486,7 +490,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -503,7 +507,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -518,7 +522,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -533,7 +537,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -548,7 +552,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -563,7 +567,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -580,7 +584,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -595,7 +599,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -610,7 +614,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -625,7 +629,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -640,7 +644,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -657,7 +661,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -672,7 +676,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -687,7 +691,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -702,7 +706,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -717,7 +721,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -734,7 +738,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -749,7 +753,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -764,7 +768,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -779,7 +783,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -794,7 +798,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -813,7 +817,7 @@
             </div>
         </div>
     </div>
-    <div class="page-wrapper background-6">
+    <div class="section page-wrapper background-6">
         <div class="container">
             <div class="panel panel-custom">
                 <div class="panel-heading">
@@ -918,7 +922,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -933,7 +937,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -948,7 +952,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -963,7 +967,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -978,7 +982,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -995,7 +999,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1010,7 +1014,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1025,7 +1029,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1040,7 +1044,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1055,7 +1059,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1072,7 +1076,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1087,7 +1091,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1102,7 +1106,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1117,7 +1121,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1132,7 +1136,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1149,7 +1153,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1164,7 +1168,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1179,7 +1183,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1194,7 +1198,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1209,7 +1213,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1226,7 +1230,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">1</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1241,7 +1245,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">2</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1256,7 +1260,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number active">3</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1271,7 +1275,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">4</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1286,7 +1290,7 @@
                                         <div class="lyt lyt-text-left w630">
                                             <div class="lyt-text-left-overflow">
                                                 <em class="number">5</em>
-                                                金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始
+                                                <a href="javascript:void(0);"> 金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始金融巨头们接连发布合作协议，好戏才刚刚开始</a>
                                             </div>
                                             <p class="details">
                                                 <span class="text-darkgray">河南经济报</span>
@@ -1305,17 +1309,22 @@
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="section footer fp-auto-height">
         <p>Copyright © 2004-2017 京东JD.com 版权所有 </p>
         <p>中科点击（北京）科技有限公司提供技术支持    客服电话400617855</p>
     </footer>
+</div>
     <script src="../vendor/jQuery/jquery.min.js"></script>
     <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.min.js"></script>
     <script src="../vendor/headRoom/Headroom.js"></script>
     <script src="../vendor/headRoom/jQuery.headroom.js"></script>
+    <script src="../vendor/fullpage.js/dist/jquery.fullpage.js"></script>
+    <script src="../vendor/fullpage.js/vendors/jquery.easings.min.js"></script>
+    <script src="../vendor/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+    <script src="../vendor/fullpage.js/vendors/scrolloverflow.min.js"></script>
     <script src="../script/radialIndicator.js"></script>
     <script src="../vendor/echarts.min.js"></script>
-    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.min.js"></script>
     <script src="../script/riskAssessmentDocments/riskAssessmentDocments.js"></script>
 </body>
 </html>

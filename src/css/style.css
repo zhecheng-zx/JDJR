@@ -11,6 +11,13 @@ li{
 a{
     text-decoration: none;
 }
+a:hover{
+    color: #1c6bb9;
+}
+a:focus{
+    color:#1461ad;
+    outline: none;
+}
 .container{
     min-width: 1200px;
 }
@@ -27,8 +34,11 @@ a{
     left: 0;
     top: 0;
     padding-top: 6px;
-    height: 58px;
+    height: 64px;
     background-color: rgba(34,44,58,0.7);
+}
+.vertical-top .header--fixed{
+    background-color: transparent;
 }
 @media print {
     .hide-from-print {
@@ -200,7 +210,8 @@ a{
 .banner{
     margin-top: 45px;
 }
-.header-list{
+.header-list .banner{
+    margin-top: 0;
     padding-top: 119px;
 }
 .type-wrapper{
@@ -341,7 +352,7 @@ a{
     color:#179bf3;
     margin-top:30px;
 }
-.ring.red{box-shadow: 0 0 21px rgba(249, 92, 67, .15);}
+.ring.red{box-shadow: 0 0 20px rgba(249, 92, 67, .15);}
 .ring.red .num{
     color:#fc5e44;
     margin-top:30px;
@@ -522,6 +533,44 @@ table.index-table span.analysis{display:inline-block;padding-left:20px;backgroun
 table.index-table span.collect{display:inline-block;padding-left:20px;background:url(../images/collect.png) 0 center no-repeat;}
 table.index-table span.submit{display:inline-block;padding-left:20px;background:url(../images/submit-over.png) 0 center no-repeat;}
 /*风险评估单*/
+.page,.page body,.page .section.page-wrapper{
+    height:100%;
+    overflow: hidden;
+}
+.page>body>.page-wrapper{
+    display: none;
+    -webkit-transition: all .6s ease-out;
+    -moz-transition: all .6s ease-out;
+    -ms-transition: all .6s ease-out;
+    -o-transition: all .6s ease-out;
+    transition: all .6s ease-out;
+}
+.page-wrapper {
+    position: relative;
+}
+.vertical-top>.fp-tableCell,
+.vertical-top>div{
+    vertical-align:top;
+}
+#fp-nav.white ul li a span, .fp-slidesNav.white ul li a span{
+    background-color: #ffffff;
+}
+#fp-nav ul li .fp-tooltip{
+    color:#323232;
+}
+#fp-nav.white ul li .fp-tooltip{
+    color:#ffffff;
+}
+#fp-nav ul li:last-child{
+    display: none;
+}
+.remind-message-box+.container .panel-heading {
+    padding-top: 100px;
+}
+
+.remind-message-box+.container .panel-heading span.big-text {
+    top:40px;
+}
 .header-list{
     height: 358px;
     background-image: url("../images/banner2.jpg");
@@ -566,7 +615,13 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
     border-radius: 30px;
 }
 .remind-message-box {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
     background-color: #f7f7f7;
+    z-index: 2;
 }
 .remind-message-box .remind-message{
     margin:0;
@@ -702,7 +757,11 @@ span.big-text {
     background-color: transparent;
 }
 .charts{
+    width: 1200px;
     height: 500px;
+}
+.col-md-6 .charts{
+    width:600px;
 }
 .btn-radius {border-radius: 50px;}
 
@@ -713,11 +772,11 @@ span.big-text {
     color: #323232;
     background-color: #f9f9f9;
     border: 1px solid #e6e6e6;
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -ms-transition: all .2s;
-    -o-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
     outline:none !important;
 }
 
@@ -736,10 +795,11 @@ span.big-text {
     outline:none;
 }
 .panel-custom .bootstrap-select>.btn{
-    border-radius: 50px;
+    border-radius: 5px;
     padding: 6px 25px;
-    /* background-color: #f5f5f5 !important; */
-    border-color:#e6e6e6 !important;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
 }
 .panel-custom .bootstrap-select{
     margin-right:20px;
@@ -797,6 +857,9 @@ span.big-text {
     color:#dcc186;
     border-color:#dcc186;
 }
+.background-4 .panel-custom .panel-title>.circle:hover{
+    color:#deab3b;
+}
 .background-4 .panel-custom .bootstrap-select>.btn{
     background-color: transparent !important;
     border-color:#474f50 !important;
@@ -832,12 +895,6 @@ span.big-text {
     font-size:16px;
     color:#323232;
     text-decoration:none;
-}
-.list-box>li>h3>a:hover{
-    color:#1c6bb9;
-}
-.list-box>li>h3>a:focus{
-    color:#1461ad;
 }
 .list-box>li label{
     width:85px;
@@ -973,6 +1030,21 @@ span.big-text {
     color:#323232;
     border-bottom-color:#f5f5f5;
 }
+.lyt-news .lyt a{
+    text-decoration: none;
+    color:#323232;
+}
+.background-4 .lyt-box .lyt a{
+    text-decoration: none;
+    color:#cdced0;
+}
+.lyt-box .lyt a:hover{
+    color: #1c6bb9;
+}
+.lyt-box .lyt a:focus{
+    color:#1461ad;
+    outline: none;
+}
 .lyt-news .lyt .lyt-text-left-overflow .number{
     display:inline-block;
     margin-right:10px;
@@ -1086,6 +1158,7 @@ span.big-text {
     height: 58px;
     margin: 0;
     border-radius: 50px;
+    transition: all .5s;
 }
 
 .tab-hover li.current .layout>.author-name
@@ -1094,6 +1167,9 @@ span.big-text {
 }
 .tab-hover li.change-red .layout>.author-name{
     color:#f95c43;
+}
+.tab-hover li.change-red .ring.red{
+    box-shadow: 0 0 20px rgba(249, 92, 67, .45);
 }
 .slide-border-right {
     height: 59px;
@@ -1110,6 +1186,10 @@ span.big-text {
 .background-6 .lyt-box .lyt-item .lyt{
     border-bottom-color: rgb(230, 230, 230);
     border-bottom-color: rgba(230, 230, 230, .7);
+}
+.fp-auto-height,
+.fp-auto-height .tableCell {
+    height: auto !important;
 }
 /*---------------------------------头部背景蓝色 高290     start-----------------------------*/
 .header-wrapper.blue{
@@ -1234,7 +1314,11 @@ span.big-text {
 .text-icon.gray::before{
     content: '灰色';
 }
-
+.text-icon.golden{
+    margin-right:5px;
+    color:#dcc186;
+    border-color:#dcc186;
+}
 .article-content{
     font-size: 13px;
     color: #8d989d;
@@ -1290,7 +1374,7 @@ span.big-text {
     padding: 0px 10px;
 }
 
-.small-icon.icon-tag{
+.small-icon.icon-tag {
     background-image: url("../images/icon-tag.png");
     padding: 1px 12px;
 }
