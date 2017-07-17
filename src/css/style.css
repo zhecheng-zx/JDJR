@@ -1550,10 +1550,12 @@ span.big-text {
 .compare-wrapper .top .up-div{
     background-color: #0ea9ea;
     display: inline-block;
+    cursor: pointer;
 }
 
 .compare-wrapper .top .down-div{
     background-color: #fc563a;
+    cursor: pointer;
 }
 
 .compare-wrapper .top .glyphicon{
@@ -1607,7 +1609,7 @@ span.big-text {
     border: 1px solid #e6e6e6;
     position: relative;
     vertical-align: top;
-    height: 530px;
+    height: 880px;
 }
 
 .pointAnalyze .article-wrapper .positive-wrapper .title{
@@ -1709,7 +1711,7 @@ span.big-text {
     font-size: 0;
     color: #323232;
     position: absolute;
-    top: 20px;
+    top: 370px;
     left: 0px;
     overflow-y: auto;
     width: 100%;
@@ -1792,9 +1794,8 @@ span.big-text {
     height: 100%;
     background: #1e90ff;
     color: #fff;
-    line-height: 80px;
-    box-shadow: 2px 2px 2px #aebdc8;
-     /*底边阴影*/
+    line-height: 82px;
+    box-shadow: 2px 2px 2px #aebdc8; /*底边阴影*/
 }
 
 .triangle{
@@ -1820,6 +1821,17 @@ span.big-text {
 
 .myCenter .header-wrapper .classify-nav li:not(:first-child) .triangle{
     display: none;
+}
+
+.myCenter .icon{
+     display: inline-block;
+     width: 27px;
+     height: 31px;
+}
+
+.myCenter .icon.icon-bell{
+    background-image: url("../images/icon-bell.png");
+    background-repeat: no-repeat;
 }
 
 .myCenter .page-wrapper .container{

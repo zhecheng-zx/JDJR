@@ -111,24 +111,17 @@
                 </div>
             </div>
             <div class="content-wrap">
-                <div class="wordCloud-wrapper">
+                <div class="article-wrapper">
                     <div class="positive-wrapper">
+                        <div class="title">正面</div>
                         <div class="echarts-div positive-word" id="positive-word">
                         </div>
                     </div>
                     <div class="space"></div>
                     <div class="negative-wrapper">
+                        <div class="title">负面</div>
                         <div class="echarts-div negative-word" id="negative-word">
                         </div>
-                    </div>
-                </div>
-                <div class="article-wrapper">
-                    <div class="positive-wrapper">
-                        <div class="title">正面</div>
-                    </div>
-                    <div class="space"></div>
-                    <div class="negative-wrapper">
-                        <div class="title">负面</div>
                     </div>
                     <div class="title-list">
                         <div class="positive-list">
@@ -195,180 +188,152 @@
 </body>
 <script>
     $(function () {
-        var data = [{
-            "name": "这个女科长，比52只大老虎都狠",
-
-            "category": "正面词云",
-            "value": 1
-        }, {
-            "name": "北京市西城区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "深圳市罗湖区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "广州市越秀区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "杭州市下城区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "上海市徐汇区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "这人真厉害，连续被雷电击中几次还是站了起来",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "正面词云",
-            "symbolSize": 8,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "友好城市生产总值排名",
-            "symbolSize": 6,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "友好城市生产总值",
-            "symbolSize": 4,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }, {
-            "name": "天津市和平区季度生产总值",
-            "symbolSize": 2,
-            "category": "正面词云",
-            "draggable": "true",
-            "value": 1
-        }];
-//        return ;
-        var chart = echarts.init(document.getElementById('positive-word'));
-        var chart1 = echarts.init(document.getElementById('negative-word'));
-        chart.setOption({
-            grid: {x: 0, x2: 0, y: 0, y2: 0},
-            toolbox: {
-                show: false,
-                feature: {
-                    dataView: {
-                        show: true,
-                        readOnly: true
-                    },
-                    restore: {
-                        show: true
-                    },
-                    saveAsImage: {
-                        show: true
-                    }
-                }
+        var data = [
+            {
+                name: 'Sam S Club',
+                value: 10000
             },
-            animationDuration: 3000,//初始动画的时长
-            animationEasingUpdate: 'quinticInOut',//数据更新动画的缓动效果
+            {
+                name: 'Macys',
+                value: 6181
+            },
+            {
+                name: 'Amy Schumer',
+                value: 4386
+            },
+            {
+                name: 'Jurassic World',
+                value: 4055
+            },
+            {
+                name: 'Charter Communications',
+                value: 2467
+            },
+            {
+                name: 'Chick Fil A',
+                value: 2244
+            },
+            {
+                name: 'Planet Fitness',
+                value: 1898
+            },
+            {
+                name: 'Pitch Perfect',
+                value: 1484
+            },
+            {
+                name: 'Express',
+                value: 1112
+            },
+            {
+                name: 'Home',
+                value: 965
+            },
+            {
+                name: 'Johnny Depp',
+                value: 847
+            },
+            {
+                name: 'Lena Dunham',
+                value: 582
+            },
+            {
+                name: 'Lewis Hamilton',
+                value: 555
+            },
+            {
+                name: 'KXAN',
+                value: 550
+            },
+            {
+                name: 'Mary Ellen Mark',
+                value: 462
+            },
+            {
+                name: 'Farrah Abraham',
+                value: 366
+            },
+            {
+                name: 'Rita Ora',
+                value: 360
+            },
+            {
+                name: 'Serena Williams',
+                value: 282
+            },
+            {
+                name: 'NCAA baseball tournament',
+                value: 273
+            },
+            {
+                name: 'Point Break',
+                value: 265
+            }
+        ];
+
+        var chart1 = echarts.init(document.getElementById('negative-word'));
+        var chart = echarts.init(document.getElementById('positive-word'));
+        chart.setOption({
             series: [{
-                name: '正面词云图',
-                type: 'graph',
-                layout: 'force',
-
-                force: {
-                    repulsion: 170,
-                    gravity: 0.1,
-                    edgeLength: 90
-                },
-
-                data: data,
-                categories: [{
-                    "name": "正面词云"
-                }],
-                label: {
+                type: 'wordCloud',
+                shape: 'circle',
+                left: 'center',
+                top: 'center',
+                width: '80%',
+                height: '80%',
+                right: null,
+                bottom: null,
+                sizeRange: [12, 60],
+                rotationRange: [0, 0],
+                rotationStep: 45,
+                gridSize: 8,
+                drawOutOfBounds: false,
+                textStyle: {
                     normal: {
-                        show: true,
-                        position: 'top',
-                        textStyle: {
-                            fontSize: 14,
-                            color: '#1996f3'
+                        fontFamily: 'sans-serif',
+                        fontWeight: 'bold',
+                        color: function () {
+                            return 'rgba(' + [25, 150, 243, Math.random()].join(',') + ')';
                         }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
                     }
                 },
-                lineStyle: {
-                    normal: {
-                        show: false,
-                        color: 'source',
-                        curveness: 0
-                    }
-                }
+                data: data
             }]
         });
 
         chart1.setOption({
-            grid: {x: 0, x2: 0, y: 0, y2: 0},
-            toolbox: {
-                show: false,
-                feature: {
-                    dataView: {
-                        show: true,
-                        readOnly: true
-                    },
-                    restore: {
-                        show: true
-                    },
-                    saveAsImage: {
-                        show: true
-                    }
-                }
-            },
-            animationDuration: 3000,
-            animationEasingUpdate: 'quinticInOut',
             series: [{
-                name: '正面词云图',
-                type: 'graph',
-                layout: 'force',
-
-                force: {
-                    repulsion: 170,
-                    gravity: 0.1,
-                    edgeLength: 90
-                },
-
-                data: data,
-                categories: [{
-                    "name": "正面词云"
-                }],
-                focusNodeAdjacency: true,
-                label: {
+                type: 'wordCloud',
+                shape: 'circle',
+                left: 'center',
+                top: 'center',
+                width: '80%',
+                height: '80%',
+                right: null,
+                bottom: null,
+                sizeRange: [12, 60],
+                rotationRange: [0, 0],
+                rotationStep: 45,
+                gridSize: 8,
+                drawOutOfBounds: false,
+                textStyle: {
                     normal: {
-                        show: true,
-                        position: 'top',
-                        textStyle: {
-                            fontSize: 14,
-                            color: '#f5553b'
+                        fontFamily: 'sans-serif',
+                        fontWeight: 'bold',
+                        color: function () {
+                            return 'rgba(' + [245, 85, 59, Math.random()].join(',') + ')';
                         }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
                     }
                 },
-                lineStyle: {
-                    normal: {
-                        color: 'source',
-                        curveness: 0
-                    }
-                }
+                data: data
             }]
         });
 
