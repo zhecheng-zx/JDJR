@@ -18,6 +18,13 @@ a:focus{
     color:#1461ad;
     outline: none;
 }
+.pt20{
+    padding-top:20px;
+}
+.plr40{
+    padding-left: 40px;
+    padding-right: 40px;
+}
 .container{
     min-width: 1200px;
 }
@@ -426,7 +433,7 @@ table.index-table td span.red{color:#fc5e44;}
 table.index-table td span.orange{color:#fd9047;}
 table.index-table td span.yellow{color:#fdcc02;}
 footer{
-    padding-top:30px;
+    padding-top: 30px;
     height:100px;
     background-color:#222c3a;
 }
@@ -523,7 +530,12 @@ footer p{
 .evaluate-data .top-bar .tool .bootstrap-select .btn:focus{outline:none;}
 .tool .bootstrap-select .dropdown-toggle:focus{outline:none !important;}
 .btn-group.open .dropdown-toggle{box-shadow:none !important;}
-
+.open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover{
+    background-color:#f5f5f5;
+}
+.dropdown-toggle.btn-default.focus, .dropdown-toggle.btn-default:focus, .dropdown-toggle.btn-default:hover{
+    background-color:#f5f5f5;
+}
 #beginTime,#endTime{width:73px;border:none;text-align:center;}
 table.index-table button{width:72px;border-color:#ffffff;}
 table.index-table button.btn:focus{outline:none !important;}
@@ -757,7 +769,6 @@ span.big-text {
     background-color: transparent;
 }
 .charts{
-    width: 1200px;
     height: 500px;
 }
 .col-md-6 .charts{
@@ -794,20 +805,19 @@ span.big-text {
     background-image:linear-gradient(to right,#04bae2,#1996f3);
     outline:none;
 }
-.panel-custom .bootstrap-select>.btn{
-    border-radius: 5px;
+.bootstrap-select>.btn{
     padding: 6px 25px;
-    background-color: transparent !important;
-    border: none;
-    border-bottom: 1px solid #e6e6e6;
+    background-color: #f5f5f5;
+    border: 1px solid #e6e6e6;
+    border-radius: 50px;
 }
-.panel-custom .bootstrap-select{
+.bootstrap-select{
     margin-right:20px;
 }
 .panel-custom .bootstrap-select:last-child{
     margin-right: 0;
 }
-.panel-custom .bootstrap-select.btn-group .dropdown-toggle .caret{
+.bootstrap-select.btn-group .dropdown-toggle .caret{
     right:18px;
 }
 .background-3{
@@ -1191,6 +1201,80 @@ span.big-text {
 .fp-auto-height .tableCell {
     height: auto !important;
 }
+/*异常企业指标预警*/
+.header-wrapper.exceptionEnterpriseWarning{
+    height:290px;
+    background-image: url("../images/exceptionEnterpriseWarning.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.exceptionEnterpriseWarning .banner{
+    color:#ffffff;
+}
+.exceptionEnterpriseWarning .banner .banner-title{
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.exceptionEnterpriseWarning .banner .banner-title-en{
+    opacity: .7;
+    filter: alpha(opacity=70);
+}
+.page-wrapper.bgary{
+    background-color: #f5f5f5;
+}
+.select-caption{
+    padding-top:35px;
+    padding-bottom:25px;
+}
+.table-box-gray .bootstrap-table .fixed-table-container .fixed-table-body .table thead th{
+    background-color:#e3e7ea;
+    border-bottom: none;
+    border-left: none;
+}
+.table-box-gray .bootstrap-table .fixed-table-container tbody td{
+    border-left:none;
+    background-color: #ffffff;
+}
+.table-box-gray .bootstrap-table .table:not(.table-condensed),
+.table-box-gray .bootstrap-table .table:not(.table-condensed)>tbody>tr>td,
+.table-box-gray .bootstrap-table .table:not(.table-condensed)>tbody>tr>th,
+.table-box-gray .bootstrap-table .table:not(.table-condensed)>tfoot>tr>td,
+.table-box-gray .bootstrap-table .table:not(.table-condensed)>tfoot>tr>th,
+.table-box-gray .bootstrap-table .table:not(.table-condensed)>thead>tr>td{
+    padding: 15px;
+}
+.table-box-gray .bootstrap-table .table>tbody>tr:last-child>td{
+    border-bottom:none;
+}
+/*生命周期*/
+.panel.panel-blue-text{
+    border:none;
+}
+.panel-blue-text .panel-heading {
+    padding: 47px 44px 41px;
+}
+.panel-blue-text .panel-heading .panel-title{
+    color:#323232;
+    font-size:20px;
+    padding-left:9px;
+    border-left:4px solid #1e90ff;
+}
+.table-box-gray .fixed-table-container{
+    border:none;
+}
+.bootstrap-table .table{
+    border:none;
+}
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .table>thead>tr>th {
+    background-color: transparent;
+}
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .table>tbody>tr>td{
+    border-top:none;
+}
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .table>tbody>tr:nth-child(odd)>td{
+    background-color:#f6f6f6;
+}
 /*---------------------------------头部背景蓝色 高290     start-----------------------------*/
 .header-wrapper.darkBlue{
     height: 290px;
@@ -1257,6 +1341,7 @@ span.big-text {
     color: #333;
     font-weight: bold;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .article .title .source{
@@ -1413,10 +1498,16 @@ span.big-text {
     width: 122px;
     height: 40px;
     line-height: 40px;
+    color:rgba(245, 245, 245, .70);
     background: #1964d3;
+    cursor:pointer;
+    transition:all .6s ease-out;
 }
 
-.header-wrapper.blue .banner .item:hover{
+.header-wrapper.blue .banner .item:hover,
+.header-wrapper.blue .banner .item:focus,
+.header-wrapper.blue .banner .item.active{
+    color:#f5f5f5;
     background: #1157c9;
 }
 

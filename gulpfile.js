@@ -26,6 +26,7 @@ var  gulp = require('gulp'),
 var path={
     input:{
         html:['src/html/*.html'],
+        copy:['src/data/*.json'],
         js:['src/script/**/*.js'],
         css:['src/css/**'],
         image:['src/images/**'],
@@ -34,6 +35,7 @@ var path={
     output:{
         css:'dist/css',
         html:'dist/html',
+        copy:['dist/data'],
         js:'dist/script',
         img:'dist/images' ,
         resource:'dist/vendor',
@@ -188,10 +190,10 @@ gulp.task('browser-sync', function() {
             directory: true  // 是否打开文件目录
         }
     });
-    gulp.watch("src/**",['minhtml','mincss','minjs','imgmin','resource']);
+    gulp.watch("src/**",['minhtml','mincss','minjs','imgmin','resource','copy']);
     gulp.watch("src/**").on('change', browserSync.reload);
 
 });
-gulp.task('default',['minhtml','less','mincss','minjs','imgmin','resource']);
+gulp.task('default',['minhtml','less','mincss','minjs','imgmin','resource','copy']);
 
 
