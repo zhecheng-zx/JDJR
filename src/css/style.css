@@ -25,6 +25,9 @@ a:focus{
     padding-left: 40px;
     padding-right: 40px;
 }
+.bg-white{
+    background: #fff;
+}
 .container{
     min-width: 1200px;
 }
