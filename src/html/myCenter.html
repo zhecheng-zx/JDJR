@@ -17,7 +17,7 @@
     <script src="../vendor/respond.js_1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="kewordSet">
+<body class="myCenter gray">
     <div class="header-wrapper lightBlue">
         <div class="header tall" id="header">
             <div class="container">
@@ -34,11 +34,48 @@
                 </ul>
             </div>
         </div>
+        <div class="banner">
+            <div class="container">
+                <ul class="nav nav-pills nav-justified classify-nav">
+                    <li role="presentation" class="active">
+                        <a href="#">监控企业管理</a>
+                        <div class="triangle"></div>
+                        <div class="triangle triangle-border"></div>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">企业预警设置</a>
+                        <div class="triangle"></div>
+                        <div class="triangle triangle-border"></div>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">事件分类设置</a>
+                        <div class="triangle"></div>
+                        <div class="triangle triangle-border"></div>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">帮助中心</a>
+                        <div class="triangle"></div>
+                        <div class="triangle triangle-border"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="page-wrapper gray">
+    <div class="page-wrapper">
         <div class="container">
-            <div style="height: 800px;background: #fff"></div>
+            <div class="content" style="height: 800px;background: #fff"></div>
         </div>
     </div>
 </body>
+<script>
+    $(function () {
+
+        $('.classify-nav li').click(function () {
+           $('.classify-nav li').removeClass('active');
+           $(this).siblings().find('.triangle').hide();
+           $(this).addClass('active');
+           $(this).find('.triangle').show();
+        });
+    });
+</script>
 </html>

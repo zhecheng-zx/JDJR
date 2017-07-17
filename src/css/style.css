@@ -1332,7 +1332,6 @@ span.big-text {
 
 .article .title-box{
     position: relative;
-    /* height: 30px; */
 }
 
 .article .title-box .title{
@@ -1375,7 +1374,7 @@ span.big-text {
     border: 1px solid;
     border-radius: 3px;
     font-size: 12px;
-    padding: 2px 6px;
+    padding: 1px 5px;
 }
 
 .text-icon.red{
@@ -1383,8 +1382,9 @@ span.big-text {
 }
 
 .text-icon.red::before{
-    content: '正面';
+    content: '负面';
     color: #fd191f;
+    font-style: normal;
 }
 
 .text-icon.blue{
@@ -1394,6 +1394,7 @@ span.big-text {
 
 .text-icon.blue::before{
     content: '正面';
+    font-style: normal;
 }
 
 .text-icon.gray{
@@ -1403,6 +1404,7 @@ span.big-text {
 
 .text-icon.gray::before{
     content: '灰色';
+    font-style: normal;
 }
 .text-icon.golden{
     margin-right:5px;
@@ -1601,12 +1603,13 @@ span.big-text {
     padding: 30px 100px;
 }
 
-.pointAnalyze .content-wrap .positive-wrap, .pointAnalyze .content-wrap .negative-wrap{
+.pointAnalyze .article-wrapper .positive-wrapper, .pointAnalyze .article-wrapper .negative-wrapper{
     border: 1px solid #e6e6e6;
     position: relative;
+    vertical-align: top;
 }
 
-.pointAnalyze .content-wrap .positive-wrap .title{
+.pointAnalyze .article-wrapper .positive-wrapper .title{
     position: absolute;
     top: -16px;
     left: 40%;
@@ -1618,7 +1621,7 @@ span.big-text {
     font-weight: bold;
 }
 
-.pointAnalyze .content-wrap .positive-wrap .title::before{
+.pointAnalyze .article-wrapper .positive-wrapper .title::before{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -1628,7 +1631,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .content-wrap .positive-wrap .title::after{
+.pointAnalyze .article-wrapper .positive-wrapper .title::after{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -1638,7 +1641,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .content-wrap .negative-wrap .title{
+.pointAnalyze .article-wrapper .negative-wrapper .title{
     position: absolute;
     top: -16px;
     left: 40%;
@@ -1650,7 +1653,7 @@ span.big-text {
     font-weight: bold;
 }
 
-.pointAnalyze .content-wrap .negative-wrap .title::before{
+.pointAnalyze .article-wrapper .negative-wrapper .title::before{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -1660,7 +1663,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .content-wrap .negative-wrap .title::after{
+.pointAnalyze .article-wrapper .negative-wrapper .title::after{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -1670,17 +1673,32 @@ span.big-text {
     top: 0px;
 }
 
+.pointAnalyze .wordCloud-wrapper, .pointAnalyze .article-wrapper{
+    font-size: 0;
+}
+
+.pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper{
+    display: inline-block;
+    width: calc((100% - 100px) / 2);
+}
+
+.pointAnalyze .content-wrap .space{
+    display: inline-block;
+    width: 100px;
+}
+
 .pointAnalyze .content-wrap .echarts-div{
-    height: 350px;
+    height: 360px;
 }
 
 .pointAnalyze .content-wrap .title-list{
-    padding: 0px 20px;
+    padding: 20px;
+    font-size: 14px;
+    color: #323232;
 }
 
 .pointAnalyze .content-wrap .title-list ul li{
-    height: 40px;
-    line-height: 40px;
+    line-height: 50px;
     list-style: square;
     list-style-type: square;
     list-style-position: inside;
@@ -1691,6 +1709,17 @@ span.big-text {
     white-space: nowrap;
 }
 
+.pointAnalyze .space .time-line{
+    font-size: 13px;
+    color: #323232;
+    line-height: 50px;
+    height: 540px;
+}
+
+.pointAnalyze .time-line p{
+    margin: 0;
+}
+
     /*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
 .header-wrapper.lightBlue{
@@ -1698,5 +1727,71 @@ span.big-text {
     height: 617px;
 }
 
+.myCenter{
+    background: #f5f5f5;
+}
+
+.myCenter .header-wrapper .banner{
+    margin-top: 80px;
+}
+
+.myCenter .header-wrapper .nav-justified{
+    width: 891px;
+    margin:auto;
+}
+
+.myCenter .header-wrapper .nav-justified>li{
+    padding: 0px 30px;
+    height: 103px;
+    position: relative;
+}
+
+.myCenter .header-wrapper .nav-justified>li.active a{
+    background: #fff;
+    color: #1e90ff;
+    border: 2px solid #1e90ff;
+}
+
+.myCenter .header-wrapper .nav-justified>li a{
+    height: 100%;
+    background: #1e90ff;
+    color: #fff;
+    line-height: 80px;
+    box-shadow: 2px 2px 2px #aebdc8;
+     /*底边阴影*/
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 13px solid #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    top: 102px;
+    z-index: 999;
+}
+
+.triangle.triangle-border{
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 16px solid #1e90ff;
+    z-index: 1;
+    margin-left: -11px;
+}
+
+.myCenter .header-wrapper .classify-nav li:not(:first-child) .triangle{
+    display: none;
+}
+
+.myCenter .page-wrapper .container{
+    position: absolute;
+    top: -250px;
+    left: 50%;
+    z-index: 9999;
+    margin-left: -600px;
+}
 
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
