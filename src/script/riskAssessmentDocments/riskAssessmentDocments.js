@@ -117,8 +117,10 @@
             }
         },
         grid: {
-            top: 70,
-            bottom: 70
+            top: 50,
+            bottom: 70,
+            left:60,
+            right:40,
         },
         dataZoom: [
             {
