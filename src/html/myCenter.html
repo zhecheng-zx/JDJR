@@ -7,10 +7,11 @@
     <title>预警设置-关键词</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/honeyswitch/honeySwitch.css">
     <link href="../css/style.css" rel="stylesheet" />
-
     <script src="../vendor/jQuery/jquery.min.js"></script>
     <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../vendor/honeyswitch/honeySwitch.js"></script>
 
     <!--[if lt IE 9]>
     <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
@@ -39,23 +40,24 @@
                 <ul class="nav nav-pills nav-justified classify-nav">
                     <li role="presentation" class="active">
                         <a href="#">
+                            <i class="icon icon-bell"></i>
                             企业预警设置
                         </a>
                         <div class="triangle"></div>
                         <div class="triangle triangle-border"></div>
                     </li>
                     <li role="presentation">
-                        <a href="#">监控企业管理</a>
+                        <a href="#"> <i class="icon icon-circle"></i>监控企业管理</a>
                         <div class="triangle"></div>
                         <div class="triangle triangle-border"></div>
                     </li>
                     <li role="presentation">
-                        <a href="#">事件分类设置</a>
+                        <a href="#"> <i class="icon icon-classify"></i>事件分类设置</a>
                         <div class="triangle"></div>
                         <div class="triangle triangle-border"></div>
                     </li>
                     <li role="presentation">
-                        <a href="#">帮助中心</a>
+                        <a href="#"> <i class="icon icon-help"></i>帮助中心</a>
                         <div class="triangle"></div>
                         <div class="triangle triangle-border"></div>
                     </li>
@@ -65,19 +67,55 @@
     </div>
     <div class="page-wrapper">
         <div class="container">
-            <div class="content" style="height: 800px;background: #fff"></div>
+            <div class="content">
+                <!-- 预警内容页  -->
+                <div class="alert-wrapper">
+                    <ul class="nav nav-tabs nav-alert text-center">
+                        <li role="presentation" class="active"><a href="javascript:void(0);">关键词预警</a></li>
+                        <li role="presentation"><a href="javascript:void(0);">警戒线预警</a></li>
+                    </ul>
+                    <div class="alert-content">
+                        <div class="keyword-alert">
+                            <div class="alert-rule">
+                                <div class="top clearfix">
+                                    <div class="left pull-left">
+                                        <i class="alert-icon icon-bulb">
+
+                                        </i>
+                                        预警规则
+                                        <span class="switch-on"></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary" type="button">添加规则</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert-mode">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 <script>
     $(function () {
 
+        //点击不同的tab  加载响应的内容
         $('.classify-nav li').click(function () {
            $('.classify-nav li').removeClass('active');
            $(this).siblings().find('.triangle').hide();
            $(this).addClass('active');
            $(this).find('.triangle').show();
         });
+
+        //企业预警内容页两个tab的点击事件
+        $('.nav-alert li').click(function () {
+            $('.nav-alert li').removeClass('active');
+            $(this).addClass('active');
+        })
     });
 </script>
 </html>
