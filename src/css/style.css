@@ -821,7 +821,7 @@ span.big-text {
     margin-right: 0;
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret{
-    right:18px;
+    right: 18px;
 }
 .background-3{
     height: 77px;
@@ -1321,11 +1321,6 @@ span.big-text {
     background: #f5f5f5;
     padding: 20px 30px 30px;
 }
-
-.page-wrapper.gray .container{
-    /* background: #fff; */
-}
-
 .article{
     margin: 20px auto;
     background: #fff;
@@ -1364,12 +1359,14 @@ span.big-text {
     margin-left: 20px;
 }
 .title-box .tag .select .btn-group .btn{
-    padding: 1px 12px;
+    padding: 2px 12px 1px;
+    border-radius: 3px;
 }
 
 .title-box .tag .select .btn-group .btn span{
     font-size: 13px;
     color: #8d989d;
+    right: 6px;
 }
 
 .text-icon{
@@ -1616,7 +1613,7 @@ span.big-text {
 .pointAnalyze .article-wrapper .positive-wrapper .title{
     position: absolute;
     top: -16px;
-    left: 40%;
+    left: calc(50% - 40px);
     background: #fff;
     width: 100px;
     text-align: center;
@@ -1648,7 +1645,7 @@ span.big-text {
 .pointAnalyze .article-wrapper .negative-wrapper .title{
     position: absolute;
     top: -16px;
-    left: 40%;
+    left: calc(50% - 40px);
     background: #fff;
     width: 100px;
     text-align: center;
@@ -1677,37 +1674,46 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .wordCloud-wrapper, .pointAnalyze .article-wrapper{
+.pointAnalyze .wordCloud-wrapper{
+    font-size: 0;
+}
+
+.pointAnalyze .article-wrapper{
     font-size: 0;
     position: relative;
-    /* padding: 0px 20px; */
+    margin-top: 30px;
 }
 
 .pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper,
 .pointAnalyze .positive-list, .pointAnalyze .negative-list{
     display: inline-block;
-    width: calc((100% - 140px) / 2);
+    width: calc(50% - 70px);
+}
+
+.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+    padding: 0px 15px;
 }
 
 .pointAnalyze .content-wrap .space{
     display: inline-block;
     width: 100px;
+    vertical-align: top;
+    min-height: 1px;
 }
 
 .pointAnalyze .content-wrap .echarts-div{
-    height: 360px;
+    height: 350px;
 }
 
 .pointAnalyze .content-wrap .title-list{
-    /* padding: 20px; */
     font-size: 0;
     color: #323232;
     position: absolute;
     top: 20px;
-    left: 6px;
+    left: 0px;
     overflow-y: auto;
     width: 100%;
-    height: 525px;
+    max-height: 485px;
 }
 
 .pointAnalyze .content-wrap .title-list ul li{
@@ -1723,6 +1729,18 @@ span.big-text {
     white-space: nowrap;
 }
 
+.pointAnalyze .content-wrap .positive-list ul li{
+    color: #1997f3;
+}
+
+.pointAnalyze .content-wrap .negative-list ul li{
+    color: #f5553b;
+}
+
+.pointAnalyze .content-wrap .title-list ul li span{
+    color: #323232;
+}
+
 .pointAnalyze .space .time-line{
     font-size: 13px;
     color: #323232;
@@ -1734,6 +1752,10 @@ span.big-text {
     margin: 0;
 }
 
+.pointAnalyze .time-line .today{
+    color: #1997f3;
+    font-weight: bold;
+}
     /*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
 .header-wrapper.lightBlue{
