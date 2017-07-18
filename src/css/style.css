@@ -1899,4 +1899,25 @@ span.big-text {
     border-bottom: 2px solid #1996f3;
 }
 
+.myCenter .page-wrapper .alert-content .top{
+    margin: 50px 50px 20px;
+}
+
+.myCenter .page-wrapper .alert-content .top h5{
+    font-weight:bold;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.alert-icon{
+    display: inline-block;
+     width: 20px;
+     height: 20px;
+}
+
+.alert-icon.icon-bulb{
+    background-image: url('../images/icon-bulb.png');
+    background-repeat:no-repeat;
+}
+
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
