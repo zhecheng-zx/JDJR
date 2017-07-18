@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body{
     font-family:PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,微软雅黑,STHeitiSC-Light,simsun,宋体,WenQuanYi Zen Hei,WenQuanYi Micro Hei,'sans-serif';
     font-size: 14px;
@@ -17,6 +18,10 @@ a:hover{
 a:focus{
     color:#1461ad;
     outline: none;
+}
+.mbt20{
+    margin-top: 20px;
+    margin-bottom:20px;
 }
 .pt20{
     padding-top:20px;
@@ -530,7 +535,7 @@ footer p{
     text-decoration:none;
     outline:none;
 }
-.datetimepicker{margin-top:60px;}
+.datetimepicker{/* margin-top:60px; */}
 .evaluate-data .top-bar .tool .bootstrap-select{width:80px;}
 .evaluate-data .top-bar .tool .bootstrap-select .btn{background-color:#fff;}
 .evaluate-data .top-bar .tool .bootstrap-select .btn:focus{outline:none;}
@@ -715,6 +720,30 @@ a.circle {
 a.help{
     text-decoration: none;
 }
+.help+.tooltip.bottom .tooltip-arrow{
+    margin-left: -8px;
+    border-width: 0 8px 8px;
+    border-bottom-color: #ffffff;
+}
+.help+.tooltip.bottom .tooltip-inner{
+    padding: 15px;
+    color:#323232;
+    line-height: 26px;
+    text-align: left;
+    border:1px solid #e6e6e6;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background-color: #ffffff;
+}
+.background-4 .help+.tooltip.bottom .tooltip-arrow{
+    border-bottom-color:#dcc186;
+}
+.background-4 .help+.tooltip.bottom .tooltip-inner{
+    margin-top: 3px;
+    color:#cdced0;
+    border:1px solid #dcc186;
+    box-shadow: 0 0 10px rgba(240,240,240,.3);
+    background-color:#333333;
+}
 span.big-text {
     position: absolute;
     top: 0;
@@ -826,6 +855,7 @@ span.big-text {
     outline:none;
 }
 .bootstrap-select>.btn{
+    width:125px;
     padding: 6px 25px;
     background-color: #f5f5f5;
     border: 1px solid #e6e6e6;
@@ -839,6 +869,53 @@ span.big-text {
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret{
     right: 18px;
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option{
+    text-align:center;
+}
+.bootstrap-select.open:before,
+.bootstrap-select.open:after{
+    content:" ";
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+    bottom: -16px;
+    left:50%;
+    margin-left:-10px;
+    border-width:0 10px 10px;
+    border-style:solid;
+    border-color:transparent;
+    border-bottom-color:#ffffff;
+    z-index: 1002;
+}
+.bootstrap-select.open:after{
+    bottom: -15px;
+    margin-left:-11px;
+    border-width:0 11px 11px;
+    border-style:solid;
+    border-color:transparent;
+    border-bottom-color:#e6e6e6;
+    z-index: 1001;
+}
+.bootstrap-select.open .dropdown-menu.open{
+    margin-top:15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-color:#e6e6e6;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+.dropdown-menu>li>a:hover{
+    color:#ffffff;
+    background-color:#5aa9f5;
+}
+.dropdown-menu>li>a:focus{
+    color:#ffffff;
+    background-color:#1e90ff;
+}
+.dropdown-menu>li.selected>a{
+    color:#ffffff;
+    background-color:#1e90ff;
 }
 .background-3{
     height: 77px;
@@ -894,6 +971,33 @@ span.big-text {
     background-color: transparent !important;
     border-color:#474f50 !important;
     color:#cdced0;
+}
+.background-4 .bootstrap-select.open .dropdown-menu.open,
+.background-4 .bootstrap-select.open .dropdown-menu.open>ul{
+    background-color:#000000;
+}
+.background-4 .bootstrap-select.open .dropdown-menu.open{
+    border-color:#dcc186;
+}
+.background-4 .bootstrap-select.open .dropdown-menu.open>ul>li>a{
+    color:#ffffff;
+}
+.background-4 .bootstrap-select.open:before{
+    border-bottom-color:#000000;
+}
+.background-4 .bootstrap-select.open:after{
+    border-bottom-color:#dcc186;
+}
+.background-4 .dropdown-menu>li>a:hover{
+    color:#ffffff;
+    background-color:#af9d75;
+}
+.background-4 .dropdown-menu>li>a:focus{
+    color:#ffffff;
+    background-color:#dcc186;
+}
+.background-4 .dropdown-menu>li.selected>a{
+    background-color:#dcc186;
 }
 .background-4 .panel-custom>.panel-body{
     padding-bottom: 28px;
@@ -1307,7 +1411,7 @@ span.big-text {
 }
 .timeline:before{
     position:absolute;
-    left:8%;
+    left: 8%;
     top:0;
     bottom:0;
     content: " ";
@@ -1350,7 +1454,7 @@ span.big-text {
     position:relative;
     float: right;
     padding:20px;
-    width: 88%;
+    width: 86%;
     border:1px solid #e6e6e6;
     border-radius:4px;
 }
@@ -1539,13 +1643,14 @@ span.big-text {
     border-radius:20px;
 }
 .horizontal .timeline>li .timeline-inner{
+    position: static;
     width:100%;
     height:230px;
     overflow-y:auto;
 }
 .horizontal .timeline>li .timeline-inner:before{
     top:inherit;
-    bottom:-15px;
+    bottom:-14px;
     left:50%;
     margin-left:-15px;
     border:none;
@@ -1555,7 +1660,7 @@ span.big-text {
 }
 .horizontal .timeline>li .timeline-inner:after{
     top:inherit;
-    bottom:-16px;
+    bottom:-15px;
     left:50%;
     margin-left:-16px;
     border:none;
@@ -1591,7 +1696,104 @@ span.big-text {
 .transform-orange .news-site .dian{
     background-color:#fd411e;
 }
-/*---------------------------------头部背景蓝色 高290     start-----------------------------*/
+/*舆情报道*/
+.header-wrapper.article-details{
+    height:290px;
+    background-image: url("../images/article_details_banner.jpg");
+}
+.article-details .article{
+    margin: 0;
+    padding:0;
+    background-color:transparent;
+}
+.article-details .article .title-box{
+    margin-bottom: 35px;
+}
+.article-details .article .title-box .title{
+    color:#ffffff;
+    font-size:20px;
+}
+.article-details .article .title-box .tag{
+    color:#ffffff;
+}
+.article-details .title-box .tag .select .btn-group .btn {
+    background-color:transparent;
+}
+.article-details .title-box .tag .select .btn-group .btn span{
+    color: #ffffff;
+}
+.article-details .small-icon.icon-tag{
+    background-image: url("../images/tag_white.png");
+}
+.article-details .article .article-info span{
+    color:#ffffff;
+}
+.article-contents{
+    padding:44px 40px;
+    line-height: 35px;
+    text-indent: 2em;
+    background-color:#ffffff;
+}
+.panel-no-header .panel-heading{
+    padding: 22px 19px 14px;
+}
+.panel-no-header .panel-heading .panel-title{
+    color:#323232;
+    font-size: 14px;
+    font-weight:bold;
+}
+.panel-no-header .panel-body .timeline{
+    height:290px;
+    overflow-y:auto;
+}
+.panel-no-header .timeline>li .empty-circle{
+    width: 8px;
+    height:8px;
+    margin-top:-4px;
+    background-color: #1e90ff;
+    border: none;
+}
+.panel-no-header .timeline>li .timeline-inner{
+    padding:0;
+    border:none;
+}
+.panel-no-header .timeline .timeline-inner .lyt-box .lyt.w160{
+    width:100px;
+}
+.panel-no-header .timeline .timeline-inner .lyt-box .lyt{
+    color:#373d41;
+    font-size: 13px;
+}
+.panel-no-header .timeline .timeline-inner .lyt-box .lyt p{
+    width: 94px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.panel-no-header .timeline>li .timeline-inner:before,
+.panel-no-header .timeline>li .timeline-inner:after{
+    display:none;
+}
+.panel-no-header .timeline.no-line:before{
+    display: none;
+}
+.panel-no-header .timeline.no-line .empty-circle{
+    width:4px;
+    height:4px;
+    margin-top:-1px;
+    border-radius:0;
+    background-color: #8d989d;
+}
+.panel-no-header .timeline.no-line .timeline-inner .lyt-box .lyt p{
+    width: 200px;
+}
+.panel-no-header .timeline:before{
+    left:5%;
+}
+.panel-no-header .timeline>li .empty-circle{
+    left:7.2%;
+}
+    /*---------------------------------头部背景蓝色 高290     start-----------------------------*/
 .header-wrapper.darkBlue{
     height: 290px;
     background-image: url("../images/banner3.png");
@@ -1637,7 +1839,6 @@ span.big-text {
 .article{
     margin: 20px auto;
     background: #fff;
-    height: 199px;
     padding: 35px 40px;
 }
 
@@ -1785,7 +1986,9 @@ span.big-text {
 
 .small-icon.icon-tag {
     background-image: url("../images/icon-tag.png");
-    padding: 1px 12px;
+    background-position:center center;
+    padding: 1px 14px;
+    vertical-align: middle;
 }
 
 
@@ -2212,4 +2415,4 @@ span.big-text {
     border-bottom: 2px solid #1996f3;
 }
 
-/*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
+/*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------

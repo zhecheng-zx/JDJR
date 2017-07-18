@@ -52,4 +52,6 @@ $(function () {
     $(".uleft").on("click","a",function () {
        $(this).parent().addClass("active").siblings().removeClass("active");
     });
+    $(".scrollbar").niceScroll({styler:"fb",cursorcolor:"#ebebeb"});
+    $("[data-toggle='tooltip']").tooltip();
 });
