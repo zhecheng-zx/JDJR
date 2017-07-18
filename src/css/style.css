@@ -1637,7 +1637,7 @@ span.big-text {
 .article{
     margin: 20px auto;
     background: #fff;
-    height: 199px;
+    /* height: 199px; */
     padding: 35px 40px;
 }
 
@@ -2212,25 +2212,246 @@ span.big-text {
     border-bottom: 2px solid #1996f3;
 }
 
-.myCenter .page-wrapper .alert-content .top{
-    margin: 50px 50px 20px;
+.myCenter .page-wrapper .alert-content{
+    padding: 50px 50px 20px;
 }
 
-.myCenter .page-wrapper .alert-content .top h5{
+.myCenter .page-wrapper .alert-content h5{
     font-weight:bold;
-    display: inline-block;
-    vertical-align: middle;
+    margin: 0px auto 20px;
 }
 
 .alert-icon{
     display: inline-block;
-     width: 20px;
-     height: 20px;
+    width: 25px;
+    height: 20px;
+    vertical-align: middle;
+    background-repeat:no-repeat;
 }
 
 .alert-icon.icon-bulb{
     background-image: url('../images/icon-bulb.png');
-    background-repeat:no-repeat;
 }
 
-/*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
+.alert-icon.icon-mail{
+    background-image: url('../images/icon-mail.png');
+}
+
+.small-switch-box .text{
+    vertical-align: middle;
+}
+
+.small-switch-box .switch-on,
+.small-switch-box .switch-off{
+    height: 22px;
+    width: 45px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.small-switch-box .switch-on .slider,
+.small-switch-box .switch-off .slider{
+    width: 20px;
+    height: 20px;
+}
+
+.small-switch-box .switch-on .slider{
+    left: 23px;
+}
+
+.panel-box{
+    border: 1px solid #e6e6e6;
+}
+
+.panel-box.panel-group .panel{
+    border: none;
+    margin-top: 0px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #323232;
+}
+
+.panel-box .panel-default>.panel-heading+.panel-collapse>.panel-body{
+    border-top-color: #f6f6f6;
+}
+
+.panel-box .panel-title{
+    font-size: 13px;
+    color: #323232;
+}
+
+.panel-box .panel-title .delete{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.panel-box .panel-title a:hover, .panel-box .panel-title a:active, .panel-box .panel-title a:visited{
+    text-decoration: none;
+    color: #323232;
+}
+
+.icon-arrow{
+    background: url("../images/icon-arrow.png") no-repeat;
+    background-position: 0px -40px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+}
+
+a.collapsed .icon-arrow{
+    background-position: 0px 3px;
+}
+
+.myCenter .rule-select>.btn{
+    background: #fff;
+    font-size: 13px;
+    color: #323232;
+    padding: 4px 25px;
+    margin-left: 15px;
+}
+
+.panel-box .panel-body .box{
+    border: 1px solid #e5e5e5;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    padding: 20px 40px;
+    position: relative;
+}
+
+.panel-body .box .red{
+    color: #fc5e44;
+    font-size: 14px;
+}
+
+.panel-body .box .orange{
+    color: #fd9047;
+    font-size: 14px;
+}
+
+.panel-body .box .yellow{
+    color: #fdcc02;
+    font-size: 14px;
+}
+
+.panel-body .box .circle{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.panel-body .box .red .circle{
+    border-color: #fc5e44;
+    margin-right: 5px;
+}
+
+.panel-body .box .orange .circle{
+    color: #fd9047;
+    margin-right: 5px;
+}
+
+.panel-body .box .yellow .circle{
+    color: #fdcc02;
+    margin-right: 5px;
+}
+
+.panel-body .list-wrapper{
+    height: 50px;
+    margin-top: 20px;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+.panel-body .box .list{
+    width: calc(100% - 24px);
+}
+
+.panel-body .box .list li{
+    display: inline-block;
+    margin-right: 15px;
+    line-height: 50px;
+}
+
+.box .list li .btn{
+    border-radius: 14px;
+    font-size: 13px;
+    color: #323232;
+    padding: 5px 16px;
+    background: #f5f5f5;
+    border: none;
+}
+
+.box .list li .btn:active{
+    box-shadow: none !important;
+}
+
+.btn-white{
+    background: #fff !important;
+    border: 1px dashed #abd4fc !important;
+}
+
+.box .dot{
+    position: absolute;
+    top: 76px;
+    right: 40px;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #a5a5a5;
+    cursor: pointer;
+    display: none;
+    width: 24px;
+}
+.btn-circle{
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;;
+}
+
+.transition{
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari 和 Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+
+.btn-cancel{
+    background: #f5f5f5;
+    padding: 4px 20px;
+}
+
+.btn-cancel:hover,
+.btn-cancel:active,
+.btn-cancel:focus,
+.btn-cancel:active:hover,
+.btn-cancel:active:focus{
+    background-color: #f5f5f5;
+    padding: 4px 20px;
+}
+
+.mr20{
+    margin-right: 20px;
+}
+
+.keyword-alert-mode{
+    margin-top: 48px;
+}
+
+.keyword-alert-mode .mode-content{
+    padding: 0px 28px;
+    color: #323232;
+}
+
+.mode-content .title{
+    display: inline-block;
+    width: 90px;
+}
+
+.mode-content .email-box{
+    display: inline-block;
+}
+
+.checkbox-wrapper label{
+    font-weight:normal;
+}
+/*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 end-----------------------------------*/
