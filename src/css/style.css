@@ -2390,6 +2390,7 @@ span.big-text {
 .myCenter .page-wrapper .container .content{
     min-height: 500px;
     background: #fff;
+    margin-bottom: 30px;
 }
 
 .myCenter .page-wrapper .nav-alert{
@@ -2438,6 +2439,7 @@ span.big-text {
 
 .alert-icon.icon-mail{
     background-image: url('../images/icon-mail.png');
+    height: 16px;
 }
 
 .small-switch-box .text{
@@ -2648,13 +2650,35 @@ a.collapsed .icon-arrow{
 .mode-content .title{
     display: inline-block;
     width: 90px;
+    height: 50px;
+    line-height: 50px;
 }
 
 .mode-content .email-box{
     display: inline-block;
+    width: calc(100% - 100px);
 }
 
-.checkbox-wrapper label{
+.email-box label{
     font-weight:normal;
+}
+
+.email-box .mail-list li{
+    height: 50px;
+    line-height: 50px;
+}
+
+.email-box input[type=email]{
+     display: inline-block;
+    width: 200px;
+    margin-right: 10px;;
+}
+
+.email-box .btn-add-mail{
+    background: #fff;
+    color: #1e90ff;
+    border: 1px solid #1e90ff;
+    font-size: 13px;
+    padding: 6px 18px;
 }
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 end-----------------------------------*/
