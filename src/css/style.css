@@ -28,6 +28,9 @@ a:focus{
 .pad40{
     padding: 60px;
 }
+.bg-white{
+    background: #fff;
+}
 .container{
     min-width: 1200px;
 }
@@ -835,7 +838,7 @@ span.big-text {
     margin-right: 0;
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret{
-    right:18px;
+    right: 18px;
 }
 .background-3{
     height: 77px;
@@ -1631,10 +1634,6 @@ span.big-text {
     background: #f5f5f5;
     padding: 20px 30px 30px;
 }
-
-.page-wrapper.gray .container{
-}
-
 .article{
     margin: 20px auto;
     background: #fff;
@@ -1673,12 +1672,14 @@ span.big-text {
     margin-left: 20px;
 }
 .title-box .tag .select .btn-group .btn{
-    padding: 1px 12px;
+    padding: 2px 12px 1px;
+    border-radius: 3px;
 }
 
 .title-box .tag .select .btn-group .btn span{
     font-size: 13px;
     color: #8d989d;
+    right: 6px;
 }
 
 .text-icon{
@@ -1862,10 +1863,12 @@ span.big-text {
 .compare-wrapper .top .up-div{
     background-color: #0ea9ea;
     display: inline-block;
+    cursor: pointer;
 }
 
 .compare-wrapper .top .down-div{
     background-color: #fc563a;
+    cursor: pointer;
 }
 
 .compare-wrapper .top .glyphicon{
@@ -1919,12 +1922,13 @@ span.big-text {
     border: 1px solid #e6e6e6;
     position: relative;
     vertical-align: top;
+    height: 880px;
 }
 
 .pointAnalyze .article-wrapper .positive-wrapper .title{
     position: absolute;
     top: -16px;
-    left: 40%;
+    left: calc(50% - 40px);
     background: #fff;
     width: 100px;
     text-align: center;
@@ -1956,7 +1960,7 @@ span.big-text {
 .pointAnalyze .article-wrapper .negative-wrapper .title{
     position: absolute;
     top: -16px;
-    left: 40%;
+    left: calc(50% - 40px);
     background: #fff;
     width: 100px;
     text-align: center;
@@ -1985,31 +1989,50 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .wordCloud-wrapper, .pointAnalyze .article-wrapper{
+.pointAnalyze .wordCloud-wrapper{
     font-size: 0;
 }
 
-.pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper{
+.pointAnalyze .article-wrapper{
+    font-size: 0;
+    position: relative;
+    margin-top: 30px;
+}
+
+.pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper,
+.pointAnalyze .positive-list, .pointAnalyze .negative-list{
     display: inline-block;
-    width: calc((100% - 100px) / 2);
+    width: calc(50% - 70px);
+}
+
+.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+    padding: 0px 15px;
 }
 
 .pointAnalyze .content-wrap .space{
     display: inline-block;
     width: 100px;
+    vertical-align: top;
+    min-height: 1px;
 }
 
 .pointAnalyze .content-wrap .echarts-div{
-    height: 360px;
+    height: 350px;
 }
 
 .pointAnalyze .content-wrap .title-list{
-    padding: 20px;
-    font-size: 14px;
+    font-size: 0;
     color: #323232;
+    position: absolute;
+    top: 370px;
+    left: 0px;
+    overflow-y: auto;
+    width: 100%;
+    max-height: 485px;
 }
 
 .pointAnalyze .content-wrap .title-list ul li{
+    font-size: 14px;
     line-height: 50px;
     list-style: square;
     list-style-type: square;
@@ -2019,6 +2042,18 @@ span.big-text {
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.pointAnalyze .content-wrap .positive-list ul li{
+    color: #1997f3;
+}
+
+.pointAnalyze .content-wrap .negative-list ul li{
+    color: #f5553b;
+}
+
+.pointAnalyze .content-wrap .title-list ul li span{
+    color: #323232;
 }
 
 .pointAnalyze .space .time-line{
@@ -2032,6 +2067,10 @@ span.big-text {
     margin: 0;
 }
 
+.pointAnalyze .time-line .today{
+    color: #1997f3;
+    font-weight: bold;
+}
     /*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
 .header-wrapper.lightBlue{
@@ -2044,7 +2083,7 @@ span.big-text {
 }
 
 .myCenter .header-wrapper .banner{
-    margin-top: 80px;
+    margin-top: 86px;
 }
 
 .myCenter .header-wrapper .nav-justified{
@@ -2053,7 +2092,7 @@ span.big-text {
 }
 
 .myCenter .header-wrapper .nav-justified>li{
-    padding: 0px 30px;
+    padding: 0px 25px;
     height: 103px;
     position: relative;
 }
@@ -2065,12 +2104,10 @@ span.big-text {
 }
 
 .myCenter .header-wrapper .nav-justified>li a{
-    height: 100%;
+    height: 103px;
     background: #1e90ff;
     color: #fff;
-    line-height: 80px;
-    box-shadow: 2px 2px 2px #aebdc8;
-     /*底边阴影*/
+    box-shadow: 2px 2px 2px #aebdc8; /*底边阴影*/
 }
 
 .triangle{
@@ -2082,7 +2119,7 @@ span.big-text {
     position: absolute;
     left: 50%;
     margin-left: -7px;
-    top: 102px;
+    top: 100px;
     z-index: 999;
 }
 
@@ -2098,12 +2135,81 @@ span.big-text {
     display: none;
 }
 
+.myCenter .icon{
+     display: block;
+     width: 30px;
+     height: 30px;
+     background-image: url("../images/icon-mycenter.png");
+     background-repeat: no-repeat;
+     margin: 9px 56px 9px;
+}
+
+.myCenter .icon.icon-bell{
+    background-position: -48px -2px;
+}
+
+.myCenter .nav-justified li.active .icon.icon-bell{
+    background-position: -48px -38px;
+}
+
+.myCenter .icon.icon-circle{
+    background-position: 2px 0px;
+}
+
+.myCenter .nav-justified li.active .icon.icon-circle{
+    background-position: 2px -38px;
+}
+
+.myCenter .icon.icon-classify{
+    background-position: -99px 0px;
+}
+
+.myCenter .nav-justified li.active .icon.icon-classify{
+    background-position: -99px -40px;
+}
+
+.myCenter .icon.icon-help{
+    background-position: -151px 3px;
+}
+
+.myCenter .nav-justified li.active .icon.icon-help{
+    background-position: -151px -39px;
+}
+
 .myCenter .page-wrapper .container{
     position: absolute;
-    top: -250px;
+    top: -260px;
     left: 50%;
     z-index: 9999;
     margin-left: -600px;
+}
+
+.myCenter .page-wrapper .container .content{
+    min-height: 500px;
+    background: #fff;
+}
+
+.myCenter .page-wrapper .nav-alert{
+    padding-top: 20px;
+}
+
+.myCenter .page-wrapper .nav-alert li{
+    float: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 20px;
+}
+
+.myCenter .page-wrapper .nav-alert li a{
+    color: #323232;
+    padding: 10px 5px;
+}
+
+.myCenter .page-wrapper .nav-alert li.active a{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 2px solid #1996f3;
 }
 
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
