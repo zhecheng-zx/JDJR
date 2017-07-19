@@ -19,6 +19,9 @@ a:focus{
     color:#1461ad;
     outline: none;
 }
+.mb25{
+    margin-bottom: 25px;
+}
 .mbt20{
     margin-top: 20px;
     margin-bottom:20px;
@@ -35,6 +38,21 @@ a:focus{
 }
 .bg-white{
     background: #fff;
+}
+.text-gray{
+    color:#999999;
+}
+.text-red{
+    color:#f95c43;
+}
+.btn-gray{
+    margin-right: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e6e6e6;
+}
+.btn-gray:focus,
+.btn-gray:hover{
+    background-color: #f5f5f5;
 }
 .container{
     min-width: 1200px;
@@ -1535,7 +1553,7 @@ span.big-text {
     text-align: center;
 }
 /*传播演化*/
-.table-box-grayblue .fixed-table-body .table thead tr th {padding-top:16px;padding-bottom:14px;background-color: #f1f4fc;border-color:#ededed;}
+.table-box-grayblue .fixed-table-body .table thead tr th {padding-top:12px;padding-bottom:12px;background-color: #f1f4fc;border-color:#ededed;}
 .table-box-grayblue .fixed-table-body .table tbody tr td {padding-top:19px;padding-bottom:19px;border-color:#ededed;}
 .table-box-grayblue .bootstrap-table .fixed-table-container {
     border-color: #ededed;
@@ -1793,6 +1811,116 @@ span.big-text {
 .panel-no-header .timeline>li .empty-circle{
     left:7.2%;
 }
+.panel-header-bottom{
+    border:none;
+}
+.panel-header-bottom .panel-heading {
+    padding: 20px 60px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.panel-header-bottom .panel-body{
+    padding:30px 60px;
+}
+.group-box {
+    background-color: #eaeef1;
+    padding: 25px 60px;
+}
+.group-box .group-left{
+    float:left;
+    width: 100px;
+}
+.group-box .group-left a{
+    color:#1e90ff;
+    font-size:13px;
+    text-decoration:none;
+}
+.group-box .group-left a:hover{
+    color:#1b7cda;
+}
+.group-item{
+    display:block;
+    padding: 5px 0;
+    border-right: 1px solid #e6e6e6;
+}
+.group-box .group-right{
+    float:right;
+    width:60px;
+}
+.group-box .group-right a{
+    color:#323232;
+    font-size:13px;
+    text-decoration:none;
+}
+.group-box .group-right a:hover{
+    color:#1b7cda;
+}
+.group-box .group-right a .glyphicon{
+    display: none;
+}
+.group-box .group-right a .glyphicon-menu-down{
+    display: inline-block;
+}
+.group-box .group-right a.open .glyphicon-menu-up{
+    display: inline-block;
+}
+.group-box .group-right a.open .glyphicon-menu-down{
+    display: none;
+}
+.group-box .group-center{
+    margin-left:100px;
+    margin-right: 80px;
+    height: 28px;
+    overflow-y: hidden;
+    transition:height .9s ease-out;
+}
+.group-box .group-center.open{
+    height:auto;
+}
+.group-box .group-center.open .group .group-item{
+    margin-bottom:10px;
+}
+.group .group-item{
+    position:relative;
+    float:left;
+    padding: 0 12px;
+    margin-bottom: 8px;
+}
+.group .group-item .glyphicon-box{
+    position:absolute;
+    top: -15px;
+}
+.glyphicon-box>a{
+    display:inline-block;
+}
+.group .group-item .name{
+    display:block;
+    padding: 5px 18px;
+    color: #323232;
+    font-size:13px;
+    transition: all .5s;
+    text-decoration:none;
+}
+.group .group-item a:hover{
+    color:#1e90ff;
+}
+.group .group-item.active .name{
+    color:#ffffff;
+    border-radius:20px;
+    background-color:#1e90ff;
+    box-shadow: 0 0 8px rgba(30, 144, 255, .2);
+}
+.edit{
+    font-size: 14px;
+    font-weight: 400;
+    color:#1e90ff;
+}
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .no-stirpe>thead>tr>th,
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .no-stirpe>tbody>tr>td{
+    border-bottom: 1px solid #e6e6e6;
+}
+.transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .no-stirpe>tbody>tr:nth-child(odd)>td{
+    background-color: #ffffff;
+}
     /*---------------------------------头部背景蓝色 高290     start-----------------------------*/
 .header-wrapper.darkBlue{
     height: 290px;
@@ -1942,16 +2070,16 @@ span.big-text {
     margin-left: 0px;
 }
 
-.yuqingView .search-box{
+.search-box{
     margin: 10px auto;
 }
 
-.yuqingView .search-box .search-div{
+.search-div{
     width: 270px;
     position: relative;
 }
 
-.yuqingView .search-box .search-div .search-icon{
+.search-div .search-icon{
     position: absolute;
     top: 10px;
     left: 10px;
@@ -1959,7 +2087,7 @@ span.big-text {
     cursor: pointer;
 }
 
-.yuqingView .search-box .search-div .search-text{
+.search-div .search-text{
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;

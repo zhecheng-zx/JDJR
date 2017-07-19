@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>舆情压力监控系统-事件分类设置</title>
+    <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-table/bootstrap-table.min.css"/>
+    <link rel="stylesheet" href="../vendor/honeyswitch/honeySwitch.css">
+    <link rel="stylesheet" href="../vendor/icheck/flat/blue.css">
+    <link href="../css/style.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
+    <script src="../vendor/respond.js_1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="myCenter gray">
+<div class="header-wrapper lightBlue">
+    <div class="header tall" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="../images/JD-finance-logo.png" class="logo">
+                <a class="navbar-brand" href="javascript:void(0);">舆情压力监控系统</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right ">
+                <li><a href="javascript:void(0);" data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/>
+                    上午好，JD6524197_2012 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:void(0);"><img src="../images/loginout.png" alt=""/> 退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="container">
+            <ul class="nav nav-pills nav-justified classify-nav">
+                <li role="presentation" class="active">
+                    <a href="javascript:void(0);">
+                        <i class="icon icon-bell"></i>
+                        企业预警设置
+                    </a>
+                    <div class="triangle"></div>
+                    <div class="triangle triangle-border"></div>
+                </li>
+                <li role="presentation">
+                    <a href="javascript:void(0);"> <i class="icon icon-circle"></i>监控企业管理</a>
+                    <div class="triangle"></div>
+                    <div class="triangle triangle-border"></div>
+                </li>
+                <li role="presentation">
+                    <a href="javascript:void(0);"> <i class="icon icon-classify"></i>事件分类设置</a>
+                    <div class="triangle"></div>
+                    <div class="triangle triangle-border"></div>
+                </li>
+                <li role="presentation">
+                    <a href="javascript:void(0);"> <i class="icon icon-help"></i>帮助中心</a>
+                    <div class="triangle"></div>
+                    <div class="triangle triangle-border"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="page-wrapper">
+    <div class="container">
+        <div class="panel panel-header-bottom">
+            <div class="panel-heading">
+                <h3 class="panel-title clearfix">
+                    事件分类设置
+                    <div class="pull-right">
+                        <button class="btn btn-primary" type="button">新建分类</button>
+                    </div>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-box-gray">
+                    <table id="eventClassifySet"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../vendor/jQuery/jquery.min.js"></script>
+<script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
+<script src="../vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../vendor/honeyswitch/honeySwitch.js"></script>
+<script src="../vendor/scrollbar/jquery.nicescroll.js"></script>
+<script src="../vendor/icheck/icheck.min.js"></script>
+</body>
+<script>
+    $(function () {
+        var options = {
+            columns : [ {
+                field : 'name',
+                align:"center",
+                valign: "middle",
+                title : "分类名称"
+            }, {
+                field : 'exponent',
+                title : "关键词",
+                width : "100px",
+                align:"center",
+                valign: "middle"
+
+
+            }, {
+                field : 'number',
+                title : "类型",
+                align:"center",
+                valign: "middle",
+
+            }, {
+                field : 'count',
+                title : "创建时间",
+                align:"center",
+                valign: "middle",
+
+            }, {
+                field : 'count',
+                title : "操作",
+                align:"center",
+                valign: "middle",
+                formatter:function () {
+                    var _html="";
+                    _html += "<a href='javascript:void(0);' class='text-gray'><span class='glyphicon glyphicon-pencil'></span></a>   ";
+                    _html += "<span class='small-switch-box'><span class='switch-on' themecolor='#1e90ff'></span></span>";
+                    return _html;
+                }
+            }],
+            paginationPreText:"<i class='glyphicon glyphicon-menu-left'></i>",
+            paginationNextText:"<i class='glyphicon glyphicon-menu-right'></i>",
+            method: 'get',
+            sortable:false,
+            sortOrder : 'desc',
+            pagination : true,
+            sidePagination : 'server',
+            pageNumber :1,
+            pageSize :6,
+            dataType: "json",
+            url : '../data/table2.json',
+            pageList : [ 10000],
+            queryParamsType: '',
+            onLoadSuccess:function(){
+                honeySwitch.init();
+            }
+//                queryParams : function(params) {
+//                    return{
+//                    offset:params.offset,
+//                    limit:params.limit
+//                   }
+//                }
+
+        };
+        $("#eventClassifySet").bootstrapTable(options);
+        //点击不同的tab  加载响应的内容
+        $('.classify-nav li').click(function () {
+            $('.classify-nav li').removeClass('active');
+            $(this).siblings().find('.triangle').hide();
+            $(this).addClass('active');
+            $(this).find('.triangle').show();
+        });
+
+        //企业预警内容页两个tab的点击事件
+        $('.nav-alert li').click(function () {
+            $('.nav-alert li').removeClass('active');
+            $(this).addClass('active');
+
+            if($(this).hasClass('nav-alert')){
+
+            }else {
+
+            }
+        });
+
+        $('#add-keyword-rule').click(function () {
+            var panelLength = $('.panel-box .panel').length;
+            var $html = $('');
+        });
+
+        //删除关键字规则
+        $('.panel-title a.delete').click(function () {
+
+        });
+
+        $('.list').each(function () {
+            var height = $(this).height();
+            if(height > $(this).parent().height()) {
+                $(this).parent().siblings('.dot').show();
+            }
+        });
+
+        $('.dot').click(function () {
+            var sibHeight = $(this).siblings('.list-wrapper').height();
+            if(sibHeight > 50){
+                $(this).siblings('.list-wrapper').height(50).getNiceScroll().hide();
+            }else {
+                var height = $(this).siblings('.list-wrapper').find('.list').height(),
+                    $sib = $(this).siblings('.list-wrapper');
+                $sib.show().height(height).niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
+//                if($sib.getNiceScroll()){
+//                    $sib.getNiceScroll().resize().show();
+//                }else{
+//                    $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true});
+//                }
+            }
+        });
+
+        $('.checkbox').iCheck({
+            checkboxClass: 'icheckbox_flat-blue'
+        });
+
+        $('.btn-add-mail').click(function () {
+            var $li = $('<li><input type="email" class="form-control" placeholder="请输入邮箱"></li>');
+            $('.mail-list').append($li);
+        })
+    });
+</script>
+</html>
