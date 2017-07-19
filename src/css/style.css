@@ -2311,6 +2311,7 @@ span.big-text {
     background: #1e90ff;
     color: #fff;
     box-shadow: 2px 2px 2px #aebdc8; /*底边阴影*/
+    border: 2px solid transparent;
 }
 
 .triangle{
@@ -2322,7 +2323,7 @@ span.big-text {
     position: absolute;
     left: 50%;
     margin-left: -7px;
-    top: 100px;
+    top: 101px;
     z-index: 999;
 }
 
@@ -2511,8 +2512,12 @@ a.collapsed .icon-arrow{
     background: #fff;
     font-size: 13px;
     color: #323232;
-    padding: 4px 25px;
+    padding: 4px 6px;
     margin-left: 15px;
+}
+
+.myCenter .rule-select>.btn .caret{
+    right: 8px;
 }
 
 .panel-box .panel-body .box{
@@ -2638,11 +2643,11 @@ a.collapsed .icon-arrow{
     margin-right: 20px;
 }
 
-.keyword-alert-mode{
+.alert-mode{
     margin-top: 48px;
 }
 
-.keyword-alert-mode .mode-content{
+.alert-mode .mode-content{
     padding: 0px 28px;
     color: #323232;
 }
