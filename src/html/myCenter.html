@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>舆情压力监控系统-预警设置-关键词</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-slider/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="../vendor/honeyswitch/honeySwitch.css">
     <link rel="stylesheet" href="../vendor/icheck/flat/blue.css">
@@ -13,9 +14,13 @@
     <script src="../vendor/jQuery/jquery.min.js"></script>
     <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
+    <script src="../vendor/bootstrap-tab/bootstrap-tab.js"></script>
     <script src="../vendor/honeyswitch/honeySwitch.js"></script>
     <script src="../vendor/scrollbar/jquery.nicescroll.js"></script>
     <script src="../vendor/icheck/icheck.min.js"></script>
+    <script src="../vendor/bootstrap-slider/js/bootstrap-slider.min.js"></script>
+
+    <script src="../script/myCenter/warning.js"></script>
 
     <!--[if lt IE 9]>
     <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
@@ -71,351 +76,47 @@
     </div>
 </div>
 <div class="page-wrapper">
-    <div class="container">
-        <div class="content">
-            <!-- 预警内容页  -->
-            <div class="alert-wrapper">
-                <ul class="nav nav-tabs nav-alert text-center">
-                    <li role="presentation" class="active nav-keyword"><a href="javascript:void(0);">关键词预警</a></li>
-                    <li role="presentation" class="nav-jingrong"><a href="javascript:void(0);">警戒线预警</a></li>
+    <div class="container bg-white">
+        <!-- 预警内容页  -->
+        <div class="warning-wrapper">
+            <div class="tabbable">
+                <ul class="nav nav-tabs nav-line text-center">
+                    <li class="active nav-keyword">
+                        <a href="#keyword-warning" data-toggle="tab">关键词预警</a>
+                        <div class="nav-active-bar"></div>
+                    </li>
+                    <li class="nav-jingrong">
+                        <a href="#jingrong-warning" data-toggle="tab">警戒线预警</a>
+                        <div class="nav-active-bar"></div>
+                    </li>
                 </ul>
-                <div class="alert-content">
+
+                <div class="tab-content warning-content">
                     <!--  -----------------------关键词预警  start--------------------------->
-                    <div class="keyword-alert">
+                    <div id="keyword-warning" class="tab-pane active keyword-warning">
                         <!-- 预警规则-->
-                        <div class="alert-rule keyword-alert-rule">
+                        <div class="warning-rule keyword-warning-rule">
                             <h5 class="small-switch-box clearfix">
-                                <i class="alert-icon icon-bulb"></i>
+                                <i class="warning-icon icon-bulb"></i>
                                 <span class="text">预警规则</span>
                                 <span class="switch-on" themecolor="#1e90ff"></span>
                                 <div class="pull-right">
                                     <button class="btn btn-primary btn-circle" type="button" id="add-keyword-rule">添加规则</button>
                                 </div>
                             </h5>
-                            <div class="keyword-alert-content">
-                                <div class="panel-group panel-box" id="accordion">
+                            <div class="keyword-warning-content">
+                                <div class="panel-group panel-box" id="keyword-accordion">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div class="panel-title clearfix">
                                                 <span>规则一: 预警规则一预警规则一预警规则一预警规则一</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="pull-right">
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse1" class="pull-right">
                                                     <i class="icon-arrow"></i>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse in">
-                                            <div class="panel-body">
-                                                <div class="panel-content">
-                                                    <div class="title">
-                                                        应用企业分组
-                                                        <select  id="title-select" class="selectpicker rule-select">
-                                                            <option value="1">企业分组名称1</option>
-                                                            <option value="2">企业分组名称2</option>
-                                                            <option value="3">企业分组名称3</option>
-                                                            <option value="4">企业分组名称4</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="box">
-                                                        <div class="title red clearfix">
-                                                            <div class="circle"></div>
-                                                            红色关键词预警
-                                                            <div class="small-switch-box pull-right">
-                                                                <span class="switch-on" themecolor="#fc5e44"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-wrapper transition">
-                                                            <ul class="list">
-                                                                <li class="first">
-                                                                    <button class="btn btn-default btn-white">
-                                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                                        关键词
-                                                                    </button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="box">
-                                                        <div class="title orange clearfix">
-                                                            <div class="circle"></div>
-                                                            橙色关键词预警
-                                                            <div class="small-switch-box pull-right">
-                                                                <span class="switch-on" themecolor="#fd9047"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-wrapper transition">
-                                                            <ul class="list">
-                                                                <li class="first">
-                                                                    <button class="btn btn-default btn-white">
-                                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                                        关键词
-                                                                    </button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="box">
-                                                        <div class="title yellow clearfix">
-                                                            <div class="circle"></div>
-                                                            黄色关键词预警
-                                                            <div class="small-switch-box pull-right">
-                                                                <span class="switch-on" themecolor="#fdcc02"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-wrapper transition">
-                                                            <ul class="list">
-                                                                <li class="first">
-                                                                    <button class="btn btn-default btn-white">
-                                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                                        关键词
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        关键词一
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估模板
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        产品销售风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        亏损风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        工期延时风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估模板
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        产品销售风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        亏损风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        工期延时风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估模板
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        产品销售风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        亏损风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        工期延时风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估模板
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        产品销售风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        亏损风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        工期延时风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        风险评估模板
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        产品销售风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        亏损风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        工期延时风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        市场变化风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button type="button" class="btn" aria-label="Close">
-                                                                        信息安全风险
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="dot">
-                                                            ···
-                                                        </div>
-                                                    </div>
-                                                    <div class="btn-area text-center">
-                                                        <button class="btn btn-cancel btn-circle mr20">取消</button>
-                                                        <button class="btn btn-primary btn-circle">保存</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title clearfix">
-                                                <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                vice lomo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title clearfix">
-                                                <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                vice lomo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- 预警方式-->
-                        <div class="alert-mode keyword-alert-mode">
-                            <h5 class="small-switch-box">
-                                <i class="alert-icon icon-mail"></i>
-                                <span class="text">预警方式</span>
-                            </h5>
-                            <div class="mode-content clearfix">
-                                <div class="title pull-left">邮件预警</div>
-                                <div class="email-box">
-                                    <ul class="mail-list">
-                                        <li>
-                                            <input type="checkbox" checked class="checkbox" id="checkbox">
-                                            <label for="checkbox">开启预警</label>
-                                        </li>
-                                        <li>
-                                            <input type="email" class="form-control" placeholder="请输入邮箱">
-                                            <button class="btn btn-add-mail btn-circle">添加</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  -----------------------关键词预警  end--------------------------->
-                    <!--------------------------警绒线预警  start-------------------------->
-                    <div class="jingrong-alert">
-                        <div class="alert-rule jingrong-alert-rule">
-                            <h5 class="small-switch-box clearfix">
-                                <i class="alert-icon icon-bulb"></i>
-                                <span class="text">预警规则</span>
-                                <span class="switch-on" themecolor="#1e90ff"></span>
-                                <div class="pull-right">
-                                    <button class="btn btn-primary btn-circle" type="button" id="add-jingrong-rule">添加规则</button>
-                                </div>
-                            </h5>
-                            <div class="keyword-alert-content">
-                                <div class="panel-group panel-box" id="accordion1">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title clearfix">
-                                                <span>规则一: 预警规则一预警规则一预警规则一预警规则一</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne1" class="pull-right">
-                                                    <i class="icon-arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div id="collapseOne1" class="panel-collapse collapse in">
+                                        <div id="keyword-collapse1" class="panel-collapse collapse in">
                                             <div class="panel-body">
                                                 <div class="panel-content">
                                                     <div class="title">
@@ -643,17 +344,14 @@
                                         <div class="panel-heading">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1" class="collapsed pull-right">
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse2" class="collapsed pull-right">
                                                     <i class="icon-arrow"></i>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div id="collapseTwo1" class="panel-collapse collapse">
+                                        <div id="keyword-collapse2" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                vice lomo.
                                             </div>
                                         </div>
                                     </div>
@@ -661,25 +359,253 @@
                                         <div class="panel-heading">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete">X</a>
-                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1" class="collapsed pull-right">
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse3" class="collapsed pull-right">
                                                     <i class="icon-arrow"></i>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div id="collapseThree1" class="panel-collapse collapse">
+                                        <div id="keyword-collapse3" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                vice lomo.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="alert-mode jingrong-alert-mode">
 
+                        </div>
+                        <!-- 预警方式-->
+                        <div class="warning-mode keyword-warning-mode">
+                            <h5 class="small-switch-box">
+                                <i class="warning-icon icon-mail"></i>
+                                <span class="text">预警方式</span>
+                            </h5>
+                            <div class="mode-content clearfix">
+                                <div class="title pull-left">邮件预警</div>
+                                <div class="email-box">
+                                    <ul class="mail-list">
+                                        <li>
+                                            <input type="checkbox" checked class="checkbox" id="checkbox">
+                                            <label for="checkbox">开启预警</label>
+                                        </li>
+                                        <li>
+                                            <input type="email" class="form-control" placeholder="请输入邮箱">
+                                            <button class="btn btn-add-mail btn-circle">添加</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -----------------------关键词预警  end--------------------------->
+                    <!--------------------------警绒线预警  start-------------------------->
+                    <div id="jingrong-warning" class="tab-pane jingrong-warning">
+                        <div class="warning-rule jingrong-warning-rule">
+                            <h5 class="small-switch-box clearfix">
+                                <i class="warning-icon icon-bulb"></i>
+                                <span class="text">预警规则</span>
+                                <span class="switch-on" themecolor="#1e90ff"></span>
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-circle" type="button" id="add-jingrong-rule">添加规则</button>
+                                </div>
+                            </h5>
+                            <div class="jingrong-warning-content">
+                                <div class="panel-group panel-box" id="jingrong-accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title clearfix">
+                                                <span>规则一: 预警规则一预警规则一预警规则一预警规则一</span>
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse1" class="pull-right">
+                                                    <i class="icon-arrow"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="jingrong-collapse1" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <div class="panel-content">
+                                                    <div class="title">
+                                                        应用企业分组
+                                                        <select class="selectpicker rule-select">
+                                                            <option value="1">企业分组名称1</option>
+                                                            <option value="2">企业分组名称2</option>
+                                                            <option value="3">企业分组名称3</option>
+                                                            <option value="4">企业分组名称4</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="title red clearfix">
+                                                            <div class="circle"></div>
+                                                            红色关键词预警
+                                                            <div class="small-switch-box pull-right">
+                                                                <span class="switch-on" themecolor="#fc5e44"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label>压力指数</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                            <div class="col-md-2 col-md-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>负面占比</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                           <div class="col-md-2 col-md-offset-1">
+                                                               <div class="form-group">
+                                                                   <label>负面数量</label>
+                                                                   <input type="text" class="form-control">
+                                                                   条
+                                                               </div>
+                                                           </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="title orange clearfix">
+                                                            <div class="circle"></div>
+                                                            橙色关键词预警
+                                                            <div class="small-switch-box pull-right">
+                                                                <span class="switch-on" themecolor="#fd9047"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label>压力指数</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                            <div class="col-md-2 col-md-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>负面占比</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                            <div class="col-md-2 col-md-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>负面数量</label>
+                                                                    <input type="text" class="form-control">
+                                                                    条
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="title yellow clearfix">
+                                                            <div class="circle"></div>
+                                                            黄色关键词预警
+                                                            <div class="small-switch-box pull-right">
+                                                                <span class="switch-on" themecolor="#fdcc02"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label>压力指数</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                            <div class="col-md-2 col-md-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>负面占比</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 slider-box blue">
+                                                                <input type="text" class="slider" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20">
+                                                            </div>
+                                                            <div class="col-md-2 col-md-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>负面数量</label>
+                                                                    <input type="text" class="form-control">
+                                                                    条
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-area text-center">
+                                                        <button class="btn btn-cancel btn-circle mr20">取消</button>
+                                                        <button class="btn btn-primary btn-circle">保存</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title clearfix">
+                                                <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse2" class="collapsed pull-right">
+                                                    <i class="icon-arrow"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="jingrong-collapse2" class="panel-collapse collapse">
+                                            <div class="panel-body"></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title clearfix">
+                                                <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
+                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse3" class="collapsed pull-right">
+                                                    <i class="icon-arrow"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="jingrong-collapse3" class="panel-collapse collapse">
+                                            <div class="panel-body"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="warning-mode jingrong-warning-mode">
+                            <h5 class="small-switch-box">
+                                <i class="warning-icon icon-mail"></i>
+                                <span class="text">预警方式</span>
+                            </h5>
+                            <div class="mode-content clearfix">
+                                <div class="title pull-left">邮件预警</div>
+                                <div class="email-box">
+                                    <ul class="mail-list">
+                                        <li>
+                                            <input type="checkbox" checked class="checkbox" id="checkbox1">
+                                            <label for="checkbox">开启预警</label>
+                                        </li>
+                                        <li>
+                                            <input type="email" class="form-control" placeholder="请输入邮箱">
+                                            <button class="btn btn-add-mail btn-circle">添加</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--------------------------警绒线预警  end   -------------------------->
@@ -688,71 +614,409 @@
         </div>
     </div>
 </div>
+
+
+<div id="keyword-template" style="display: none;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title clearfix">
+                <span>新建预警规则</span>
+                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                <a data-toggle="collapse" data-parent="#keyword-accordion" class="pull-right collapse-a">
+                    <i class="icon-arrow"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="panel-content">
+                    <div class="title">
+                        应用企业分组
+                        <select class="selectpicker rule-select">
+                            <option value="1">企业分组名称1</option>
+                            <option value="2">企业分组名称2</option>
+                            <option value="3">企业分组名称3</option>
+                            <option value="4">企业分组名称4</option>
+                        </select>
+                    </div>
+                    <div class="box">
+                        <div class="title red clearfix">
+                            <div class="circle"></div>
+                            红色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fc5e44"></span>
+                            </div>
+                        </div>
+                        <div class="list-wrapper transition">
+                            <ul class="list">
+                                <li class="first">
+                                    <button class="btn btn-default btn-white">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        关键词
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title orange clearfix">
+                            <div class="circle"></div>
+                            橙色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fd9047"></span>
+                            </div>
+                        </div>
+                        <div class="list-wrapper transition">
+                            <ul class="list">
+                                <li class="first">
+                                    <button class="btn btn-default btn-white">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        关键词
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title yellow clearfix">
+                            <div class="circle"></div>
+                            黄色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fdcc02"></span>
+                            </div>
+                        </div>
+                        <div class="list-wrapper transition">
+                            <ul class="list">
+                                <li class="first">
+                                    <button class="btn btn-default btn-white">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        关键词
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        关键词一
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估模板
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        产品销售风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        亏损风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        工期延时风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估模板
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        产品销售风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        亏损风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        工期延时风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估模板
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        产品销售风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        亏损风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        工期延时风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估模板
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        产品销售风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        亏损风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        工期延时风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        风险评估模板
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        产品销售风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        亏损风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        工期延时风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        市场变化风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn" aria-label="Close">
+                                        信息安全风险
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dot">
+                            ···
+                        </div>
+                    </div>
+                    <div class="btn-area text-center">
+                        <button class="btn btn-cancel btn-circle mr20">取消</button>
+                        <button class="btn btn-primary btn-circle">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jingrong-template" style="display: none;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title clearfix">
+                <span>新建规则</span>
+                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
+                <a data-toggle="collapse" data-parent="#jingrong-accordion" class="pull-right collapse-a">
+                    <i class="icon-arrow"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="panel-content">
+                    <div class="title">
+                        应用企业分组
+                        <select class="selectpicker rule-select">
+                            <option value="1">企业分组名称1</option>
+                            <option value="2">企业分组名称2</option>
+                            <option value="3">企业分组名称3</option>
+                            <option value="4">企业分组名称4</option>
+                        </select>
+                    </div>
+                    <div class="box">
+                        <div class="title red clearfix">
+                            <div class="circle"></div>
+                            红色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fc5e44"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>压力指数</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面占比</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面数量</label>
+                                    <input type="text" class="form-control">
+                                    条
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title orange clearfix">
+                            <div class="circle"></div>
+                            橙色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fd9047"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>压力指数</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面占比</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面数量</label>
+                                    <input type="text" class="form-control">
+                                    条
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title yellow clearfix">
+                            <div class="circle"></div>
+                            黄色关键词预警
+                            <div class="small-switch-box pull-right">
+                                <span class="switch-on" themecolor="#fdcc02"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>压力指数</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面占比</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2 slider-box blue">
+                                <input type="text" class="slider" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="20">
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="form-group">
+                                    <label>负面数量</label>
+                                    <input type="text" class="form-control">
+                                    条
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area text-center">
+                        <button class="btn btn-cancel btn-circle mr20">取消</button>
+                        <button class="btn btn-primary btn-circle">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 信息删除确认 -->
+<div class="modal fade" id="deleteModel">
+    <div class="modal-dialog">
+        <div class="modal-content message_align">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">提示信息</h4>
+            </div>
+            <div class="modal-body">
+                <p>您确认要删除吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary deleteBtn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-<script>
-    $(function () {
-
-        //点击不同的tab  加载响应的内容
-        $('.classify-nav li').click(function () {
-            $('.classify-nav li').removeClass('active');
-            $(this).siblings().find('.triangle').hide();
-            $(this).addClass('active');
-            $(this).find('.triangle').show();
-        });
-
-        //企业预警内容页两个tab的点击事件
-        $('.nav-alert li').click(function () {
-            $('.nav-alert li').removeClass('active');
-            $(this).addClass('active');
-
-            if($(this).hasClass('nav-alert')){
-
-            }else {
-
-            }
-        });
-
-        $('#add-keyword-rule').click(function () {
-            var panelLength = $('.panel-box .panel').length;
-            var $html = $('');
-        });
-
-        //删除关键字规则
-        $('.panel-title a.delete').click(function () {
-
-        });
-
-        $('.list').each(function () {
-            var height = $(this).height();
-            if(height > $(this).parent().height()) {
-                $(this).parent().siblings('.dot').show();
-            }
-        });
-
-        $('.dot').click(function () {
-            var sibHeight = $(this).siblings('.list-wrapper').height();
-            if(sibHeight > 50){
-                $(this).siblings('.list-wrapper').height(50).getNiceScroll().hide();
-            }else {
-                var height = $(this).siblings('.list-wrapper').find('.list').height(),
-                    $sib = $(this).siblings('.list-wrapper');
-                $sib.show().height(height).niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
-//                if($sib.getNiceScroll()){
-//                    $sib.getNiceScroll().resize().show();
-//                }else{
-//                    $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true});
-//                }
-            }
-        });
-
-        $('.checkbox').iCheck({
-            checkboxClass: 'icheckbox_flat-blue'
-        });
-
-        $('.btn-add-mail').click(function () {
-            var $li = $('<li><input type="email" class="form-control" placeholder="请输入邮箱"></li>');
-            $('.mail-list').append($li);
-        })
-    });
-</script>
 </html>
