@@ -178,6 +178,7 @@
     <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="../vendor/headRoom/Headroom.js"></script>
     <script src="../vendor/headRoom/jQuery.headroom.js"></script>
+    <script src="../vendor/scrollbar/jquery.nicescroll.js"></script>
     <script src="../script/common.js"></script>
     <script src="../script/yuqing/yuqing01.js"></script>
     <script src="../script/radialIndicator.js"></script>
@@ -258,7 +259,6 @@
                     valign: "middle",
                     title : "指标状态",
                     formatter: function (value, row, index) {
-                      console.log(row.state);
                         var className;
                         switch(row.state){
                             case "黄色预警":
@@ -281,7 +281,7 @@
                 }],
                 paginationPreText:"<i class='glyphicon glyphicon-menu-left'></i>",
                 paginationNextText:"<i class='glyphicon glyphicon-menu-right'></i>",
-                method: 'post',
+                method: 'get',
                 sortable:true,
                 sortOrder : 'desc',
                 pagination : true,
