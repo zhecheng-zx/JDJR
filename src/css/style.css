@@ -236,6 +236,21 @@ a:focus{
 .header  .navbar-nav>li>a{color:#e2e7ee;}
 .header  .navbar-nav li a:hover,.header  .navbar-nav li a:focus{background:none;}
 .header  .navbar-nav>li>a img{margin-top:-2px;}
+.header-wrapper .dropdown-menu>li>a:hover{
+    color:#323232;
+    background-color:#f5f5f5;
+}
+.header-wrapper .navbar-nav>li>.dropdown-menu{
+    margin-top: 10px;
+}
+.header-wrapper .dropdown-menu>li>a:focus{
+    color:#323232;
+    background-color:#f8f8f8;
+}
+.header-wrapper .dropdown-menu>li>a{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{background:none;}
 .head-bg{
     height:473px;
@@ -588,6 +603,7 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
 }
 .page-wrapper {
     position: relative;
+    overflow-x: hidden;
 }
 .vertical-top>.fp-tableCell,
 .vertical-top>div{

@@ -109,7 +109,7 @@ $(function () {
         },
         yAxis: {
             type: 'value',
-            name:"压力值",
+            name:"聚合舆情数",
             axisTick: {
                 alignWithLabel: true,
                 length:0,
@@ -149,7 +149,7 @@ $(function () {
             }
         },
         series: {
-            name:'舆情压力趋势图',
+            name:'事件发展趋势图',
             type:'line',
             symbol:'emptyCircle',
             symbolSize:8,
