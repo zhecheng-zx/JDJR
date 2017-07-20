@@ -236,6 +236,21 @@ a:focus{
 .header  .navbar-nav>li>a{color:#e2e7ee;}
 .header  .navbar-nav li a:hover,.header  .navbar-nav li a:focus{background:none;}
 .header  .navbar-nav>li>a img{margin-top:-2px;}
+.header-wrapper .dropdown-menu>li>a:hover{
+    color:#323232;
+    background-color:#f5f5f5;
+}
+.header-wrapper .navbar-nav>li>.dropdown-menu{
+    margin-top: 10px;
+}
+.header-wrapper .dropdown-menu>li>a:focus{
+    color:#323232;
+    background-color:#f8f8f8;
+}
+.header-wrapper .dropdown-menu>li>a{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{background:none;}
 .head-bg{
     height:473px;
@@ -588,6 +603,7 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
 }
 .page-wrapper {
     position: relative;
+    overflow-x: hidden;
 }
 .vertical-top>.fp-tableCell,
 .vertical-top>div{
@@ -936,23 +952,21 @@ span.big-text {
     background-color:#1e90ff;
 }
 .background-3{
-    height: 77px;
+    height: auto;
     background-image: url("../images/background_3.png");
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: relative;
 }
 .background-3 .type-wrapper{
+    position: static;
     padding-top: 20px;
     padding-bottom: 20px;
     width: auto;
 }
 .background-3 .type-wrapper:hover{
-    background-image: -webkit-linear-gradient(to right,#68a1f1,#6ac9f1);
-    background-image: -moz-linear-gradient(to right,#68a1f1,#6ac9f1);
-    background-image: -ms-linear-gradient(to right,#68a1f1,#6ac9f1);
-    background-image: -o-linear-gradient(to right,#68a1f1,#6ac9f1);
-    background-image: linear-gradient(to right,#68a1f1,#6ac9f1);
+    background:transparent;
 }
 .background-3 .type-list li .type{
     border:1px solid transparent;
@@ -962,6 +976,24 @@ span.big-text {
 .background-3 .type-list li:hover .type {
     background-color: transparent;
     border-color: #ffffff;
+}
+.background-3 .type-list-right{
+    width: 80px;
+}
+.background-3 .type-list-right .last-menu .arrow{
+    color:#ffffff;
+    text-align: right;
+    background-color: transparent;
+}
+.background-3 .type-list-right .last-menu .arrow .glyphicon{
+    display: inline-block;
+}
+.background-3 .type-list-right .last-menu .arrow .glyphicon-menu-up,
+.background-3 .type-list-right .last-menu .arrow.open .glyphicon-menu-down{
+    display: none;
+}
+.background-3 .type-list-right .last-menu .arrow.open .glyphicon-menu-up{
+    display: inline-block;
 }
 .background-4{
     background-image: url("../images/background_4.jpg");
@@ -1607,10 +1639,10 @@ span.big-text {
 .horizontal{
     padding:20px;
     overflow-y:auto;
-/*     border-radius:15px;
-    -webkit-box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset;
-    moz-box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset;
-    box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset; */
+    /*     border-radius:15px;
+        -webkit-box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset;
+        moz-box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset;
+        box-shadow:5px 0px 15px #f2f2f2 inset, -15px 0px 15px #f2f2f2 inset; */
 }
 .horizontal .timeline{
     position:relative;
@@ -1921,7 +1953,7 @@ span.big-text {
 .transparent-head .bootstrap-table .fixed-table-container .fixed-table-body .no-stirpe>tbody>tr:nth-child(odd)>td{
     background-color: #ffffff;
 }
-    /*---------------------------------头部背景蓝色 高290     start-----------------------------*/
+/*---------------------------------头部背景蓝色 高290     start-----------------------------*/
 .header-wrapper.darkBlue{
     height: 290px;
     background-image: url("../images/banner3.png");
@@ -2402,7 +2434,7 @@ span.big-text {
     color: #1997f3;
     font-weight: bold;
 }
-    /*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
+/*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 start-----------------------------------*/
 .header-wrapper.lightBlue{
     background-image: url("../images/banner5.png");
@@ -2472,12 +2504,12 @@ span.big-text {
 }
 
 .myCenter .icon{
-     display: block;
-     width: 30px;
-     height: 30px;
-     background-image: url("../images/icon-mycenter.png");
-     background-repeat: no-repeat;
-     margin: 9px 56px 9px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icon-mycenter.png");
+    background-repeat: no-repeat;
+    margin: 9px 56px 9px;
 }
 
 .myCenter .icon.icon-bell{
@@ -2863,7 +2895,7 @@ a.collapsed .icon-arrow{
 }
 
 .email-box input[type=email]{
-     display: inline-block;
+    display: inline-block;
     width: 200px;
     margin-right: 10px;;
 }

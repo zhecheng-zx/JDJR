@@ -37,13 +37,23 @@
     $("#btn_box").on("click",".btn-gradual",function () {
         $(this).addClass("btn-transform").siblings().removeClass("btn-transform");
     });
-    $(".type-wrapper").hover(function(){
+    $(".arrow").on("click",function () {
+        var _this=$(this);
+        if(_this.hasClass("open")) {
+            _this.parents(".type-wrapper").find(".type-list").removeClass("open");
+            _this.removeClass("open");
+        }else{
+            _this.parents(".type-wrapper").find(".type-list").addClass("open");
+            _this.addClass("open");
+        }
+    });
+    /*$(".type-wrapper").hover(function(){
         $(this).children(".type-list-main").addClass("open");
         $(this).find(".arrow-up").css("display","block").siblings().css("display","none");
     },function(){
         $(this).children(".type-list-main").removeClass("open");
         $(this).find(".arrow-up").css("display","none").siblings().css("display","block");
-    });
+    });*/
     $(".type-wrapper").on("click",".type",function(){
         $(this).parent().addClass("active").siblings().removeClass("active");
     });
