@@ -2906,3 +2906,7 @@ a.collapsed .icon-arrow{
     border: 2px solid #1996f3;
 }
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 end-----------------------------------*/
+
+.select-white.bootstrap-select>.btn{
+    background: #fff;
+}
