@@ -2463,8 +2463,12 @@ span.big-text {
     margin-left: -11px;
 }
 
-.myCenter .header-wrapper .classify-nav li:not(:first-child) .triangle{
+.nav-justified li .triangle{
     display: none;
+}
+
+.nav-justified li.active .triangle{
+    display: block;
 }
 
 .myCenter .icon{

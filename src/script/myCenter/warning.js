@@ -70,6 +70,7 @@ $(function () {
             var height = $(this).siblings('.list-wrapper').find('.list').height(),
                 $sib = $(this).siblings('.list-wrapper');
             $sib.show().height(height).niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
+            $sib.getNiceScroll().resize();
 //                if($sib.getNiceScroll()){
 //                    $sib.getNiceScroll().resize().show();
 //                }else{
