@@ -1299,7 +1299,8 @@ span.big-text {
     background: -webkit-linear-gradient(left top, #04bae2 , #1997f3); /* Safari 5.1 - 6.0 */
     background: -moz-linear-gradient(bottom right, #04bae2, #1997f3); /* Opera 11.1 - 12.0 */
     background: -o-linear-gradient(bottom right, #04bae2, #1997f3); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to bottom right, #04bae2 , #1997f3); /* 标准的语法（必须放在最后） */
+    background: linear-gradient(to bottom right, #04bae2, #1997f3); /* Firefox 3.6 - 15 */
+    /*background: linear-gradient(to bottom right, #fd9047 , #fc5e44); !* 标准的语法（必须放在最后） *!*/
 }
 .lyt-news .lyt .details{
     padding-left:37px;
@@ -1317,10 +1318,12 @@ span.big-text {
 .lyt-news .details .text-gray,
 .lyt-news .details .glyphicon{
     margin-right:2px;
+    /*color: #fc5e44;*/
     color:#cdced0;
 }
 .lyt-news .details .number{
-    color:#1e90ff;
+    /*color: #fc5e44;*/
+    color: #1e90ff;
     font-size:14px;
     vertical-align:inherit;
 }
@@ -1399,7 +1402,7 @@ span.big-text {
     transition: all .5s;
 }
 
-.tab-hover li.current .layout>.author-name
+.tab-hover li.current.change-red .layout>.author-name
 {
     color:#f95c43;
 }
@@ -1409,13 +1412,23 @@ span.big-text {
 .tab-hover li.change-red .ring.red{
     box-shadow: 0 0 20px rgba(249, 92, 67, .45);
 }
+.tab-hover li.current.change-blue .layout>.author-name
+{
+    color:#1e90ff;
+}
+.tab-hover li.change-blue .layout>.author-name{
+    color:#1990ff;
+}
+.tab-hover li.change-blue .ring.blue{
+    box-shadow: 0 0 25px rgba(23,155,243, .5);
+}
 .slide-border-right {
     height: 59px;
     width: 2px;
     position: absolute;
     right: -1px;
     top: 25px;
-    background-color: #fd3c1d;
+    background-color: #f95c43;
     border-radius: 2px;
 }
 .change-box .lyt-box+.lyt-box{
