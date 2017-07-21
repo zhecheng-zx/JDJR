@@ -3162,3 +3162,7 @@ input.form-control.no-border:focus{
 .select-white.bootstrap-select>.btn{
     background: #fff;
 }
+
+.select-small.bootstrap-select>.btn{
+    width: 80px;
+}
