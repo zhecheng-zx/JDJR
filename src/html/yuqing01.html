@@ -81,7 +81,7 @@
                             <div class="ring blue" >
                                 <h3 class="num">0.86</h3>
                                 <p class="num-ud"><span class="ud-icom up"></span><span class="ud-num">16%</span>
-                                <div class="top-num">64</div>
+                                <a href="javascript:void(0);" class="top-num">64</a>
                             </div>
                         </div>
                         <p class="ring-title">全部企业舆情压力值</p>
@@ -102,7 +102,7 @@
                             <div class="ring red">
                                 <h3 class="num">0.66</h3>
                                 <p class=""><span class="ud-icom up"></span><span class="ud-num">16%</span>
-                                <div class="top-num">64</div>
+                                <a href="javascript:void(0);" class="top-num">64</a>
                             </div>
                         </div>
                         <p class="ring-title">红色预警企业压力值</p>
@@ -123,7 +123,7 @@
                             <div class="ring orange">
                                 <h3 class="num">0.60</h3>
                                 <p class=""><span class="ud-icom down"></span><span class="ud-num">16%</span>
-                                <div class="top-num">64</div>
+                                <a href="javascript:void(0);" class="top-num">64</a>
                             </div>
                         </div>
                         <p class="ring-title">橙色预警企业压力值</p>
@@ -137,7 +137,6 @@
                                 <p class="number-key">预警企业数</p>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-xs-3">
                         <div  class="indicatorContainerWrap ">
@@ -145,7 +144,7 @@
                             <div class="ring yellow">
                                 <h3 class="num">0.36</h3>
                                 <p class=""><span class="ud-icom up"></span><span class="ud-num">16%</span>
-                                <div class="top-num">64</div>
+                                <a href="javascript:void(0);" class="top-num">64</a>
                             </div>
                         </div>
                         <p class="ring-title">黄色预警企业压力值</p>
@@ -198,38 +197,33 @@
         $(".type-wrapper").on("click",".type",function(){
             $(this).parent().addClass("active").siblings().removeClass("active");
         });
-        var option={
-            initValue :80,
+        var option=new Object({
+            initValue :0,
             displayNumber: false,
             radius:56,
             barWidth:8,
-            barColor : '#179bf3'
-        };
-        $('#indicatorContainer-1').radialIndicator(option);
-        $('#indicatorContainer-2').radialIndicator({
-            initValue :66,
-            displayNumber: false,
-            radius:56,
-            barWidth:8,
-            barColor : '#fc5e44'
-
+            barColor : '#179bf3',
+            minValue: 0,
+            maxValue: 100,
+            frameTime:2,
+            roundCorner : true
         });
-        $('#indicatorContainer-3').radialIndicator({
-            initValue :60,
-            displayNumber: false,
-            radius:56,
-            barWidth:8,
-            barColor : '#fd914a'
-
-        });
-        $('#indicatorContainer-4').radialIndicator({
-            initValue :36,
-            displayNumber: false,
-            radius:56,
-            barWidth:8,
-            barColor : '#fdcc02'
-
-        });
+        var radialOtions2=new Object(option);
+        var radialOtions3=new Object(option);
+        var radialOtions4=new Object(option);
+        var indicatorContainer1=radialIndicator('#indicatorContainer-1',option);
+            radialOtions2.barColor='#fc5e44';
+        var indicatorContainer2=radialIndicator("#indicatorContainer-2",radialOtions2);
+            radialOtions3.barColor='#fd914a';
+        var indicatorContainer3=radialIndicator("#indicatorContainer-3",radialOtions3);
+            radialOtions4.barColor='#fdcc02';
+        var indicatorContainer4=radialIndicator("#indicatorContainer-4",radialOtions4);
+        setTimeout(function () {
+            indicatorContainer1.animate(76);
+            indicatorContainer2.animate(86);
+            indicatorContainer3.animate(6);
+            indicatorContainer4.animate(16);
+        },200);
     </script>
     <script>
             $(function(){

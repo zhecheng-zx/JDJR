@@ -21,7 +21,7 @@
         radialOptions.frameTime=1,
         radialOptions.percentage=true,
         radialOptions.displayNumber=true;
-        var indicatorContainer2=radialIndicator("#indicatorContainer-2",radialOptions);
+    var indicatorContainer2=radialIndicator("#indicatorContainer-2",radialOptions);
         indicatorContainer3=radialIndicator("#indicatorContainer-3",radialOptions);
         indicatorContainer4=radialIndicator("#indicatorContainer-4",radialOptions);
         indicatorContainer5=radialIndicator("#indicatorContainer-5",radialOptions);
@@ -377,7 +377,7 @@
         'anchors': ['header','page1', 'page2', 'page3', 'page4','page5','page6','footer'],
         'navigation': true,
         'navigationPosition': 'right',
-        'navigationTooltips': ['舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情'],
+        'navigationTooltips': ['','舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情'],
         'afterLoad': function(anchorLink, index){
             if(index == 3){
                 myChart.setOption(option,true);
