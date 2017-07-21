@@ -2260,6 +2260,10 @@ span.big-text {
     margin: 0px;
 }
 
+.pointAnalyze .echarts-wrapper .wordcloud{
+    height: 350px;
+}
+
 .pointAnalyze .compare-wrapper .top .center{
     font-size: 36px;
     font-weight: bold;
@@ -2283,19 +2287,21 @@ span.big-text {
     color: #1997f3;
 }
 
-.pointAnalyze .content-wrap{
-    margin-top: 20px;
-    padding: 30px 100px;
+.pointAnalyze .title-wrapper{
+    font-size: 0;
+    position: relative;
+    margin: 70px 100px;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper, .pointAnalyze .article-wrapper .negative-wrapper{
+.pointAnalyze .positive-wrapper,
+.pointAnalyze .negative-wrapper{
     border: 1px solid #e6e6e6;
     position: relative;
     vertical-align: top;
-    height: 880px;
+    height: 540px;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title{
+.pointAnalyze .positive-wrapper .title{
     position: absolute;
     top: -16px;
     left: calc(50% - 40px);
@@ -2307,7 +2313,7 @@ span.big-text {
     font-weight: bold;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title::before{
+.pointAnalyze .positive-wrapper .title::before{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -2317,7 +2323,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title::after{
+.pointAnalyze .positive-wrapper .title::after{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -2327,7 +2333,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title{
+.pointAnalyze .negative-wrapper .title{
     position: absolute;
     top: -16px;
     left: calc(50% - 40px);
@@ -2339,7 +2345,7 @@ span.big-text {
     font-weight: bold;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title::before{
+.pointAnalyze .negative-wrapper .title::before{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -2349,7 +2355,7 @@ span.big-text {
     top: 0px;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title::after{
+.pointAnalyze .negative-wrapper .title::after{
     content: '○';
     color: #e5e5e5;
     width: 6px;
@@ -2363,45 +2369,38 @@ span.big-text {
     font-size: 0;
 }
 
-.pointAnalyze .article-wrapper{
-    font-size: 0;
-    position: relative;
-    margin-top: 30px;
-}
-
-.pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper,
-.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+.pointAnalyze .positive-wrapper,
+.pointAnalyze .negative-wrapper,
+.pointAnalyze .positive-list,
+.pointAnalyze .negative-list{
     display: inline-block;
     width: calc(50% - 70px);
 }
 
-.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+.pointAnalyze .positive-list,
+.pointAnalyze .negative-list{
     padding: 0px 15px;
 }
 
-.pointAnalyze .content-wrap .space{
+.pointAnalyze .title-wrapper .space{
     display: inline-block;
     width: 100px;
     vertical-align: top;
     min-height: 1px;
 }
 
-.pointAnalyze .content-wrap .echarts-div{
-    height: 350px;
-}
-
-.pointAnalyze .content-wrap .title-list{
+.pointAnalyze .title-wrapper .title-list{
     font-size: 0;
     color: #323232;
     position: absolute;
-    top: 370px;
+    top: 30px;
     left: 0px;
     overflow-y: auto;
     width: 100%;
     max-height: 485px;
 }
 
-.pointAnalyze .content-wrap .title-list ul li{
+.pointAnalyze .title-wrapper .title-list ul li{
     font-size: 14px;
     line-height: 50px;
     list-style: square;
@@ -2414,15 +2413,15 @@ span.big-text {
     white-space: nowrap;
 }
 
-.pointAnalyze .content-wrap .positive-list ul li{
+.pointAnalyze .title-wrapper .positive-list ul li{
     color: #1997f3;
 }
 
-.pointAnalyze .content-wrap .negative-list ul li{
+.pointAnalyze .title-wrapper .negative-list ul li{
     color: #f5553b;
 }
 
-.pointAnalyze .content-wrap .title-list ul li span{
+.pointAnalyze .title-wrapper .title-list ul li span{
     color: #323232;
 }
 
