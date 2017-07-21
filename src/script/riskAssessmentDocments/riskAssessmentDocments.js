@@ -374,31 +374,31 @@
         }
     };
     var fpOptions={
-        'anchors': ['page1', 'page2', 'page3', 'page4','page5','page6','footer'],
+        'anchors': ['header','page1', 'page2', 'page3', 'page4','page5','page6','footer'],
         'navigation': true,
         'navigationPosition': 'right',
         'navigationTooltips': ['舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情'],
         'afterLoad': function(anchorLink, index){
-            if(index == 2){
+            if(index == 3){
                 myChart.setOption(option,true);
             }
-            if(index == 3){
+            if(index == 4){
                 myChart2.setOption(option2,true);
                 myChart3.setOption(option2,true);
                 myChart4.setOption(option2,true);
             }
-            if(index==4){
+            if(index==5){
                 $("#fp-nav").addClass("white");
             }
         },
         'onLeave':function (index,nextIndex,direction) {
-            if(index==4){
+            if(index==5){
                 $("#fp-nav").removeClass("white");
             }
-            if(index==1&&nextIndex==4){
+            if(index==2&&nextIndex==5){
                 $("#fp-nav").removeClass("white");
             }
-            if(index==3&&direction=="down"&&nextIndex==4||index==5&&direction=="up"&&nextIndex==4){
+            if(index==4&&direction=="down"&&nextIndex==5||index==6&&direction=="up"&&nextIndex==5){
                 $("#fp-nav").addClass("white");
             }
         }

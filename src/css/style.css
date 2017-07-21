@@ -603,7 +603,7 @@ table.index-table span.submit{display:inline-block;padding-left:20px;background:
 }
 .page-wrapper {
     position: relative;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 .vertical-top>.fp-tableCell,
 .vertical-top>div{
@@ -940,8 +940,8 @@ span.big-text {
     box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 .dropdown-menu>li>a:hover{
-    color:#ffffff;
-    background-color:#5aa9f5;
+    color:#323232;
+    background-color:#f5f5f5;
 }
 .dropdown-menu>li>a:focus{
     color:#ffffff;
@@ -1227,6 +1227,13 @@ span.big-text {
 }
 .lyt-box .lyt a:focus{
     color:#1461ad;
+    outline: none;
+}
+.background-4 .lyt-box .lyt a:hover{
+    color:#dcc186;
+}
+.background-4 .lyt-box .lyt a:focus{
+    color:#dcc186;
     outline: none;
 }
 .lyt-news .lyt .lyt-text-left-overflow .number{
@@ -2180,6 +2187,7 @@ span.big-text {
     background: #1964d3;
     cursor:pointer;
     transition:all .6s ease-out;
+    text-decoration: none;
 }
 
 .header-wrapper.blue .banner .item:hover,
@@ -2226,7 +2234,6 @@ span.big-text {
 .compare-wrapper .top .up-div{
     background-color: #0ea9ea;
     display: inline-block;
-    cursor: pointer;
 }
 
 .compare-wrapper .top .down-div{
