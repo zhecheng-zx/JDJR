@@ -928,11 +928,11 @@ span.big-text {
 .btn-transform:focus
 {
     color:#ffffff;
-    background-image:-webkit-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-moz-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-ms-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-o-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:linear-gradient(to right,#04bae2,#1996f3);
+    background-image:-webkit-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-moz-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-ms-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-o-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:linear-gradient(to right,#04bae2,#1997f3);
     outline:none;
 }
 .bootstrap-select>.btn{
@@ -1208,10 +1208,10 @@ span.big-text {
     outline: none;
 }
 .company-box .company-layout {
-    background: -webkit-linear-gradient(left top, #04bae2 , #1996f3); /* Safari 5.1 - 6.0 */
-    background: -moz-linear-gradient(bottom right, #04bae2, #1996f3); /* Opera 11.1 - 12.0 */
-    background: -o-linear-gradient(bottom right, #04bae2, #1996f3); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to bottom right, #04bae2 , #1996f3); /* 标准的语法（必须放在最后） */
+    background: -webkit-linear-gradient(left top, #04bae2 , #1997f3); /* Safari 5.1 - 6.0 */
+    background: -moz-linear-gradient(bottom right, #04bae2, #1997f3); /* Opera 11.1 - 12.0 */
+    background: -o-linear-gradient(bottom right, #04bae2, #1997f3); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #04bae2 , #1997f3); /* 标准的语法（必须放在最后） */
     border-radius: 6px;
 }
 .company-box .company-layout>li{
@@ -1296,10 +1296,10 @@ span.big-text {
 }
 .lyt-news .lyt .lyt-text-left-overflow .number.active{
     color:#ffffff;
-    background: -webkit-linear-gradient(left top, #04bae2 , #1996f3); /* Safari 5.1 - 6.0 */
-    background: -moz-linear-gradient(bottom right, #04bae2, #1996f3); /* Opera 11.1 - 12.0 */
-    background: -o-linear-gradient(bottom right, #04bae2, #1996f3); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to bottom right, #04bae2 , #1996f3); /* 标准的语法（必须放在最后） */
+    background: -webkit-linear-gradient(left top, #04bae2 , #1997f3); /* Safari 5.1 - 6.0 */
+    background: -moz-linear-gradient(bottom right, #04bae2, #1997f3); /* Opera 11.1 - 12.0 */
+    background: -o-linear-gradient(bottom right, #04bae2, #1997f3); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #04bae2 , #1997f3); /* 标准的语法（必须放在最后） */
 }
 .lyt-news .lyt .details{
     padding-left:37px;
@@ -2419,6 +2419,10 @@ span.big-text {
     margin: 0px;
 }
 
+.pointAnalyze .echarts-wrapper .wordcloud{
+    height: 350px;
+}
+
 .pointAnalyze .compare-wrapper .top .center{
     font-size: 36px;
     font-weight: bold;
@@ -2442,125 +2446,126 @@ span.big-text {
     color: #1997f3;
 }
 
-.pointAnalyze .content-wrap{
-    margin-top: 20px;
-    padding: 30px 100px;
+.pointAnalyze .title-wrapper{
+    font-size: 0;
+    position: relative;
+    margin: 70px 100px;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper, .pointAnalyze .article-wrapper .negative-wrapper{
+.pointAnalyze .positive-wrapper,
+.pointAnalyze .negative-wrapper{
     border: 1px solid #e6e6e6;
     position: relative;
     vertical-align: top;
-    height: 880px;
+    height: 540px;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title{
+.pointAnalyze .positive-wrapper .title{
     position: absolute;
     top: -16px;
-    left: calc(50% - 40px);
+    left: 50%;
+    margin-left: -45px;
     background: #fff;
-    width: 100px;
+    width: 90px;
     text-align: center;
     font-size: 20px;
     color: #1997f3;
     font-weight: bold;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title::before{
-    content: '○';
-    color: #e5e5e5;
+.pointAnalyze .positive-wrapper .title::before{
+    position: absolute;
+    content: '';
     width: 6px;
     height: 6px;
-    position: absolute;
-    left: -3px;
-    top: 0px;
+    left: -1px;
+    top: 12px;
+    border-radius: 50%;
+    background: #e5e5e5;
 }
 
-.pointAnalyze .article-wrapper .positive-wrapper .title::after{
-    content: '○';
-    color: #e5e5e5;
+.pointAnalyze .positive-wrapper .title::after{
+    position: absolute;
+    content: '';
     width: 6px;
     height: 6px;
-    position: absolute;
-    left: 90px;
-    top: 0px;
+    border-radius:50%;
+    left: 88px;
+    top: 12px;
+    background: #e5e5e5;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title{
+.pointAnalyze .negative-wrapper .title{
     position: absolute;
     top: -16px;
-    left: calc(50% - 40px);
+    left: 50%;
+    margin-left: -45px;
     background: #fff;
-    width: 100px;
+    width: 90px;
     text-align: center;
     font-size: 20px;
     color: #f5553c;
     font-weight: bold;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title::before{
-    content: '○';
-    color: #e5e5e5;
+.pointAnalyze .negative-wrapper .title::before{
+    position: absolute;
+    content: '';
     width: 6px;
     height: 6px;
-    position: absolute;
-    left: -3px;
-    top: 0px;
+    left: -1px;
+    top: 12px;
+    border-radius: 50%;
+    background: #e5e5e5;
 }
 
-.pointAnalyze .article-wrapper .negative-wrapper .title::after{
-    content: '○';
-    color: #e5e5e5;
+.pointAnalyze .negative-wrapper .title::after{
+    position: absolute;
+    content: '';
     width: 6px;
     height: 6px;
-    position: absolute;
-    left: 90px;
-    top: 0px;
+    border-radius:50%;
+    left: 88px;
+    top: 12px;
+    background: #e5e5e5;
 }
 
 .pointAnalyze .wordCloud-wrapper{
     font-size: 0;
 }
 
-.pointAnalyze .article-wrapper{
-    font-size: 0;
-    position: relative;
-    margin-top: 30px;
-}
-
-.pointAnalyze .positive-wrapper, .pointAnalyze .negative-wrapper,
-.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+.pointAnalyze .positive-wrapper,
+.pointAnalyze .negative-wrapper,
+.pointAnalyze .positive-list,
+.pointAnalyze .negative-list{
     display: inline-block;
     width: calc(50% - 70px);
 }
 
-.pointAnalyze .positive-list, .pointAnalyze .negative-list{
+.pointAnalyze .positive-list,
+.pointAnalyze .negative-list{
     padding: 0px 15px;
 }
 
-.pointAnalyze .content-wrap .space{
+.pointAnalyze .title-wrapper .space{
     display: inline-block;
     width: 100px;
     vertical-align: top;
     min-height: 1px;
 }
 
-.pointAnalyze .content-wrap .echarts-div{
-    height: 350px;
-}
-
-.pointAnalyze .content-wrap .title-list{
+.pointAnalyze .title-wrapper .title-list{
     font-size: 0;
     color: #323232;
     position: absolute;
-    top: 370px;
+    top: 30px;
     left: 0px;
     overflow-y: auto;
     width: 100%;
     max-height: 485px;
 }
 
-.pointAnalyze .content-wrap .title-list ul li{
+.pointAnalyze .title-wrapper .title-list ul li{
     font-size: 14px;
     line-height: 50px;
     list-style: square;
@@ -2571,17 +2576,18 @@ span.big-text {
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-.pointAnalyze .content-wrap .positive-list ul li{
+.pointAnalyze .title-wrapper .positive-list ul li{
     color: #1997f3;
 }
 
-.pointAnalyze .content-wrap .negative-list ul li{
+.pointAnalyze .title-wrapper .negative-list ul li{
     color: #f5553b;
 }
 
-.pointAnalyze .content-wrap .title-list ul li span{
+.pointAnalyze .title-wrapper .title-list ul li span{
     color: #323232;
 }
 
@@ -2762,7 +2768,7 @@ span.big-text {
     display: inline-block;
     width: 83px;
     height: 2px;
-    background: #1996f3;
+    background: #1997f3;
     left: 4px;
 }
 
@@ -2845,24 +2851,28 @@ span.big-text {
     color: #323232;
 }
 
-.icon-arrow{
-    background: url("../images/icon-arrow.png") no-repeat;
-    background-position: 0px -40px;
-    width: 12px;
-    height: 12px;
+a.panel-arrow span.glyphicon-chevron-up{
     display: inline-block;
 }
 
-a.collapsed .icon-arrow{
-    background-position: 0px 3px;
+a.panel-arrow .glyphicon-chevron-down{
+    display: none;
+}
+
+a.collapsed>span.glyphicon-chevron-up{
+    display: none;
+}
+
+a.collapsed>span.glyphicon-chevron-down{
+    display: inline-block;
 }
 
 .myCenter .rule-select>.btn{
     background: #fff;
     font-size: 13px;
     color: #323232;
-    padding: 4px 6px;
     margin-left: 15px;
+    width: 150px;
 }
 
 .myCenter .rule-select>.btn .caret{
@@ -2871,6 +2881,7 @@ a.collapsed .icon-arrow{
 
 .panel-box .panel-heading{
     padding: 10px 30px;
+    cursor: pointer;
 }
 
 .panel-box .panel-body{
@@ -3028,6 +3039,10 @@ a.collapsed .icon-arrow{
     margin-right: 20px;
 }
 
+.mr5{
+    margin-right: 5px;
+}
+
 .warning-mode{
     margin-top: 48px;
 }
@@ -3055,9 +3070,16 @@ a.collapsed .icon-arrow{
     margin-left: 5px;
 }
 
+.email-box .mail-list{
+    display: inline-block;
+}
+
 .email-box .mail-list li{
-    height: 50px;
     line-height: 50px;
+}
+
+.mail-list li span{
+    margin: 0px 10px;
 }
 
 .email-box input[type=email]{
@@ -3066,12 +3088,16 @@ a.collapsed .icon-arrow{
     margin-right: 10px;;
 }
 
-.email-box .btn-add-mail{
+.email-box .btn-addkeyword-mail,
+.email-box .btn-addjingrong-mail{
     background: #fff;
     color: #1e90ff;
     border: 1px solid #1e90ff;
     font-size: 13px;
     padding: 6px 18px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 
 .slider-box{
@@ -3090,18 +3116,33 @@ a.collapsed .icon-arrow{
 }
 
 .slider-box.blue .slider-selection{
-    background-image:-webkit-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-moz-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-ms-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:-o-linear-gradient(to right, #04bae2, #1996f3);
-    background-image:linear-gradient(to right,#04bae2,#1996f3);
+    background-image:-webkit-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-moz-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-ms-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:-o-linear-gradient(to right, #04bae2, #1997f3);
+    background-image:linear-gradient(to right,#04bae2,#1997f3);
 }
 
 .slider-box.blue .slider-handle{
     width: 14px;
     height: 14px;
     background: #fff;
-    border: 2px solid #1996f3;
+    border: 2px solid #1997f3;
+}
+
+input.form-control.no-border{
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+input.form-control.no-border:active,
+input.form-control.no-border:hover,
+input.form-control.no-border:focus{
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 /*--------------------------------头部浅蓝色 高617  预警设置-关键词页面用到 end-----------------------------------*/
 

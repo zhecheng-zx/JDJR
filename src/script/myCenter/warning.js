@@ -1,3 +1,7 @@
+/**
+ * Created by lifei on 2017/7/19.
+ */
+
 $(function () {
 
     //点击不同的tab  加载响应的内容
@@ -16,7 +20,8 @@ $(function () {
         }
         var id = "keyword-collapse" + length;
         var $html = $('#keyword-template').children().clone();
-        $html.find('a.collapse-a').attr('href', '#' + id);
+        $html.find('.panel-heading').attr('href', '#' + id);
+        $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
         $html.find('.delete-rule').click(function () {
             deleteRule(length, 'keyword-accordion');
@@ -33,7 +38,8 @@ $(function () {
         }
         var id = "jingrong-collapse" + length;
         var $html = $('#jingrong-template').children().clone();
-        $html.find('a.collapse-a').attr('href', '#' + id);
+        $html.find('.panel-heading').attr('href', '#' + id);
+        $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
         $html.find('.delete-rule').click(function () {
             deleteRule(length, 'jingrong-accordion');
@@ -83,15 +89,41 @@ $(function () {
         checkboxClass: 'icheckbox_flat-blue'
     });
 
-    $('.btn-add-mail').click(function () {
-        var $li = $('<li><input type="email" class="form-control" placeholder="请输入邮箱"></li>');
-        $('.mail-list').append($li);
+    $('.btn-addkeyword-mail').click(function () {
+        var mail = $('#keyword-mail').val();
+        if(!mail){
+            //暂时alert
+            alert('请输入邮箱');
+        }
+
+        //ajax请求后台保存 后回调以下代码
+
     });
 
     $('input.slider').slider({
         formatter: function (value) {
-            return 'Current value: ' + value;
+            return value;
         }
+    });
+
+    $('.pressure-slide').on('change', function (e) {
+        var val = e.value.newValue;
+        $(this).closest('.row').find('.pressure-input').val(val);
+    });
+
+    $('.negative-slide').on('change', function (e) {
+        var val = e.value.newValue;
+        $(this).closest('.row').find('.negative-input').val(val);
+    });
+
+    $('.pressure-input').change(function () {
+            var val = $(this).val();
+            $(this).closest('.row').find('.pressure-slide').slider('setValue', parseFloat(val));
+    });
+
+    $('.negative-input').change(function () {
+        var val = $(this).val();
+        $(this).closest('.row').find('.negative-slide').slider('setValue', parseFloat(val));
     });
 });
 
@@ -116,6 +148,3 @@ function dotClick() {
     }
 }
 
-/**
- * Created by lifei on 2017/7/19.
- */
