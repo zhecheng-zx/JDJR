@@ -18,7 +18,7 @@
     <script src="../vendor/honeyswitch/honeySwitch.js"></script>
     <script src="../vendor/scrollbar/jquery.nicescroll.js"></script>
     <script src="../vendor/icheck/icheck.min.js"></script>
-    <script src="../vendor/bootstrap-slider/js/bootstrap-slider.min.js"></script>
+    <script src="../vendor/bootstrap-slider/js/bootstrap-slider.js"></script>
 
     <script src="../script/myCenter/warning.js"></script>
 
@@ -111,12 +111,15 @@
                             <div class="keyword-warning-content">
                                 <div class="panel-group panel-box" id="keyword-accordion">
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse1">
                                             <div class="panel-title clearfix">
                                                 <span>规则一: 预警规则一预警规则一预警规则一预警规则一</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse1" class="pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse1" class="pull-right mr5 panel-arrow">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -345,12 +348,16 @@
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse2">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse2" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse2"
+                                                   class="pull-right mr5 panel-arrow collapsed">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -360,12 +367,16 @@
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse3">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse3" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#keyword-accordion" href="#keyword-collapse3"
+                                                   class="pull-right mr5 panel-arrow collapsed">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -393,8 +404,8 @@
                                             <label for="checkbox">开启预警</label>
                                         </li>
                                         <li>
-                                            <input type="email" class="form-control" placeholder="请输入邮箱">
-                                            <button class="btn btn-add-mail btn-circle">增加</button>
+                                            <input type="email" id="keyword-mail" class="form-control" placeholder="请输入邮箱">
+                                            <button class="btn btn-addkeyword-mail">添加</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -416,12 +427,16 @@
                             <div class="jingrong-warning-content">
                                 <div class="panel-group panel-box" id="jingrong-accordion">
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse1">
                                             <div class="panel-title clearfix">
                                                 <span>规则一: 预警规则一预警规则一预警规则一预警规则一</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse1" class="pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse1"
+                                                   class="pull-right mr5 panel-arrow">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -449,27 +464,27 @@
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>压力指数</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border pressure-input" value="20">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="20" id="pressure-slide">
                                                             </div>
                                                             <div class="col-md-2 col-md-offset-1">
                                                                 <div class="form-group">
                                                                     <label>负面占比</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border negative-input" value="0">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="0">
                                                             </div>
                                                            <div class="col-md-2 col-md-offset-1">
                                                                <div class="form-group">
                                                                    <label>负面数量</label>
-                                                                   <input type="text" class="form-control">
+                                                                   <input type="text" class="form-control no-border" value="0">
                                                                    条
                                                                </div>
                                                            </div>
@@ -487,27 +502,27 @@
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>压力指数</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border pressure-input" value="0">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="0">
                                                             </div>
                                                             <div class="col-md-2 col-md-offset-1">
                                                                 <div class="form-group">
                                                                     <label>负面占比</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border negative-input" value="0">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="0">
                                                             </div>
                                                             <div class="col-md-2 col-md-offset-1">
                                                                 <div class="form-group">
                                                                     <label>负面数量</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border" value="0">
                                                                     条
                                                                 </div>
                                                             </div>
@@ -525,27 +540,27 @@
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>压力指数</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border pressure-input" value="0">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="0">
                                                             </div>
                                                             <div class="col-md-2 col-md-offset-1">
                                                                 <div class="form-group">
                                                                     <label>负面占比</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border negative-input" value="0">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2 slider-box blue">
-                                                                <input type="text" class="slider" data-slider-min="0"
-                                                                       data-slider-max="100" data-slider-value="20">
+                                                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                                                       data-slider-max="100" data-slider-value="0">
                                                             </div>
                                                             <div class="col-md-2 col-md-offset-1">
                                                                 <div class="form-group">
                                                                     <label>负面数量</label>
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control no-border" value="0">
                                                                     条
                                                                 </div>
                                                             </div>
@@ -560,12 +575,16 @@
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse2">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse2" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse2"
+                                                   class="pull-right mr5 panel-arrow">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -574,12 +593,16 @@
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
+                                        <div class="panel-heading" data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse3">
                                             <div class="panel-title clearfix">
                                                 <span>规则三: 预警规则三预警规则三预警规则三预警规则三</span>
-                                                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse3" class="collapsed pull-right">
-                                                    <i class="icon-arrow"></i>
+                                                <a href="javascript:void (0);" class="pull-right delete-rule">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                                <a data-toggle="collapse" data-parent="#jingrong-accordion" href="#jingrong-collapse3"
+                                                   class="pull-right mr5 panel-arrow">
+                                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -603,9 +626,15 @@
                                             <input type="checkbox" checked class="checkbox" id="checkbox1">
                                             <label for="checkbox">开启预警</label>
                                         </li>
+                                        <li class="exist-mail">
+                                            <span>zhangsan@123.com</span>
+                                            <span>zhangsan@123.com</span>
+                                            <span>zhangsan@123.com</span><span>zhangsan@123.com</span>
+                                            <span>zhangsan@123.com</span>
+                                        </li>
                                         <li>
-                                            <input type="email" class="form-control" placeholder="请输入邮箱">
-                                            <button class="btn btn-add-mail btn-circle">添加</button>
+                                            <input type="email" id="jingrong-mail" class="form-control" placeholder="请输入邮箱">
+                                            <button class="btn btn-addjingrong-mail btn-circle">添加</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -620,12 +649,15 @@
 </div>
 <div id="keyword-template" style="display: none;">
     <div class="panel panel-default">
-        <div class="panel-heading">
+        <div class="panel-heading"  data-toggle="collapse" data-parent="#keyword-accordion">
             <div class="panel-title clearfix">
                 <span>新建预警规则</span>
-                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                <a data-toggle="collapse" data-parent="#keyword-accordion" class="pull-right collapse-a">
-                    <i class="icon-arrow"></i>
+                <a href="javascript:void (0);" class="pull-right delete-rule">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <a data-toggle="collapse" data-parent="#keyword-accordion" class="pull-right mr5 panel-arrow">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
                 </a>
             </div>
         </div>
@@ -857,12 +889,15 @@
 
 <div id="jingrong-template" style="display: none;">
     <div class="panel panel-default">
-        <div class="panel-heading">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#jingrong-accordion">
             <div class="panel-title clearfix">
                 <span>新建规则</span>
-                <a href="javascript:void (0);" class="pull-right delete delete-rule">X</a>
-                <a data-toggle="collapse" data-parent="#jingrong-accordion" class="pull-right collapse-a">
-                    <i class="icon-arrow"></i>
+                <a href="javascript:void (0);" class="pull-right delete-rule">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <a data-toggle="collapse" data-parent="#jingrong-accordion" class="pull-right mr5 panel-arrow">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
                 </a>
             </div>
         </div>
@@ -890,27 +925,27 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>压力指数</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border pressure-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面占比</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border negative-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面数量</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border" value="0">
                                     条
                                 </div>
                             </div>
@@ -928,27 +963,27 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>压力指数</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border pressure-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面占比</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border negative-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面数量</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border" value="0">
                                     条
                                 </div>
                             </div>
@@ -966,27 +1001,27 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>压力指数</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border pressure-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider pressure-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面占比</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border negative-input" value="0">
                                 </div>
                             </div>
                             <div class="col-md-2 slider-box blue">
-                                <input type="text" class="slider" data-slider-min="0"
-                                       data-slider-max="100" data-slider-value="20">
+                                <input type="text" class="slider negative-slide" data-slider-min="0"
+                                       data-slider-max="100" data-slider-value="0">
                             </div>
                             <div class="col-md-2 col-md-offset-1">
                                 <div class="form-group">
                                     <label>负面数量</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control no-border" value="0">
                                     条
                                 </div>
                             </div>
