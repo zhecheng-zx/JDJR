@@ -54,6 +54,7 @@ a:focus{
 .btn-gray:hover{
     background-color: #f5f5f5;
 }
+.event-disabled { pointer-events: none; }
 .container{
     min-width: 1200px;
 }
@@ -242,9 +243,11 @@ a:focus{
 .header .navbar-brand{
     font-size: 24px;
     color:#ffffff;
+    padding: 2px 15px 0;
+    line-height: 50px;
 }
 .header .navbar-header .logo{
-    float: left;
+    display:inline-block;
 }
 .header  .navbar-nav>li>a{color:#e2e7ee;}
 .header  .navbar-nav li a:hover,.header  .navbar-nav li a:focus{background:none;}
@@ -597,16 +600,12 @@ footer p{
 }
 .evaluate-data .top-bar .tool>a{
     color:#333;
-    margin-left:20px;
-
 }
 .evaluate-data .top-bar .tool a:hover,.evaluate-data .top-bar .tool a:focus{
     text-decoration:none;
     outline:none;
 }
 .datetimepicker{/* margin-top:60px; */}
-.evaluate-data .top-bar .tool .bootstrap-select{width:80px;}
-.evaluate-data .top-bar .tool .bootstrap-select .btn{background-color:#fff;}
 .evaluate-data .top-bar .tool .bootstrap-select .btn:focus{outline:none;}
 .tool .bootstrap-select .dropdown-toggle:focus{outline:none !important;}
 .btn-group.open .dropdown-toggle{box-shadow:none !important;}
@@ -937,7 +936,7 @@ span.big-text {
 }
 .bootstrap-select>.btn{
     width:125px;
-    padding: 6px 25px;
+    padding: 6px 25px 6px 15px;
     background-color: #f5f5f5;
     border: 1px solid #e6e6e6;
     border-radius: 50px;
@@ -1064,7 +1063,8 @@ span.big-text {
 .background-4 .panel-custom .panel-title>.circle:hover{
     color:#deab3b;
 }
-.background-4 .panel-custom .bootstrap-select>.btn{
+.background-4 .panel-custom .bootstrap-select>.btn,
+.background-4 .panel-custom .select-datePricker>.form-control{
     background-color: transparent !important;
     border-color:#474f50 !important;
     color:#cdced0;
@@ -2162,13 +2162,15 @@ span.big-text {
     margin: 20px auto;
     background: #fff;
     padding: 35px 40px;
+}
+.transitioned{
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     -ms-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;
     transition: all .5s ease-out;
 }
-.article:hover{
+.article.transitioned:hover{
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.15);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,.15);
@@ -2180,7 +2182,6 @@ span.big-text {
     -o-transform: translateX(5px);
     transform: translateX(5px);
 }
-
 .article .title-box{
     position: relative;
 }
@@ -3165,4 +3166,29 @@ input.form-control.no-border:focus{
 
 .select-small.bootstrap-select>.btn{
     width: 80px;
+}
+/*日期选择插件*/
+.select-datePricker{
+    display: inline-block;
+    margin-right: 20px;
+}
+.select-datePricker.mr0{
+    margin-right: 0;
+}
+.select-datePricker>.bootstrap-select:not(.input-group-btn){
+    margin-right: 0;
+    float: left;
+}
+.select-datePricker .bootstrap-select .btn{
+    border-radius: 50px 0 0 50px;
+}
+.select-datePricker .form-control{
+    display: inline-block;
+    width: 270px;
+    border-color:#e6e6e6;
+    border-left:none;
+    border-radius: 0 50px 50px 0;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    background-color: #f5f5f5;
 }

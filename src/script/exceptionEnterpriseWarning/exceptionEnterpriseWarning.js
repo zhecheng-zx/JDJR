@@ -60,4 +60,34 @@ $(function () {
     };
 
     $('#exceptionEnterpriseWarningTable').bootstrapTable(options);
+    $('#sld').selectpicker().on('changed.bs.select',function () {
+        var _input=$(this).parents(".bootstrap-select").next();
+        var select_val=$(this).val();
+        switch(select_val){
+            case "自定义时间":
+                _input.removeClass("event-disabled");
+                selectDatePicker.init(_input,"right",function () {
+
+                });
+                break;
+            case "近三天":
+                _input.addClass("event-disabled");
+                var _val1=moment().subtract('days', 2),
+                    _val2=moment();
+                _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                break;
+            case "近七天":
+                _input.addClass("event-disabled");
+                var _val1=moment().subtract('days', 6),
+                    _val2=moment();
+                _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                break;
+            case "近三十天":
+                _input.addClass("event-disabled");
+                var _val1=moment().subtract('days', 29),
+                    _val2=moment();
+                _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                break;
+        }
+    });
 });

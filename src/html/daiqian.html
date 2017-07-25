@@ -11,7 +11,7 @@
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../vendor/bootstrap-table/bootstrap-table.css"/>
     <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
-    <link rel="stylesheet" href="../vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="../css/style.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
@@ -23,8 +23,8 @@
         <div class="header" id="header">
             <div class="container">
                 <div class="navbar-header">
-                    <img src="../images/JD-finance-logo.png" class="logo">
-                    <a class="navbar-brand" href="javascript:void(0);">舆情压力监控系统</a>
+                    <a class="navbar-brand" href="javascript:void(0);"><img src="../images/JD-finance-logo.png" class="logo">
+                        舆情压力监控系统</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right ">
                     <li><a href="javascript:void(0);"  data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/> 上午好，JD6524197_2012 <span class="caret"></span></a>
@@ -50,13 +50,15 @@
          <div class="evaluate-data">
               <div class="top-bar"><span class="title">企业舆情风险评估看板</span>
                   <div class="pull-right tool">
-                      <select  id="sld" class="selectpicker">
-                          <option value="近七天">近七天</option>
-                          <option value="近七天">近三天</option>
-                      </select>
-                      <input size="16" type="text"  placeholder="起始时间" readonly id="beginTime">
-                      <span>~</span>
-                      <input size="16" type="text"  placeholder="结束时间" readonly id="endTime">
+                      <div class="select-datePricker">
+                          <select  id="sld" class="selectpicker" title="请选择">
+                              <option value="近三天">近三天</option>
+                              <option value="近七天">近七天</option>
+                              <option value="近三十天">近三十天</option>
+                              <option value="自定义时间">自定义时间</option>
+                          </select>
+                          <input type="text" class="form-control" readonly id="start_end_date" />
+                      </div>
                       <a href="javascript:void(0);">
                           <img src="../images/Export.png" alt=""/>
                           导出数据
@@ -79,108 +81,132 @@
     <script src="../vendor/bootstrap-table/bootstrap-table.js"></script>
     <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
-    <script src="../vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-    <script src="../vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.zh-CN.js"></script>
-
+    <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../script/select-datepicker.js"></script>
     <script>
-            $(function(){
-                $('#sld').selectpicker({
-                    style:"btn-s"
-                });
+        window.operateEvents={
+            'click .search':function (e,value,row,index) {
+                
+            },
+            'click .delete':function (e,value,row,index) {
+                $('#data-Table').bootstrapTable('remove',{
+                    field:'name',
+                    values:[row.name]
+                })
+            }
+        };
+        $(function(){
+            $('#sld').selectpicker().on('changed.bs.select',function () {
+                var _input=$(this).parents(".bootstrap-select").next();
+                var select_val=$(this).val();
+                switch(select_val){
+                    case "自定义时间":
+                        _input.removeClass("event-disabled");
+                        selectDatePicker.init(_input,"left",function () {
 
-                $('#beginTime').datetimepicker({
-                    language:'zh-CN',
-                    format: 'yyyy-mm-dd',
-                    minView: "month",
-                    clearBtn:true,
-                    autoclose:1
-                });
-                $('#endTime').datetimepicker({
-                    language:'zh-CN',
-                    format: 'yyyy-mm-dd',
-                    minView: "month",
-                    clearBtn:true,
-                    autoclose:1
-                });
-
-                var operateFormatter = function (value, row, index) {
-                    return [
-                        "<a href='javascript:void(0);' class='edit mr20'><span class='glyphicon glyphicon-eye-open'></span> 查看</a>",
-                        "<a href='javascript:void(0);' class='edit'><span class='glyphicon glyphicon-remove'></span> 删除</a>",
-                    ].join('');
-                };
-                var stateFormatter=function (value, row, index){
-                    var name="analysis";
-                    if(row.state=="数据采集中"){
-                           name="collect";
-                    }else if(row.state=="提交完成"){
-                        name="submit"
-                    }
-                    var a="<span class='"+name+"'>"+row.state+"</span>";
-                    return a;
-                };
-            var options = {
-                columns : [ {
-                    field : 'name',
-                    align:"center",
-                    valign: "middle",
-                    title : "企业名称"
-                }, {
-                    field : 'exponent',
-                    title : "压力指数",
-                     align:"center",
-                     valign: "middle"
-
-
-                }, {
-                    field : 'number',
-                    title : "负面数",
-                    align:"center",
-                    valign: "middle",
-
-                }, {
-                    field : 'count',
-                    title : "舆情数",
-                    align:"center",
-                    valign: "middle"
-
-                }, {
-                    field : 'state',
-                    align:"left",
-                    valign: "middle",
-                    title : "状态",
-                    formatter: stateFormatter
-
-                },{
-                    field : 'data',
-                    align:"right",
-                    valign: "middle",
-                    title : "提交时间",
-                    sortable:true
-                },{
-                    field : 'action',
-                    align:"center",
-                    valign: "middle",
-                    title : "操作",
-                    formatter: operateFormatter
-
-                }],
-                paginationPreText:"<i class='glyphicon glyphicon-menu-left'></i>",
-                paginationNextText:"<i class='glyphicon glyphicon-menu-right'></i>",
-                method: 'get',
-                sortable:true,
-                sortOrder : 'desc',
-                pagination : true,
-                sidePagination : 'server',
-                pageNumber :1,
-                pageSize :6,
-                dataType: "json",
-                url : '../data/table2.json',
-                pageList : [ 10000],
-                queryParamsType: '',
-                onLoadSuccess:function(){
-//                    $(".no").attr("disabled","disabled")
+                        });
+                        break;
+                    case "近三天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 2),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
+                    case "近七天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 6),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
+                    case "近三十天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 29),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
                 }
+            });
+
+            var operateFormatter = function (value, row, index) {
+                return [
+                    "<a href='javascript:void(0);' class='edit search mr20'><span class='glyphicon glyphicon-eye-open'></span> 查看</a>",
+                    "<a href='javascript:void(0);' class='edit delete'><span class='glyphicon glyphicon-remove'></span> 删除</a>",
+                ].join('');
+            };
+            var stateFormatter=function (value, row, index){
+                var name="analysis";
+                if(row.state=="数据采集中"){
+                       name="collect";
+                }else if(row.state=="提交完成"){
+                    name="submit"
+                }
+                var a="<span class='"+name+"'>"+row.state+"</span>";
+                return a;
+            };
+        var options = {
+            columns : [ {
+                field : 'name',
+                align:"center",
+                valign: "middle",
+                title : "企业名称"
+            }, {
+                field : 'exponent',
+                title : "压力指数",
+                 align:"center",
+                 valign: "middle"
+
+
+            }, {
+                field : 'number',
+                title : "负面数",
+                align:"center",
+                valign: "middle",
+
+            }, {
+                field : 'count',
+                title : "舆情数",
+                align:"center",
+                valign: "middle"
+
+            }, {
+                field : 'state',
+                align:"left",
+                valign: "middle",
+                title : "状态",
+                formatter: stateFormatter
+
+            },{
+                field : 'data',
+                align:"right",
+                valign: "middle",
+                title : "提交时间",
+                sortable:true
+            },{
+                field : 'action',
+                align:"center",
+                valign: "middle",
+                title : "操作",
+                formatter: operateFormatter,
+                events:operateEvents
+
+            }],
+            paginationPreText:"<i class='glyphicon glyphicon-menu-left'></i>",
+            paginationNextText:"<i class='glyphicon glyphicon-menu-right'></i>",
+            method: 'get',
+            sortable:true,
+            sortOrder : 'desc',
+            pagination : true,
+            sidePagination : 'server',
+            pageNumber :1,
+            pageSize :6,
+            dataType: "json",
+            url : '../data/table2.json',
+            pageList : [ 10000],
+            queryParamsType: '',
+            onLoadSuccess:function(){
+//                    $(".no").attr("disabled","disabled")
+            }
 //                queryParams : function(params) {
 //                    return{
 //                    offset:params.offset,
@@ -188,10 +214,10 @@
 //                   }
 //                }
 
-            };
+        };
 
-            $('#data-Table').bootstrapTable(options);
-            })
-        </script>
+        $('#data-Table').bootstrapTable(options);
+        })
+    </script>
 </body>
 </html>

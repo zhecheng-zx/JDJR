@@ -11,6 +11,7 @@
     <title>舆情压力监控系统-风险评估单</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="../vendor/fullpage.js/dist/jquery.fullpage.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <!--[if lt IE 9]>
@@ -109,10 +110,15 @@
                 <div class="panel-heading">
                     <span class="big-text">02</span>
                     <h3 class="panel-title">舆情压力趋势 <a href="javascript:void(0);" class="circle help" data-toggle="tooltip" data-placement="bottom" title="通过整体压力趋势、正面压力趋势、负面压力趋势，综合量化反映某一企业舆情压力变化趋势，从历史舆情风险数据走势判断未来是否会发生风险。">?</a>
-                    <select class="selectpicker pull-right">
-                        <option value="">最近七天</option>
-                        <option value="">最近一个月</option>
-                    </select>
+                        <div class="select-datePricker pull-right mr0">
+                            <select  id="sld" class="selectpicker" title="请选择">
+                                <option value="近三天">近三天</option>
+                                <option value="近七天">近七天</option>
+                                <option value="近三十天">近三十天</option>
+                                <option value="自定义时间">自定义时间</option>
+                            </select>
+                            <input type="text" class="form-control" readonly />
+                        </div>
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -135,10 +141,15 @@
                     <span class="big-text">03</span>
                     <h3 class="panel-title">舆情事件聚合 <a href="javascript:void(0);" class="circle help" data-toggle="tooltip" data-placement="bottom" title="事件聚合是指根据一定主题将全网媒体内容进行重新组合排序而生成一个或多个主题（包含多条文章）。机器学习自动聚类企业事件类型，查看事件发展走势。">?</a>
                         <div class="pull-right">
-                            <select class="selectpicker">
-                                <option value="">最近七天</option>
-                                <option value="">最近一个月</option>
-                            </select>
+                            <div class="select-datePricker">
+                                <select  id="sld2" class="selectpicker" title="请选择">
+                                    <option value="近三天">近三天</option>
+                                    <option value="近七天">近七天</option>
+                                    <option value="近三十天">近三十天</option>
+                                    <option value="自定义时间">自定义时间</option>
+                                </select>
+                                <input type="text" class="form-control" readonly />
+                            </div>
                             <select class="selectpicker">
                                 <option value="">全部情感</option>
                             </select>
@@ -249,10 +260,15 @@
                     <span class="big-text">04</span>
                     <h3 class="panel-title">企业舆情视界 <a href="javascript:void(0);" class="circle help" data-toggle="tooltip" data-placement="bottom" title="从更小颗粒度的单条新闻，展现企业经营动态和舆情情况。">?</a>
                         <div class="pull-right">
-                            <select class="selectpicker">
-                                <option value="">最近七天</option>
-                                <option value="">最近一个月</option>
-                            </select>
+                            <div class="select-datePricker">
+                                <select  id="sld3" class="selectpicker" title="请选择">
+                                    <option value="近三天">近三天</option>
+                                    <option value="近七天">近七天</option>
+                                    <option value="近三十天">近三十天</option>
+                                    <option value="自定义时间">自定义时间</option>
+                                </select>
+                                <input type="text" class="form-control" readonly />
+                            </div>
                             <select class="selectpicker">
                                 <option value="">全部情感</option>
                             </select>
@@ -382,10 +398,15 @@
                     <span class="big-text">05</span>
                     <h3 class="panel-title">相关企业舆情 <a href="javascript:void(0);" class="circle help" data-toggle="tooltip" data-placement="bottom" title="关联第三方企业对某一企业的舆情风险间接影响。">?</a>
                         <div class="pull-right">
-                            <select class="selectpicker">
-                                <option value="">最近七天</option>
-                                <option value="">最近一个月</option>
-                            </select>
+                            <div class="select-datePricker mr0">
+                                <select  id="sld4" class="selectpicker" title="请选择">
+                                    <option value="近三天">近三天</option>
+                                    <option value="近七天">近七天</option>
+                                    <option value="近三十天">近三十天</option>
+                                    <option value="自定义时间">自定义时间</option>
+                                </select>
+                                <input type="text" class="form-control" readonly />
+                            </div>
                         </div>
                     </h3>
                 </div>
@@ -833,10 +854,15 @@
                     <span class="big-text">06</span>
                     <h3 class="panel-title">相关人物舆情 <a href="javascript:void(0);" class="circle help" data-toggle="tooltip" data-placement="bottom" title="企业内部关联人物对某一企业的舆情风险间接影响。">?</a>
                         <div class="pull-right">
-                            <select class="selectpicker">
-                                <option value="">最近七天</option>
-                                <option value="">最近一个月</option>
-                            </select>
+                            <div class="select-datePricker mr0">
+                                <select  id="sld5" class="selectpicker" title="请选择">
+                                    <option value="近三天">近三天</option>
+                                    <option value="近七天">近七天</option>
+                                    <option value="近三十天">近三十天</option>
+                                    <option value="自定义时间">自定义时间</option>
+                                </select>
+                                <input type="text" class="form-control" readonly />
+                            </div>
                         </div>
                     </h3>
                 </div>
@@ -1326,6 +1352,9 @@
     <script src="../vendor/jQuery/jquery.min.js"></script>
     <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../script/select-datepicker.js"></script>
     <script src="../vendor/headRoom/Headroom.js"></script>
     <script src="../vendor/headRoom/jQuery.headroom.js"></script>
     <script src="../vendor/scrollbar/jquery.nicescroll.js"></script>

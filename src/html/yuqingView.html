@@ -7,11 +7,8 @@
     <title>舆情压力监控系统-舆情视界</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="../css/style.css" rel="stylesheet" />
-
-    <script src="../vendor/jQuery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
     <!--[if lt IE 9]>
     <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
     <script src="../vendor/respond.js_1.4.2/respond.min.js"></script>
@@ -55,12 +52,15 @@
                     <input type="text" class="form-control search-text" placeholder="请输入搜索关键词">
                 </div>
                 <div class="pull-right">
-                    <select id="date-select" class="selectpicker select-white">
-                        <option value="近七天">近七天</option>
-                        <option value="近七天">近三天</option>
-                        <option value="今天">今天</option>
-                    </select>
-
+                    <div class="select-datePricker">
+                        <select  id="sld" class="selectpicker" title="请选择">
+                            <option value="近三天">近三天</option>
+                            <option value="近七天">近七天</option>
+                            <option value="近三十天">近三十天</option>
+                            <option value="自定义时间">自定义时间</option>
+                        </select>
+                        <input type="text" class="form-control" readonly />
+                    </div>
                     <select class="selectpicker select-white">
                         <option value="全部感情">全部感情</option>
                         <option value="正面">正面</option>
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="content">
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -110,7 +110,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -143,7 +143,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -176,7 +176,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -209,7 +209,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -242,7 +242,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article transitioned">
                     <div class="title-box">
                         <i class="text-icon red"></i>
                         <a class="title">
@@ -276,22 +276,66 @@
                     </div>
                 </div>
             </div>
-            <nav aria-label="..." class="text-center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="javascript:void(0);" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                    <li class="active"><a href="javascript:void(0);">1 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="javascript:void(0);">2</a></li>
-                    <li><a href="javascript:void(0);">3</a></li>
-                    <li><a href="javascript:void(0);">4</a></li>
-                    <li><a href="javascript:void(0);">5</a></li>
-                    <li><a href="javascript:void(0);" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                </ul>
-            </nav>
+            <div class="pagination-box">
+                <ul class="pagination" id="pagination"></ul>
+            </div>
         </div>
     </div>
     <footer>
         <p>Copyright © 2004-2017 京东JD.com 版权所有 </p>
         <p>中科点击（北京）科技有限公司提供技术支持    客服电话400617855</p>
     </footer>
+    <script src="../vendor/jQuery/jquery.min.js"></script>
+    <script src="../vendor/jqPaginator/jqPaginator.min.js"></script>
+    <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../script/select-datepicker.js"></script>
+    <script>
+        $(function () {
+            $('#sld').selectpicker().on('changed.bs.select',function () {
+                var _input=$(this).parents(".bootstrap-select").next();
+                var select_val=$(this).val();
+                switch(select_val){
+                    case "自定义时间":
+                        _input.removeClass("event-disabled");
+                        selectDatePicker.init(_input,"right",function () {
+
+                        });
+                        break;
+                    case "近三天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 2),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
+                    case "近七天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 6),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
+                    case "近三十天":
+                        _input.addClass("event-disabled");
+                        var _val1=moment().subtract('days', 29),
+                            _val2=moment();
+                        _input.val(_val1.format("YYYY-MM-DD")+' 到 '+_val2.format("YYYY-MM-DD"));
+                        break;
+                }
+            });
+            $.jqPaginator('#pagination', {
+                totalPages: 100,
+                visiblePages: 10,
+                currentPage: 3,
+                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
+                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
+                page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+                onPageChange: function (num, type) {
+                    // $('#p2').text(type + '：' + num);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

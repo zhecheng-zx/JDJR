@@ -11,6 +11,7 @@
     <title>舆情压力监控系统-异常指标企业预警</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="../vendor/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
     <link href="../vendor/fullpage.js/dist/jquery.fullpage.css" rel="stylesheet" />
     <link href="../css/animate.css" rel="stylesheet" />
@@ -57,10 +58,15 @@
     <div class="container">
         <div class="row select-caption">
             <div class="col-md-10">
-                <select class="selectpicker">
-                    <option value="">最近七天</option>
-                    <option value="">最近一个月</option>
-                </select>
+                <div class="select-datePricker">
+                    <select  id="sld" class="selectpicker" title="请选择">
+                        <option value="近三天">近三天</option>
+                        <option value="近七天">近七天</option>
+                        <option value="近三十天">近三十天</option>
+                        <option value="自定义时间">自定义时间</option>
+                    </select>
+                    <input type="text" class="form-control" readonly id="start_end_date" />
+                </div>
                 <select class="selectpicker">
                     <option value="">全部等级</option>
                 </select>
@@ -90,6 +96,9 @@
 <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 <script src="../vendor/headRoom/Headroom.js"></script>
 <script src="../vendor/headRoom/jQuery.headroom.js"></script>
+<script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+<script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../script/select-datepicker.js"></script>
 <script src="../script/exceptionEnterpriseWarning/exceptionEnterpriseWarning.js"></script>
 </body>
 </html>

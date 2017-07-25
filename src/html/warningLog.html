@@ -7,6 +7,7 @@
     <title>舆情压力监控系统-预警日志</title>
     <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="../css/style.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
@@ -48,11 +49,15 @@
         <div class="container">
             <div class="search-box2 clearfix">
                 <div class="pull-left">
-                    <select class="selectpicker">
-                        <option value="近七天">近七天</option>
-                        <option value="近七天">近三天</option>
-                        <option value="今天">今天</option>
-                    </select>
+                    <div class="select-datePricker">
+                        <select  id="sld" class="selectpicker" title="请选择">
+                            <option value="近三天">近三天</option>
+                            <option value="近七天">近七天</option>
+                            <option value="近三十天">近三十天</option>
+                            <option value="自定义时间">自定义时间</option>
+                        </select>
+                        <input type="text" class="form-control" readonly id="start_end_date" />
+                    </div>
                     <select class="selectpicker">
                         <option value="全部感情">全部预警</option>
                         <option value="正面">正面</option>
@@ -269,6 +274,9 @@
     <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
     <script src="../vendor/scrollbar/jquery.nicescroll.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../script/select-datepicker.js"></script>
     <script src="../script/common.js"></script>
     <script src="../script/warningLog/warningLog.js"></script>
 </body>
