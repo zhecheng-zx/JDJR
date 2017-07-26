@@ -526,19 +526,14 @@ footer p{
     font-size:12px;
 }
 .head-wrapper{
-    height:477px;
-    background:url(../images/search-bg.png) center 0 no-repeat;
+    height: 392px;
+    background: url(../images/new_banner02.jpg) center 0 no-repeat;
     background-size:cover;
 }
-.pressure-search{
-
-
-
-}
+.pressure-search{margin-top: 100px;}
 .pressure-search .search-box{
     margin:0 auto;
     text-align:center;
-    margin-top:150px;
 }
 .pressure-search .search-box h2{
     font-size:34px;
@@ -2334,17 +2329,18 @@ span.big-text {
 
 /*--------------------------------头部蓝色 高376  观点分析页面用到   start---------------------------------------*/
 .header-wrapper.blue{
-    height: 376px;
-    background-image: url("../images/banner4.png");
+    height: 289px;
+    background-image: url("../images/new_banner01.jpg");
+    background-position: center center;
 }
 
 .header-wrapper.blue .banner{
-    margin-top: 70px;
+    margin-top: 30px;
     color: #fff;
 }
 
 .header-wrapper.blue .banner .title{
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .header-wrapper.blue .banner .yuqingIndex{
@@ -2357,7 +2353,7 @@ span.big-text {
     height: 40px;
     line-height: 40px;
     color:rgba(245, 245, 245, .70);
-    background: #1964d3;
+    background: #1358ca;
     cursor:pointer;
     transition:all .6s ease-out;
     text-decoration: none;
@@ -2367,7 +2363,7 @@ span.big-text {
 .header-wrapper.blue .banner .item:focus,
 .header-wrapper.blue .banner .item.active{
     color:#f5f5f5;
-    background: #1157c9;
+    background: #00a4fa;
 }
 
 .header-wrapper.blue .banner .icon{
