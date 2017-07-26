@@ -28,6 +28,7 @@ $(function () {
         });
 
         $('#keyword-accordion').append($html.show());
+        honeySwitch.init();
     });
 
     $('#add-jingrong-rule').click(function () {
@@ -45,6 +46,7 @@ $(function () {
             deleteRule(length, 'jingrong-accordion');
         });
         $('#jingrong-accordion').append($html.show());
+        honeySwitch.init();
     });
 
     $('.delete-rule').click(function () {
@@ -125,6 +127,10 @@ $(function () {
         var val = $(this).val();
         $(this).closest('.row').find('.negative-slide').slider('setValue', parseFloat(val));
     });
+
+    $('.exist-mail i.glyphicon').click(function () {
+        $(this).closest('span').remove();
+    });
 });
 
 
@@ -148,3 +154,7 @@ function dotClick() {
     }
 }
 
+
+function initSwitch(){
+
+}
