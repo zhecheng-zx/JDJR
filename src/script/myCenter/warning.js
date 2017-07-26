@@ -26,9 +26,15 @@ $(function () {
         $html.find('.delete-rule').click(function () {
             deleteRule(length, 'keyword-accordion');
         });
-
         $('#keyword-accordion').append($html.show());
         honeySwitch.init();
+        $html.find('ul.list').each(function () {
+            var height = $(this).height();
+            if(height > $(this).parent().height()) {
+                $(this).parent().siblings('.dot').show();
+            }
+        });
+        $html.find('div.dot').click(dotClick)
     });
 
     $('#add-jingrong-rule').click(function () {
@@ -44,6 +50,27 @@ $(function () {
         $html.find('.panel-collapse').attr('id', id);
         $html.find('.delete-rule').click(function () {
             deleteRule(length, 'jingrong-accordion');
+        });
+        $html.find('input.slider').slider({
+            formatter: function (value) {
+                return value;
+            }
+        });
+        $html.find('.pressure-slide').on('change', function (e) {
+            var val = e.value.newValue;
+            $(this).closest('.row').find('.pressure-input').val(val);
+        });
+        $html.find('.negative-slide').on('change', function (e) {
+            var val = e.value.newValue;
+            $(this).closest('.row').find('.negative-input').val(val);
+        });
+        $html.find('.pressure-input').change(function () {
+            var val = $(this).val();
+            $(this).closest('.row').find('.pressure-slide').slider('setValue', parseFloat(val));
+        });
+        $html.find('.negative-input').change(function () {
+            var val = $(this).val();
+            $(this).closest('.row').find('.negative-slide').slider('setValue', parseFloat(val));
         });
         $('#jingrong-accordion').append($html.show());
         honeySwitch.init();
@@ -102,7 +129,7 @@ $(function () {
 
     });
 
-    $('input.slider').slider({
+    $('input.exist-slider').slider({
         formatter: function (value) {
             return value;
         }
@@ -152,9 +179,4 @@ function dotClick() {
 //                    $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true});
 //                }
     }
-}
-
-
-function initSwitch(){
-
 }
