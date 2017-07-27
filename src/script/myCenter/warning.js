@@ -19,7 +19,7 @@ $(function () {
             return ;
         }
         var id = "keyword-collapse" + length;
-        var $html = $('#keyword-template').children().clone();
+        var $html = $('#keyword-template').children().clone(true);
         $html.find('.panel-heading').attr('href', '#' + id);
         $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
@@ -27,14 +27,18 @@ $(function () {
             deleteRule(length, 'keyword-accordion');
         });
         $('#keyword-accordion').append($html.show());
-        honeySwitch.init();
+        //
+        $html.find('span.span-switch').addClass('switch-on').removeClass('span-switch');
+
         $html.find('ul.list').each(function () {
             var height = $(this).height();
             if(height > $(this).parent().height()) {
                 $(this).parent().siblings('.dot').show();
             }
         });
-        $html.find('div.dot').click(dotClick)
+        $html.find('div.dot').click(dotClick);
+        honeySwitch.initCertainOne($html.find('.switch-on'));
+        $html.find('.rule-select').addClass('selectpicker ').selectpicker();
     });
 
     $('#add-jingrong-rule').click(function () {
@@ -63,7 +67,7 @@ $(function () {
         $html.find('.negative-slide').on('change', function (e) {
             var val = e.value.newValue;
             $(this).closest('.row').find('.negative-input').val(val);
-        });
+        });-
         $html.find('.pressure-input').change(function () {
             var val = $(this).val();
             $(this).closest('.row').find('.pressure-slide').slider('setValue', parseFloat(val));
@@ -72,8 +76,10 @@ $(function () {
             var val = $(this).val();
             $(this).closest('.row').find('.negative-slide').slider('setValue', parseFloat(val));
         });
+        $html.find('span.span-switch').addClass('switch-on').removeClass('span-switch');
         $('#jingrong-accordion').append($html.show());
-        honeySwitch.init();
+        honeySwitch.initCertainOne($html.find('.switch-on'));
+        $html.find('.rule-select').addClass('selectpicker').selectpicker();
     });
 
     $('.delete-rule').click(function () {
@@ -104,13 +110,14 @@ $(function () {
         }else {
             var height = $(this).siblings('.list-wrapper').find('.list').height(),
                 $sib = $(this).siblings('.list-wrapper');
-            $sib.show().height(height).niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
+            $sib.show().height(height)
+            if($sib.getNiceScroll().length == 0){
+                $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
+            }else {
+                //显示滚动条  没找到方法
+
+            }
             $sib.getNiceScroll().resize();
-//                if($sib.getNiceScroll()){
-//                    $sib.getNiceScroll().resize().show();
-//                }else{
-//                    $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true});
-//                }
         }
     });
 
@@ -172,11 +179,12 @@ function dotClick() {
     }else {
         var height = $(this).siblings('.list-wrapper').find('.list').height(),
             $sib = $(this).siblings('.list-wrapper');
-        $sib.show().height(height).niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
-//                if($sib.getNiceScroll()){
-//                    $sib.getNiceScroll().resize().show();
-//                }else{
-//                    $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true});
-//                }
+        $sib.show().height(height)
+        if($sib.getNiceScroll().length == 0){
+            $sib.niceScroll({styler:"fb",cursorcolor:"#ebebeb",iframeautoresize:true,autohidemode:false});
+        }else {
+            //显示滚动条  没找到方法
+
+        }
     }
 }
