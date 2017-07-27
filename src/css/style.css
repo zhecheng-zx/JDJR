@@ -3277,3 +3277,26 @@ fieldset[disabled] .btn-defaults.focus {
 .modal .modal-header-primary .close:hover{
     opacity: .9;
 }
+.js-example-tokenizer{width: 410px;height:200px;}
+.select2-container--default .select2-selection--multiple{
+    height:120px;
+    border:1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border:1px solid #cccccc;
+    height:120px;
+}
+.select2-container.select2-container--default.select2-container--open{
+    display: none;
+}
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--open{
+    display: inline-block;
+}
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+    border-radius: 4px;
+}
