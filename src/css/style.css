@@ -3188,3 +3188,92 @@ input.form-control.no-border:focus{
     box-shadow:none;
     background-color: #f5f5f5;
 }
+
+.btn-defaults {
+    padding:4px 20px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-defaults:focus,
+.btn-defaults.focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+.btn-defaults:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-defaults:active{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-defaults:active:hover,
+.btn-defaults:active:focus,
+.btn-defaults:active.focus{
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
+.btn-defaults:active,
+.btn-defaults.active{
+    background-image: none;
+}
+.btn-defaults.disabled:hover,
+.btn-defaults[disabled]:hover,
+fieldset[disabled] .btn-defaults:hover,
+.btn-defaults.disabled:focus,
+.btn-defaults[disabled]:focus,
+fieldset[disabled] .btn-defaults:focus,
+.btn-defaults.disabled.focus,
+.btn-defaults[disabled].focus,
+fieldset[disabled] .btn-defaults.focus {
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-defaults .badge {
+    color: #fff;
+    background-color: #333;
+}
+.modal-no-radius .modal-content{
+    border-radius: 0;
+}
+.modal-no-radius .modal-header{
+    border: 0;
+}
+.modal-no-radius .modal-footer{
+    border: 0;
+}
+.modal-no-radius .modal-body{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.modal-no-radius .modal-body .title{
+    margin-top: 0;
+    margin-bottom: 10px;
+    color:#34495e;
+    font-size: 16px;
+    font-weight: 400;
+}
+.modal-no-radius .modal-body .sec-title{
+    color:#8d989d;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.modal .modal-header-primary{
+    padding-left: 20px;
+    padding-right: 20px;
+    color:#ffffff;
+    font-size: 14px;
+    background-color: #1e90ff;
+}
+.modal .modal-header-primary .close{
+    color: #ffffff;
+    opacity: .4;
+}
+.modal .modal-header-primary .close:hover{
+    opacity: .9;
+}
