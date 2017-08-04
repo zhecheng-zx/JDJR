@@ -60,15 +60,31 @@
     $(".list-box").on("click","li",function(){
        $(this).addClass("active").siblings().removeClass("active"); 
     });
-    var step = 113;
+    var step = 83,_top=15;
+    $(window).resize(function () {
+        if($(window).height()>=800){
+            _top=25;
+            step=113;
+        }else{
+            step = 83;
+            _top=15
+        }
+    });
     $(".slide-border-box ul li").mouseenter(function() {
         var _ele = $(".slide-border-box ul li"),
             _eleIndex = $(this).index();
+        if($(window).height()>=800){
+            _top=25;
+            step=113;
+        }else{
+            step = 83;
+            _top=15
+        }
         $(this).addClass("current").siblings().removeClass("current");
         _ele.removeClass("change-red").eq(_eleIndex).addClass("change-red");
         $(this).parents(".panel-body").find(".change-box div.lyt-box").eq(_eleIndex).fadeIn(300).siblings("div.lyt-box").hide();
         $(".slide-border-right").animate({
-            top: 25 + step * _eleIndex
+            top: _top + step * _eleIndex
         }, 300);
     });
     $(".company-box ul li").mouseenter(function() {
@@ -374,31 +390,39 @@
         }
     };
     var fpOptions={
-        'anchors': ['header','page1', 'page2', 'page3', 'page4','page5','page6','footer'],
+        'anchors': ['header','banner','page1', 'page2', 'page3', 'page4','page5','page6','footer'],
         'navigation': true,
         'navigationPosition': 'right',
-        'navigationTooltips': ['','舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情'],
+        'navigationTooltips': ['','','舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情',''],
+        'beforeLeave':function () {
+
+        },
         'afterLoad': function(anchorLink, index){
-            if(index == 3){
-                myChart.setOption(option,true);
+            if(anchorLink=="header"||anchorLink=="banner"){
+                $("#fp-nav").addClass("hide");
+            }else {
+                $("#fp-nav").removeClass("hide");
             }
             if(index == 4){
+                myChart.setOption(option,true);
+            }
+            if(index == 5){
                 myChart2.setOption(option2,true);
                 myChart3.setOption(option2,true);
                 myChart4.setOption(option2,true);
             }
-            if(index==5){
+            if(index==6){
                 $("#fp-nav").addClass("white");
             }
         },
         'onLeave':function (index,nextIndex,direction) {
-            if(index==5){
+            if(index==6){
                 $("#fp-nav").removeClass("white");
             }
-            if(index==2&&nextIndex==5){
+            if(index==3&&nextIndex==6){
                 $("#fp-nav").removeClass("white");
             }
-            if(index==4&&direction=="down"&&nextIndex==5||index==6&&direction=="up"&&nextIndex==5){
+            if(index==5&&direction=="down"&&nextIndex==6||index==7&&direction=="up"&&nextIndex==6){
                 $("#fp-nav").addClass("white");
             }
         }
@@ -410,7 +434,7 @@
         switch(select_val){
             case "自定义时间":
                 _input.removeClass("event-disabled");
-                selectDatePicker.init(_input,"right",function () {
+                selectDatePicker.init(_input,"left",function () {
 
                 });
                 break;

@@ -3300,3 +3300,113 @@ fieldset[disabled] .btn-defaults.focus {
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
     border-radius: 4px;
 }
+/*风险评估单的第一屏*/
+.header-no-banner{
+    height:64px;
+    background-image: none;
+    background-color: #181f33;
+}
+#fp-nav ul li:nth-of-type(2){
+    display: none;
+}
+.bg-banner{
+    height:100%;
+    background-image: url("../images/background_1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.bg-banner>.container{
+    position: relative;
+    height:100%;
+}
+.bg-banner-content{
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    margin-top:-170px;
+    width: 100%;
+    text-align: center;
+}
+.bg-banner-content>img{
+    margin-bottom: 48px;
+}
+.bg-banner-content .company-box{
+    margin-bottom: 30px;
+    font-size: 32px;
+    color:#dbc79a;
+}
+.bg-banner-content .publish-time{
+    margin-bottom: 36px;
+    color:#dbc79a;
+    font-size: 29px;
+}
+.bg-banner-content .btn-radius .remind-message{
+    display: inline-block;
+    padding: 1px 20px 2px;
+    line-height: 25px;
+    border: 1px solid #c1a76d;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #dbc79a;
+}
+.bg-banner-content .btn-radius .remind-message a{
+    color:#fbb906;
+}
+.bg-banner-content .btn-radius .remind-message a:hover,
+.bg-banner-content .btn-radius .remind-message a:focus{
+    color:#FCD11D;
+}
+/*风险评估单的小分辨率适配*/
+@media screen and (max-height:800px) {
+    .panel-custom .panel-heading {
+        padding: 30px 0 37px;
+    }
+    span.big-text {
+        top: -30px;
+    }
+    .panel-custom .panel-body {
+        padding: 0 0 25px;
+    }
+    .charts{
+        height: 400px;
+    }
+    .background-3 .type-wrapper{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .change-box.h500{
+        height:400px;
+    }
+    .list-box>li>h3{
+        margin-top: 0;
+    }
+    .list-box>li>p:last-child{
+        margin-bottom:0;
+    }
+    .list-box>li label {
+        margin-bottom: 0;
+    }
+    .lyt {
+        padding: 20px 0;
+    }
+    .company-box .company-layout>li {
+        padding: 16px 20px;
+    }
+    .company-box .company-layout .company-name {
+        margin-bottom: 10px;
+    }
+    .lyt-news .lyt {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .lyt-news .lyt .details {
+        margin-top: 5px;
+    }
+    .layout-box {
+        padding: 10px 0 10px 15px;
+    }
+    .slide-border-right {
+        height: 40px;
+    }
+}
