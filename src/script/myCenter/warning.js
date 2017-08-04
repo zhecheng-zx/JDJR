@@ -188,3 +188,35 @@ function dotClick() {
         }
     }
 }
+
+/*这段是关键词弹出层需要的js*/
+$("[data-toggle='tooltip']").tooltip();
+$(".scrollbar").niceScroll({styler:"fb",cursorcolor:"#ebebeb"});
+$(".system-keyword>.form-control-static").on("click",function () {
+    var _this=$(this);
+    $(".backdrop").show();
+    _this.parent().addClass("open");
+});
+$(".system-keyword").on("click",".layer-title>.close",function () {
+    closeLayer();
+});
+$(".search-link").on("click","a",function () {
+    var _this= $(this);
+    _this.addClass("current").siblings().removeClass("current");
+    if(_this.hasClass("all")){
+        _this.parents(".layer").find(".list>li").addClass("active");
+    }else if(_this.hasClass("allnot")){
+        _this.parents(".layer").find(".list>li").removeClass("active");
+    }
+});
+$(".system-keyword .layer").on("click",".list>li",function () {
+    $(this).addClass("active");
+});
+$("#add_keyword").on("hide.bs.modal",function () {
+    closeLayer();
+});
+/*关闭弹层内的弹层layer*/
+function closeLayer() {
+    $(".backdrop").hide();
+    $(".system-keyword").removeClass("open");
+}
