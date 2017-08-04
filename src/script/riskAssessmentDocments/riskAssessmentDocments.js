@@ -26,6 +26,10 @@
         indicatorContainer4=radialIndicator("#indicatorContainer-4",radialOptions);
         indicatorContainer5=radialIndicator("#indicatorContainer-5",radialOptions);
         indicatorContainer6=radialIndicator("#indicatorContainer-6",radialOptions);
+        $(".indicatorContainer").each(function () {
+            var _id=$(this).attr("id");
+            indicatorContainer6=radialIndicator('#'+_id,radialOptions);
+        });
     setTimeout(function () {
         indicatorContainer.animate(86);
         indicatorContainer2.animate(86);
@@ -70,7 +74,8 @@
             _top=15
         }
     });
-    $(".slide-border-box ul li").mouseenter(function() {
+    /*相关人物的切换点击事件*/
+    $(".slide-border-box").on("click","ul>li",function() {
         var _ele = $(".slide-border-box ul li"),
             _eleIndex = $(this).index();
         if($(window).height()>=800){
@@ -82,20 +87,22 @@
         }
         $(this).addClass("current").siblings().removeClass("current");
         _ele.removeClass("change-red").eq(_eleIndex).addClass("change-red");
-        $(this).parents(".panel-body").find(".change-box div.lyt-box").eq(_eleIndex).fadeIn(300).siblings("div.lyt-box").hide();
+        $(this).parents(".panel-body").find(".change-box div.lyt-box").eq(_eleIndex).fadeIn(300).css({'display':'table'}).siblings("div.lyt-box").hide();
         $(".slide-border-right").animate({
             top: _top + step * _eleIndex
         }, 300);
     });
-    $(".company-box ul li").mouseenter(function() {
+    /*相关企业舆情的切换事件*/
+    $(".company-box").on("click","ul>li",function() {
             _eleIndex = $(this).index();
         $(this).addClass("active").siblings().removeClass("active");
-        $(this).parents(".panel-body").find(".change-box div.lyt-box").eq(_eleIndex).fadeIn(300).siblings("div.lyt-box").hide();
+        $(this).parents(".panel-body").find(".change-box div.lyt-box").eq(_eleIndex).fadeIn(300).css({'display':'table'}).siblings("div.lyt-box").hide();
     });
-    $(".event-list ul li").mouseenter(function() {
+    /*事件聚合的切换的点击事件*/
+    $(".event-list").on("click","ul>li",function() {
             _eleIndex = $(this).index();
         $(this).addClass("active").siblings().removeClass("active");
-        $(this).parents(".panel-body").find(".change-box div.charts").eq(_eleIndex).fadeIn(300).siblings("div.charts").hide();
+        $(this).parents(".panel-body").find(".change-box div.charts").eq(_eleIndex).fadeIn(300).css({'display':'table'}).siblings("div.charts").hide();
     });
     $(".remind-message-box").on("click",".remind-message .close-remind",function () {
         $(this).parents(".remind-message-box").fadeOut(1200);
@@ -394,6 +401,7 @@
         'navigation': true,
         'navigationPosition': 'right',
         'navigationTooltips': ['','','舆情量化指标', '舆情压力趋势', '舆情事件聚合', '企业舆情视界','相关企业舆情','相关人物舆情',''],
+        'normalScrollElements':'.scrollbar',
         'beforeLeave':function () {
 
         },
@@ -458,4 +466,7 @@
                 break;
         }
     });
+
+    $(".scrollbar").niceScroll({styler:"fb",cursorcolor:"#ebebeb"});
+    $("[data-toggle='tooltip']").tooltip();
 })(jQuery);

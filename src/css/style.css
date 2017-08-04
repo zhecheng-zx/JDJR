@@ -1122,6 +1122,9 @@ span.big-text {
     color:#323232;
     text-decoration:none;
 }
+.list-box>li>h3>a:hover{
+    color:#1e90ff;
+}
 .list-box>li label{
     width:85px;
     color:#a5a5a5;
@@ -1201,6 +1204,10 @@ span.big-text {
     background-image: -o-linear-gradient(to right, #dcc186, #c1923e);
     background-image: linear-gradient(to right, #dcc186, #c1923e);
     outline: none;
+}
+.panel-body .company-box{
+    height:570px;
+    border-radius: 6px;
 }
 .company-box .company-layout {
     background: -webkit-linear-gradient(left top, #04bae2 , #1997f3); /* Safari 5.1 - 6.0 */
@@ -2237,11 +2244,21 @@ span.big-text {
 }
 
 .text-icon.blue{
-    /*暂定  设计未出*/
-    border-color: blue;
+    color:#1e90ff;
+    border-color: #1e90ff;
 }
 
 .text-icon.blue::before{
+    content: '中性';
+    font-style: normal;
+}
+
+.text-icon.green{
+    color:#449d44;
+    border-color: #449d44;
+}
+
+.text-icon.green::before{
     content: '正面';
     font-style: normal;
 }
@@ -2401,7 +2418,7 @@ span.big-text {
 }
 
 .compare-wrapper .top .up-div{
-    background-color: #0ea9ea;
+    background-color: #27d687;
     display: inline-block;
 }
 
@@ -2436,7 +2453,8 @@ span.big-text {
 .pointAnalyze .compare-wrapper .top .center{
     font-size: 36px;
     font-weight: bold;
-    color: #1997f3;
+    color: #535353;
+    font-style: italic;
 }
 
 .pointAnalyze .compare-wrapper .progress{
@@ -2445,7 +2463,7 @@ span.big-text {
 }
 
 .pointAnalyze .compare-wrapper .progress .progress-bar{
-    background: #08b3e5;
+    background: #27d687;
 }
 
 .pointAnalyze .compare-wrapper .summary{
@@ -2479,7 +2497,7 @@ span.big-text {
     width: 90px;
     text-align: center;
     font-size: 20px;
-    color: #1997f3;
+    color: #27d687;
     font-weight: bold;
 }
 
@@ -2590,7 +2608,7 @@ span.big-text {
 }
 
 .pointAnalyze .title-wrapper .positive-list ul li{
-    color: #1997f3;
+    color: #27d687;
 }
 
 .pointAnalyze .title-wrapper .negative-list ul li{
@@ -2948,11 +2966,9 @@ a.collapsed>span.glyphicon-chevron-down{
     height: 50px;
     margin-top: 20px;
     overflow: hidden;
-    max-height: 150px;
 }
-
 .panel-body .box .list{
-    width: calc(100% - 24px);
+    width: calc(100% - 35px);
 }
 
 .panel-body .box .list li{
@@ -2960,7 +2976,9 @@ a.collapsed>span.glyphicon-chevron-down{
     margin-right: 15px;
     line-height: 50px;
 }
-
+.panel-body .list-wrapper.open{
+    max-height:150px;
+}
 .box .list li .btn{
     border-radius: 14px;
     font-size: 13px;
@@ -2982,7 +3000,7 @@ a.collapsed>span.glyphicon-chevron-down{
 .box .dot{
     position: absolute;
     top: 76px;
-    right: 40px;
+    right: 50px;
     font-weight: bolder;
     font-size: 18px;
     color: #a5a5a5;
@@ -3332,6 +3350,7 @@ fieldset[disabled] .btn-defaults.focus {
     margin-bottom: 48px;
 }
 .bg-banner-content .company-box{
+    height:auto;
     margin-bottom: 30px;
     font-size: 32px;
     color:#dbc79a;
@@ -3356,6 +3375,10 @@ fieldset[disabled] .btn-defaults.focus {
 .bg-banner-content .btn-radius .remind-message a:hover,
 .bg-banner-content .btn-radius .remind-message a:focus{
     color:#FCD11D;
+}
+.scrollbar6{height:565px;}
+.event-list{
+    height:459px;
 }
 /*风险评估单的小分辨率适配*/
 @media screen and (max-height:800px) {
@@ -3397,16 +3420,29 @@ fieldset[disabled] .btn-defaults.focus {
         margin-bottom: 10px;
     }
     .lyt-news .lyt {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 18px;
+        padding-bottom: 18px;
     }
     .lyt-news .lyt .details {
-        margin-top: 5px;
+        margin-top: 6px;
     }
     .layout-box {
         padding: 10px 0 10px 15px;
     }
     .slide-border-right {
         height: 40px;
+    }
+    .background-6 .lyt-box .lyt-item .lyt{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .panel-body .company-box{
+        height:445px;
+    }
+    .scrollbar6{
+        height:415px;
+    }
+    .event-list{
+        height:354px;
     }
 }
