@@ -43,6 +43,17 @@ $(function(){
                 break;
         }
     });
+    $(".search input[type=text]").on("input propertychange",function () {
+        var history_box=$(this).parents('.search-box').find(".history-box");
+        if(!history_box.hasClass("open")){
+            history_box.addClass("open");
+        }
+    }).on("blur",function () {
+        var history_box=$(this).parents('.search-box').find(".history-box");
+        if(history_box.hasClass("open")){
+            history_box.removeClass("open");
+        }
+    });
 
     var operateFormatter = function (value, row, index) {
         return [
