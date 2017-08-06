@@ -3510,10 +3510,12 @@ textarea{
 }
 .history-list {
     width: 600px;
+    max-height: 268px;
     padding: 15px 0;
     border-radius: 5px;
     text-align: left;
     background-color: #ffffff;
+    overflow-y: auto;
 }
 
 .history-list li.item {
@@ -3527,7 +3529,6 @@ textarea{
 }
 .history-box.open{
     display: block;
-    max-height: 268px;
     z-index: 99;
 }
 .history-box.open>.history-list{
