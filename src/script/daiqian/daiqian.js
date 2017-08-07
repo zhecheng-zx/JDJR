@@ -56,7 +56,7 @@ $(function(){
             /*
             * 下面这一句是拼html节点的，可以换用ajax；
             * */
-            history_box.find(".history-list").empty().append("<li class='item'>"+_this_val+"</li>");
+            history_box.find(".history-list").empty().append("<li class='item'>"+_this_val+"这是模糊搜索的结果</li>");
     });
     $(document).on("click",".history-list li.item",function () {
         var _this=$(this);
