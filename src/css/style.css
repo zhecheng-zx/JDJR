@@ -3376,6 +3376,57 @@ fieldset[disabled] .btn-defaults.focus {
 .bg-banner-content .btn-radius .remind-message a:focus{
     color:#FCD11D;
 }
+.bg-banner-content .btn-box{
+    margin-top: 30px;
+}
+.btn-golden,
+.btn-golden:hover,
+.btn-golden:active,
+.btn-golden:visited,
+.btn-golden:focus{
+    color:#ffffff;
+    background-color: #d0b274;
+    outline: none;
+}
+.select-golden .bootstrap-select>.btn{
+    width: 125px;
+    color:#ffffff;
+    background-color: #d0b274;
+    border: 1px solid #d0b274;
+    border-radius: 50px;
+}
+.select-golden .bootstrap-select .dropdown-menu,
+.select-golden .bootstrap-select.open .dropdown-menu.open{
+    background-color: #d0b274;
+    border:1px solid #c1923e;
+    color:#ffffff;
+}
+.select-golden .bootstrap-select.open:before,
+.select-golden .bootstrap-select.open:after{
+    border-bottom-color: #d0b274;
+}
+.select-golden .dropdown-menu>li>a{
+    color:#ffffff;
+}
+.select-golden .dropdown-menu>li>a:hover{
+    color:#ffffff;
+    background-color: rgba(193,146,62,.6);
+}
+.select-golden .open>.dropdown-toggle.btn-default.focus,
+.select-golden .open>.dropdown-toggle.btn-default:focus,
+.select-golden .open>.dropdown-toggle.btn-default:hover{
+    background-color: #d0b274;
+    color:#ffffff;
+}
+.genzongdan{
+    margin-top: -260px;
+}
+.select-golden .dropdown-menu>li>a:focus,
+.select-golden .dropdown-menu>li>a:active,
+.select-golden .dropdown-menu>li.selected>a{
+    color:#ffffff;
+    background-color:#c1923e;
+}
 .scrollbar6{height:565px;}
 .event-list{
     height:459px;
