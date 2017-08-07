@@ -43,18 +43,39 @@ $(function(){
                 break;
         }
     });
-    $(".search input[type=text]").on("input propertychange",function () {
-        var history_box=$(this).parents('.search-box').find(".history-box");
-        if(!history_box.hasClass("open")){
+    $(".search input[type=text]").on("focus",function () {
+        var _this=$(this),
+            history_box=_this.parents('.search-box').find(".history-box");
+        if(!history_box.hasClass("open")) {
             history_box.addClass("open");
         }
-    }).on("blur",function () {
-        var history_box=$(this).parents('.search-box').find(".history-box");
-        if(history_box.hasClass("open")){
-            history_box.removeClass("open");
+    }).on("keyup",function () {
+        var _this=$(this),
+            _this_val=_this.val(),
+            history_box=_this.parents('.search-box').find(".history-box");
+            /*
+            * 下面这一句是拼html节点的，可以换用ajax；
+            * */
+            history_box.find(".history-list").empty().append("<li class='item'>"+_this_val+"</li>");
+    });
+    $(document).on("click",".history-list li.item",function () {
+        var _this=$(this);
+        $(".search input[type=text]").val(_this.text());
+        _this.parents(".search-box").find(".history-box").removeClass("open");
+    });
+    $("body").on("click",function (e) {
+        var _className=e.target.className,
+            openClassName=["input","history-list"];
+        if(_className.length>0){
+            for(var i in openClassName){
+                if(_className==openClassName[i]){
+                    return;
+                }else{
+                    $(".history-box").removeClass("open");
+                }
+            }
         }
     });
-
     var operateFormatter = function (value, row, index) {
         return [
             "<a href='javascript:void(0);' class='edit search mr20'><span class='glyphicon glyphicon-eye-open'></span> 查看</a>",

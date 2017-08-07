@@ -3571,6 +3571,7 @@ textarea{
 
 .history-list li.item {
     padding:7px 15px;
+    cursor:pointer;
 }
 .history-list li.item:hover {
     background-color:#f5f5f5;
