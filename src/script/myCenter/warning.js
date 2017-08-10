@@ -23,7 +23,8 @@ $(function () {
         $html.find('.panel-heading').attr('href', '#' + id);
         $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
-        $html.find('.delete-rule').click(function () {
+        $html.find('.delete-rule').click(function (e) {
+            e.stopPropagation();
             deleteRule(length, 'keyword-accordion');
         });
         $('#keyword-accordion').append($html.show());
@@ -52,7 +53,8 @@ $(function () {
         $html.find('.panel-heading').attr('href', '#' + id);
         $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
-        $html.find('.delete-rule').click(function () {
+        $html.find('.delete-rule').click(function (e) {
+            e.stopPropagation();
             deleteRule(length, 'jingrong-accordion');
         });
         $html.find('input.slider').slider({
@@ -82,7 +84,10 @@ $(function () {
         $html.find('.rule-select').addClass('selectpicker').selectpicker();
     });
 
-    $('.delete-rule').click(function () {
+    $('.delete-rule').click(function (e) {
+        if($(this).parents(".panel-heading").hasClass("collapsed")){
+            e.stopPropagation();
+        }
         $('#deleteModel').modal();
     });
 
@@ -165,6 +170,13 @@ $(function () {
     $('.exist-mail i.glyphicon').click(function () {
         $(this).closest('span').remove();
     });
+    $(window).on("resize",function(){
+	 wrapperHeight();
+	});
+	function wrapperHeight(){
+	 $(".page-wrapper").height($(".page-wrapper>.container").height()+$(".page-wrapper>.container")[0].offsetTop+20);
+	}
+	wrapperHeight();
 });
 
 
