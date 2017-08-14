@@ -177,6 +177,11 @@ $(function () {
 	 $(".page-wrapper").height($(".page-wrapper>.container").height()+$(".page-wrapper>.container")[0].offsetTop+20);
 	}
 	wrapperHeight();
+    $(document).on("click",".list-wrapper>.list .btn>span",function(e){
+        e.stopPropagation();
+        console.log(e)
+        alert(1);
+    });
 });
 
 
@@ -216,13 +221,26 @@ $(".search-link").on("click","a",function () {
     var _this= $(this);
     _this.addClass("current").siblings().removeClass("current");
     if(_this.hasClass("all")){
+        /*全选*/
         _this.parents(".layer").find(".list>li").addClass("active");
     }else if(_this.hasClass("allnot")){
-        _this.parents(".layer").find(".list>li").removeClass("active");
+        /*反选*/
+        _this.parents(".layer").find(".list>li").each(function () {
+            var $this=$(this);
+            if($this.hasClass("active")){
+                $this.removeClass("active");
+            }else{
+                $this.addClass("active");
+            }
+        });
     }
 });
 $(".system-keyword .layer").on("click",".list>li",function () {
-    $(this).addClass("active");
+    if($(this).hasClass("active")){
+        $(this).removeClass("active")
+    }else{
+        $(this).addClass("active")
+    };
 });
 $("#add_keyword").on("hide.bs.modal",function () {
     closeLayer();
