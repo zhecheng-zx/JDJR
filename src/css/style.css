@@ -3027,9 +3027,14 @@ a.collapsed>span.glyphicon-chevron-down{
 }
 
 .box .row .form-group .form-control{
-    width: calc(100% - 65px);
+    width: calc(100% - 80px);
     display: inline-block;
     height: 30px;
+}
+
+.box .row .form-group .unit{
+    display: inline-block;
+    font-size: 12px;
 }
 
 .box .row .progress{

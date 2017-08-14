@@ -106,7 +106,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">关键字</label>
                         <div class="col-md-9">
-                            <select class="js-example-tokenizer form-control" multiple="multiple" title="请输入关键字，回车分隔保存"></select>
+                            <select class="js-example-tokenizer form-control slect2_need" multiple="multiple" title="请输入关键字，回车分隔保存"></select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -128,7 +128,7 @@
 <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script src="../vendor/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-<script src="../vendor/select2/js/select2.full.min.js"></script>
+<script src="../vendor/select2/js/select2.js"></script>
 <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
 <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="../vendor/select2/js/i18n/zh-CN.js"></script>
@@ -259,7 +259,7 @@
         })
         /*弹层*/
         $(".js-example-tokenizer").select2({
-            tags: true,
+            tags: true
         });
         /*时间*/
         $("input[name=endTime]").daterangepicker({
