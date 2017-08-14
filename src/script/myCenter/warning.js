@@ -23,7 +23,8 @@ $(function () {
         $html.find('.panel-heading').attr('href', '#' + id);
         $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
-        $html.find('.delete-rule').click(function () {
+        $html.find('.delete-rule').click(function (e) {
+            e.stopPropagation();
             deleteRule(length, 'keyword-accordion');
         });
         $('#keyword-accordion').append($html.show());
@@ -52,7 +53,8 @@ $(function () {
         $html.find('.panel-heading').attr('href', '#' + id);
         $html.find('a.panel-arrow').attr('href', '#' + id);
         $html.find('.panel-collapse').attr('id', id);
-        $html.find('.delete-rule').click(function () {
+        $html.find('.delete-rule').click(function (e) {
+            e.stopPropagation();
             deleteRule(length, 'jingrong-accordion');
         });
         $html.find('input.slider').slider({
@@ -83,7 +85,10 @@ $(function () {
         $html.find('.rule-select').addClass('selectpicker').selectpicker();
     });
 
-    $('.delete-rule').click(function () {
+    $('.delete-rule').click(function (e) {
+        if($(this).parents(".panel-heading").hasClass("collapsed")){
+            e.stopPropagation();
+        }
         $('#deleteModel').modal();
     });
 
@@ -167,6 +172,18 @@ $(function () {
     $('.exist-mail i.glyphicon').click(function () {
         $(this).closest('span').remove();
     });
+    $(window).on("resize",function(){
+	 wrapperHeight();
+	});
+	function wrapperHeight(){
+	 $(".page-wrapper").height($(".page-wrapper>.container").height()+$(".page-wrapper>.container")[0].offsetTop+20);
+	}
+	wrapperHeight();
+    $(document).on("click",".list-wrapper>.list .btn>span",function(e){
+        e.stopPropagation();
+        console.log(e)
+        alert(1);
+    });
 });
 
 
@@ -206,13 +223,26 @@ $(".search-link").on("click","a",function () {
     var _this= $(this);
     _this.addClass("current").siblings().removeClass("current");
     if(_this.hasClass("all")){
+        /*全选*/
         _this.parents(".layer").find(".list>li").addClass("active");
     }else if(_this.hasClass("allnot")){
-        _this.parents(".layer").find(".list>li").removeClass("active");
+        /*反选*/
+        _this.parents(".layer").find(".list>li").each(function () {
+            var $this=$(this);
+            if($this.hasClass("active")){
+                $this.removeClass("active");
+            }else{
+                $this.addClass("active");
+            }
+        });
     }
 });
 $(".system-keyword .layer").on("click",".list>li",function () {
-    $(this).addClass("active");
+    if($(this).hasClass("active")){
+        $(this).removeClass("active")
+    }else{
+        $(this).addClass("active")
+    };
 });
 $("#add_keyword").on("hide.bs.modal",function () {
     closeLayer();

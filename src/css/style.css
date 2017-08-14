@@ -3309,10 +3309,12 @@ fieldset[disabled] .btn-defaults.focus {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    overflow:auto;
 }
 .select2-container--default.select2-container--focus .select2-selection--multiple{
     border:1px solid #cccccc;
     height:120px;
+    overflow: auto;
 }
 .select2-container.select2-container--default.select2-container--open{
     display: none;
@@ -3381,6 +3383,7 @@ fieldset[disabled] .btn-defaults.focus {
 .bg-banner-content .btn-radius .remind-message a:focus{
     color:#FCD11D;
 }
+/*跟踪单*/
 .bg-banner-content .btn-box{
     margin-top: 30px;
 }
@@ -3481,12 +3484,12 @@ textarea{
 .system-keyword .layer{
     position: absolute;
     top: 0;
-    left:0;
-    right:0;
+    left:10%;
+    right:10%;
     z-index:2000;
     display: none;
     padding:10px 15px;
-    width: 100%;
+    width: 80%;
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     border-radius: 5px;
@@ -3504,6 +3507,23 @@ textarea{
 .system-keyword .layer .list>li.active .btn{
     background-color: #B1F1FD;
     color:#444444;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+.system-keyword .layer .list>li.active .btn {
+    background-color: #B1F1FD;
+    color: #444444;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+.layer .added-keyword-list>.list>li.active>.btn{
+    color:#333333;
+    background-color:#f0f7fd;
+    border-color:#1e90ff;
 }
 .layer-title {
     padding-bottom: 10px;
@@ -3576,7 +3596,7 @@ textarea{
 
 .history-list li.item {
     padding:7px 15px;
-    cursor:pointer;
+    cursor: pointer;
 }
 .history-list li.item:hover {
     background-color:#f5f5f5;
@@ -3591,6 +3611,17 @@ textarea{
 .history-box.open>.history-list{
     -webkit-box-shadow:0 0 10px rgba(0,0,0,.5);
     box-shadow:0 0 10px rgba(0,0,0,.5);
+}
+.bootstrap-select.open .dropdown-menu.open>ul {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+}
+.select-small.bootstrap-select.open .dropdown-menu.open>ul {
+    max-height: 120px !important;
+}
+.timeline .timeline-inner .lyt-box .lyt>p{
+    word-break: break-all;
+    white-space: pre-wrap;
 }
 /*风险评估单的小分辨率适配*/
 @media screen and (max-height:800px) {

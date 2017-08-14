@@ -32,7 +32,7 @@
                         <li><a href="myCenter02.html">监控企业管理</a></li>
                         <li><a href="myCenter.html">企业预警设置</a></li>
                         <li><a href="myCenter01.html">事件分类设置</a></li>
-                        <li><a href="javascript:void(0);">帮助中心</a></li>
+                        <li><a href="help.html">帮助中心</a></li>
                         <li><a href="javascript:void(0);">退出</a></li>
                     </ul>
                 </li>
@@ -61,7 +61,7 @@
                     <div class="triangle triangle-border"></div>
                 </li>
                 <li role="presentation">
-                    <a href="javascript:void(0);"> <i class="icon icon-help"></i>帮助中心</a>
+                    <a href="help.html"> <i class="icon icon-help"></i>帮助中心</a>
                     <div class="triangle"></div>
                     <div class="triangle triangle-border"></div>
                 </li>
@@ -204,6 +204,11 @@
             var _this=$(this);
             _this.parent().addClass("active").siblings().removeClass("active");
         });
+        $.fn.bootstrapTable.locales['zh-CN'].formatNoMatches=function () {
+            var _nodata='<div class="text-center"><img src="../images/jianyidan.png" /><p>无数据提示</p></div>'
+            return _nodata;
+        };
+        $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
         var options = {
             columns : [{
                 field: 'name',
@@ -267,6 +272,7 @@
             pageList : [ 10000],
             queryParamsType: '',
             onLoadSuccess:function(){
+
                 honeySwitch.init();
             }
 //                queryParams : function(params) {
