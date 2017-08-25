@@ -97,7 +97,7 @@ $(function(){
             field : 'name',
             align:"center",
             valign: "middle",
-            title : "企业名称"
+            title : "企业名称<div class='search-div small-search'><i class='glyphicon glyphicon-search search-icon'></i><input type='text' class='form-control search-text' placeholder='请输入搜索关键词'></div>"
         }, {
             field : 'exponent',
             title : "压力指数",

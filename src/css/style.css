@@ -3618,6 +3618,36 @@ textarea{
     word-break: break-all;
     white-space: pre-wrap;
 }
+/*小搜索框*/
+.search-div.small-search {
+    width: 100px;
+    display: inline-block;
+}
+
+.search-div.small-search .search-text {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 28px;
+    font-size: 12px;
+}
+
+.search-div.small-search i.search-icon {
+    top: 8px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.search-div.small-search.active {
+    position: relative;
+}
+
+.search-div.small-search.active i.search-icon {
+    right: 10px;
+    left: auto;
+}
 /*风险评估单的小分辨率适配*/
 @media screen and (max-height:800px) {
     .panel-custom .panel-heading {

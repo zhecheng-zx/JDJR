@@ -27,16 +27,21 @@ $(function () {
     //         type=scrollTop
     //     }
     // });
+
+    /*修改echarts开始*/
     var dom = document.getElementById("charts");
     var myChart = echarts.init(dom);
     var colors = ['#48a5ff', '#d14a61', "#8e99a8","#ffffff","#333333","#e6e6e6","#999999"];
     var option = {
-        color: colors,
+        // color: colors,
         tooltip: {
             trigger: 'none',
             axisPointer: {
                 type: 'cross'
             }
+        },
+        legend: {
+            data:['七日均线', '压力指数']
         },
         grid: {
             top: 30,
@@ -44,29 +49,6 @@ $(function () {
             left:60,
             right:50,
         },
-        dataZoom: [
-            {
-                show: true,
-                realtime: true,
-                start: 30,
-                end: 85,
-                zoomOnMouseWheel:false,
-                handleStyle:{
-                    color:"#2074f2"
-                }
-            },
-            {
-                type: 'inside',
-                realtime: true,
-                start: 30,
-                end: 85,
-                zoomOnMouseWheel:false,
-                borderColor:"#2074f2",
-                handleStyle:{
-                    color:"#2074f2"
-                }
-            }
-        ],
         xAxis: {
             type: 'category',
             axisTick: {
@@ -109,7 +91,7 @@ $(function () {
         },
         yAxis: {
             type: 'value',
-            name:"聚合舆情数",
+            name:"压力指数",
             axisTick: {
                 alignWithLabel: true,
                 length:0,
@@ -148,21 +130,74 @@ $(function () {
                 }
             }
         },
-        series: {
-            name:'事件发展趋势图',
-            type:'line',
-            symbol:'emptyCircle',
-            symbolSize:8,
-            smooth: true,
-            areaStyle: {
-                normal: {
-                    color:"#d6f3fd"
-                }
-            },
-            data: [3.9, 5.9, 11.1, 18.7, 48.3, -69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
-        }
+        series: [
+            {
+                name:'标准一',
+                type:'line',
+                symbol:'none',
+                symbolSize:0,
+                smooth: true,
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#e6e6e6',
+                            type:'dotted'
+                        }
+                    }
+                },
+                data: [3.9, 5.9, 4.9, 3.2, 5.2, 6.2, 4.2, 6.6, 5.4, 8.4, 3.3, 2.7]
+            },{
+                name:'标准二',
+                type:'line',
+                symbol:'none',
+                symbolSize:0,
+                smooth: true,
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#e6e6e6',
+                            type:'dotted'
+                        }
+                    }
+                },
+                data: [-9.9, -5.9, -4.9, -3.2, -5.2, -6.2, -4.2, -6.6, -5.4, -8.4, -3.3, -2.7]
+            },{
+                name:'压力指数',
+                type:'line',
+                symbol:'emptyCircle',
+                symbolSize:8,
+                smooth: true,
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            color:'#48a5ff'
+                        }
+                    }
+                },
+                data: [4, 7, 9, 18.7, 28.3, -13.2, 11.6, 16.6, 25.4, 18.4, 10.3, 0.7]
+            },{
+                name:'七日均线',
+                type:'line',
+                smooth:true,
+                itemStyle:{
+                    normal:{
+                        lineStyle:{
+                            color:'#d14a61'
+                        }
+                    }
+                },
+                data:[]
+            }
+        ]
     };
     myChart.setOption(option,true);
+    myChart.on("legendselectchanged",function (params) {
+       if(params.name=="七日均线"&&params.selected['七日均线']==false&&option.series[3].data.length==0){
+            option.series[3].data=[5,6,8,20,30,12,11,20,40,30,10,12];
+            myChart.setOption(option,true);
+       }
+    });
+    /**修改echarts 结束*/
     var options = {
         columns : [ {
             field : 'name',
