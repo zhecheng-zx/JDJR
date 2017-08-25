@@ -58,6 +58,7 @@ $(function () {
             deleteRule(length, 'jingrong-accordion');
         });
         $html.find('input.slider').slider({
+            step: 0.1,
             formatter: function (value) {
                 return value;
             }
@@ -142,6 +143,7 @@ $(function () {
     });
 
     $('input.exist-slider').slider({
+        step: 0.1,
         formatter: function (value) {
             return value;
         }
