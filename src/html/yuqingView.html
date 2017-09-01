@@ -276,8 +276,11 @@
                     </div>
                 </div>
             </div>
-            <div class="pagination-box">
-                <ul class="pagination" id="pagination"></ul>
+            <div class="pagination-box clearfix">
+                <div class="pull-left pagination-detail">
+                    <span class="pagination-info"></span>
+                </div>
+                <ul class="pagination pull-right" id="pagination"></ul>
             </div>
         </div>
     </div>
@@ -328,10 +331,15 @@
                 totalPages: 100,
                 visiblePages: 10,
                 currentPage: 3,
-                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
-                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
+                prev: '<li class="prev"><a href="javascript:;"><i class="glyphicon glyphicon-menu-left"></i></a></li>',
+                next: '<li class="next"><a href="javascript:;"><i class="glyphicon glyphicon-menu-right"></i></a></li>',
                 page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
                 onPageChange: function (num, type) {
+                    var _thisCurrentPage = parseInt(num),
+                        _totalPages = this.totalPages;
+                    var text = "显示第 "+ ((_thisCurrentPage !=0 ? (_thisCurrentPage-1) : _thisCurrentPage) * 10 + parseInt(1)) +" 到第 "+ (((_thisCurrentPage !=0 ? (_thisCurrentPage-1) : _thisCurrentPage) + parseInt(1)) * 10) +" 条记录，总共 "+ _totalPages +" 条记录";
+
+                    $(".pagination-info").text(text)
                     // $('#p2').text(type + '：' + num);
                 }
             });

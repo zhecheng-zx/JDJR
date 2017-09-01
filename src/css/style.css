@@ -3653,6 +3653,20 @@ textarea{
     right: 10px;
     left: auto;
 }
+
+.pagination-box .pagination-detail {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pagination-box .pagination-info {
+    line-height: 34px;
+}
+
+.pagination-box .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 /*风险评估单的小分辨率适配*/
 @media screen and (max-height:800px) {
     .panel-custom .panel-heading {
