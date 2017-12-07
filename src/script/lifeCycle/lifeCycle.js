@@ -255,6 +255,9 @@ $(function () {
 //                }
 
     };
+    myChart.on("click",function(params){
+        console.log(params)
+    })
 
     $('#hotTbale').bootstrapTable(options);
     $('#sld,#sld2').selectpicker().on('changed.bs.select',function () {

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="简介">
+    <meta name="keywords" content="关键词">
+    <meta name="author" content="zx">
+    <meta name="robots" content="index,follow">
+    <title>舆情压力监控系统</title>
+    <link href="../vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendor/bootstrap-table/bootstrap-table.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="../vendor/messages/messages.css" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="../vendor/html5shiv_3.7.3/html5shiv.min.js"></script>
+        <script src="../vendor/respond.js_1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+   <div class="head-wrapper header-linear-gradient-bg">
+        <div class="header" id="header">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="javascript:void(0);"><img src="../images/JD-finance-logo.png" class="logo">
+                        舆情压力监控系统</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right ">
+                    <li><a href="javascript:void(0);"  data-toggle="dropdown"><img src="../images/usercenter.png" alt=""/> 上午好，JD6524197_2012 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="myCenter02.html">监控企业管理</a></li>
+                            <li><a href="myCenter.html">企业预警设置</a></li>
+                            <li><a href="myCenter01.html">事件分类设置</a></li>
+                            <li><a href="help.html">帮助中心</a></li>
+                            <li><a href="javascript:void(0);">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pressure-search">
+              <div class="search-box">
+                  <h2>企业管理</h2>
+                  <div class="search"><input type="text" class="input" placeholder="请输入企业名称或简称"/><button class="btn">搜索</button></div>
+                  <div class="history-box">
+                      <ul class="history-list">
+
+                      </ul>
+                  </div>
+              </div>
+        </div>
+   </div>
+    <div class="evaluate">
+         <div class="evaluate-data">
+            <div class="top-bar"><span class="title">企业列表</span></div>
+            <table class="index-table" id="data-Table">
+
+            </table>
+         </div>
+    </div>
+    <footer>
+        <p>Copyright © 2004-2017 京东JD.com 版权所有 </p>
+        <p>中科点击（北京）科技有限公司提供技术支持    客服电话400617888</p>
+    </footer>
+   <div class="modal modal-no-radius fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-dialog  modal-sm">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+               </div>
+               <div class="modal-body">
+                   <h3 class="title">是否确认删除该公司简称？</h3>
+                   <p class="sec-title">删除后无法恢复</p>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-primary">确定</button>
+                   <button type="button" class="btn btn-defaults" data-dismiss="modal">取消</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div>
+   <div class="modal modal-no-radius fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header modal-header-primary">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                   <h4 class="modal-title" id="myModalLabel1">添加公司简称</h4>
+               </div>
+               <div class="modal-body">
+                   <div class="form-horizontal">
+                       <div class="form-group">
+                           <label class="col-md-3 control-label">公司全称</label>
+                           <div class="col-md-9">
+                               <input type="text" class="form-control" placeholder="内容" value="中科点击（北京）科技有限公司" readonly>
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <label class="col-md-3 control-label">简称<span class="text-red">*</span></label>
+                           <div class="col-md-9">
+                               <input type="text" class="form-control" placeholder="内容" value="">
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-primary">确定</button>
+                   <button type="button" class="btn btn-defaults" data-dismiss="modal">取消</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div>
+    <script src="../vendor/jQuery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../vendor/bootstrap-select-1.12.2/dist/js/bootstrap-select.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="../vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../script/select-datepicker.js"></script>
+    <script src="../vendor/messages/messages.js"></script>
+   <script src="../script/companyShortManage/companyShortManage.js"></script>
+</body>
+</html>
